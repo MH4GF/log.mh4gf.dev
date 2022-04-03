@@ -14,7 +14,8 @@
     "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "@notionhq/client": "^1.0.4",
@@ -38,6 +39,7 @@
     "@typescript-eslint/parser": "^5.17.0",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
+    "chromatic": "^6.5.3",
     "esbuild-loader": "^2.18.0",
     "esbuild-register": "^3.3.2",
     "eslint": "8",
