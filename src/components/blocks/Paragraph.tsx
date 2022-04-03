@@ -5,5 +5,7 @@ type Props = {
 }
 
 export const Paragraph: React.FC<Props> = ({ block }) => {
-  return <p>{block.paragraph.rich_text[0].plain_text}</p>
+  return (
+    <p className={'bg-red-200'}>{block.paragraph.rich_text[0].plain_text}</p>
+  )
 }
