@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test:compile": "tsc",
+    "test:compile": "tsc --noEmit",
     "start": "next start",
     "lint": "yarn lint:js",
     "lint:js": "next lint --fix",
