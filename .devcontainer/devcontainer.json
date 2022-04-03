@@ -1,0 +1,26 @@
+{
+  "name": "next-js-template",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "settings": {
+    "cSpell.words": [],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.addMissingImports": true
+    }
+  },
+  "extensions": [
+    "yzhang.markdown-all-in-one",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag",
+    "esbenp.prettier-vscode",
+    "steoates.autoimport"
+  ],
+  "postCreateCommand": "yarn install",
+  "workspaceFolder": "/app"
+}
