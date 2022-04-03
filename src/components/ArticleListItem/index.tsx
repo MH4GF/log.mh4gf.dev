@@ -10,7 +10,7 @@ type Props = {
 export const ArticleListItem: React.FC<Props> = ({ article }) => {
   return (
     <li>
-      <Link href={article.slug}>{article.title}</Link>
+      <Link href={`articles/${article.slug}`}>{article.title}</Link>
       <p>{article.publishedAt}</p>
     </li>
   )
