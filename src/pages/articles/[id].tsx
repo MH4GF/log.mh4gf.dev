@@ -3,18 +3,31 @@ import { ParsedUrlQuery } from 'querystring'
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 
+import { Paragraph } from '~/src/components/blocks/Paragraph'
 import { NotionClient } from '~/src/lib/notion/client'
-import { Article, ArticleData } from '~/src/model/Article'
+import { BlockObject } from '~/src/lib/notion/type'
+import { Article } from '~/src/model/Article'
 
 interface Params extends ParsedUrlQuery {
   id: string
 }
 
-type Props = ArticleData
+type Props = {
+  slug: string
+  title: string
+  blocks: BlockObject[]
+}
 
-const Page: NextPage<Props> = (props) => {
-  const article = new Article({ slug: props.slug, title: props.title })
-  return <div>{article.title}</div>
+const Page: NextPage<Props> = ({ slug, title, blocks }) => {
+  const article = new Article({ slug, title })
+  const block = blocks[0]
+
+  return (
+    <div>
+      {article.title}
+      {block.type === 'paragraph' ? <Paragraph block={block} /> : null}
+    </div>
+  )
 }
 
 export default Page
@@ -45,11 +58,12 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   }
 
   const client = new NotionClient(process.env.NOTION_TOKEN)
-  const data = await client.fetchPage(params.id)
+  const page = await client.fetchPage(params.id)
+  const blocks = await client.fetchBlockChildren(page.id)
   const title =
-    data.properties['title'].type === 'title'
-      ? data.properties['title'].title[0].plain_text
+    page.properties['title'].type === 'title'
+      ? page.properties['title'].title[0].plain_text
       : ''
 
-  return { props: { slug: params.id, title: title } }
+  return { props: { slug: params.id, title, blocks: blocks } }
 }
