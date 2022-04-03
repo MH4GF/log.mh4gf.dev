@@ -9,7 +9,7 @@ services:
       - .:/app:cached
       - node_modules:/app/node_modules:cached
   sb:
-    image: next-js-project_app:latest
+    image: logmh4gfdev_app:latest
     depends_on:
       - app
     tty: true
