@@ -23,6 +23,10 @@ module.exports = {
       ...(config.resolve.modules || []),
       path.resolve(__dirname, '../src'),
     ]
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '~': path.resolve(__dirname, '../'),
+    }
 
     return config
   },
