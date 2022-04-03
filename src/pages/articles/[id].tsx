@@ -3,6 +3,7 @@ import { ParsedUrlQuery } from 'querystring'
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 
+import { Paragraph } from '~/src/components/blocks/Paragraph'
 import { NotionClient } from '~/src/lib/notion/client'
 import { BlockObject } from '~/src/lib/notion/type'
 import { Article } from '~/src/model/Article'
@@ -19,13 +20,12 @@ type Props = {
 
 const Page: NextPage<Props> = ({ slug, title, blocks }) => {
   const article = new Article({ slug, title })
+  const block = blocks[0]
 
   return (
     <div>
       {article.title}
-      {blocks[0].type === 'paragraph'
-        ? blocks[0].paragraph.rich_text[0].plain_text
-        : null}
+      {block.type === 'paragraph' ? <Paragraph block={block} /> : null}
     </div>
   )
 }
