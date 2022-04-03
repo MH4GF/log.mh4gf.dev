@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client'
 
-import { PageObject } from './type'
+import { BlockObject, PageObject } from './type'
 
 export class NotionClient {
   client: Client
@@ -20,5 +20,13 @@ export class NotionClient {
 
   async fetchPage(pageId: string) {
     return (await this.client.pages.retrieve({ page_id: pageId })) as PageObject
+  }
+
+  async fetchBlockChildren(pageId: string): Promise<BlockObject[]> {
+    // TODO: paging
+    const res = await this.client.blocks.children.list({
+      block_id: pageId,
+    })
+    return res.results as BlockObject[]
   }
 }

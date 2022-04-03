@@ -9,3 +9,10 @@ export type PageObject = MatchType<
     properties: unknown
   }
 >
+
+export type BlockObject = MatchType<
+  ElementType<
+    Awaited<ReturnType<Client['blocks']['children']['list']>>['results']
+  >,
+  { type: unknown }
+>
