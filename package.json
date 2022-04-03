@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "ts": "node -r esbuild-register",
     "build": "next build",
     "test:compile": "tsc --noEmit",
     "start": "next start",
@@ -35,6 +36,7 @@
     "@typescript-eslint/parser": "^5.17.0",
     "babel-loader": "^8.2.4",
     "esbuild-loader": "^2.18.0",
+    "esbuild-register": "^3.3.2",
     "eslint": "8",
     "eslint-config-next": "12.1.4",
     "eslint-config-prettier": "^8.5.0",
