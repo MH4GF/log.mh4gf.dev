@@ -18,7 +18,7 @@
     "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "yarn build:path && build-storybook",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
