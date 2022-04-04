@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "run-p dev:*",
+    "dev:next": "next dev",
+    "dev:path": "pathpida --watch --output src/generated",
     "ts": "node -r esbuild-register",
-    "build": "next build",
+    "build": "run-p build:*",
+    "build:next": "next build",
+    "build:path": "pathpida --output src/generated",
     "test:compile": "tsc --noEmit",
     "start": "next start",
     "lint": "yarn lint:js",
@@ -14,7 +18,7 @@
     "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "yarn build:path && build-storybook",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
@@ -48,6 +52,8 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-storybook": "^0.5.7",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "pathpida": "^0.18.0",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
     "tailwindcss": "^3.0.23",

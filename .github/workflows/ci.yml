@@ -43,6 +43,9 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
+      - name: Build pathpida type file 👨🏻‍💻
+        run: yarn build:path
+
       - name: Run linter 👀
         run: yarn lint
 
