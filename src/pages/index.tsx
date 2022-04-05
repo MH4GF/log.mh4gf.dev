@@ -1,7 +1,8 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetStaticProps, NextPageWithLayout } from 'next'
 import React from 'react'
 
 import { IndexPage } from 'src/components/Pages/IndexPage'
+import { Layout } from 'src/components/Pages/Layout'
 import { NotionClient } from 'src/lib/notion/client'
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
   }[]
 }
 
-const Page: NextPage<Props> = ({ articles }) => {
+const Page: NextPageWithLayout<Props> = ({ articles }) => {
   return <IndexPage articles={articles} />
 }
 
@@ -36,3 +37,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return { props: { articles } }
 }
+
+Page.getLayout = (page) => <Layout>{page}</Layout>
