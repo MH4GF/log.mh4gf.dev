@@ -11,7 +11,9 @@ interface Props {
 export const Layout = ({ children, title }: Props): ReactElement => {
   return (
     <div>
-      <Head>{title || 'log.mh4gf.dev'}</Head>
+      <Head>
+        <title>{title || 'log.mh4gf.dev'}</title>
+      </Head>
       <Header />
       {children}
     </div>
