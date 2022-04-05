@@ -1,9 +1,10 @@
 import { ParsedUrlQuery } from 'querystring'
 
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import React from 'react'
+import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
+import React, { ReactElement } from 'react'
 
 import { Paragraph } from '~/src/components/blocks/Paragraph'
+import { Layout } from '~/src/components/Pages/Layout'
 import { NotionClient } from '~/src/lib/notion/client'
 import { BlockObject } from '~/src/lib/notion/type'
 import { Article } from '~/src/model/Article'
@@ -18,7 +19,7 @@ type Props = {
   blocks: BlockObject[]
 }
 
-const Page: NextPage<Props> = ({ slug, title, blocks }) => {
+const Page: NextPageWithLayout<Props> = ({ slug, title, blocks }) => {
   const article = new Article({ slug, title })
   const block = blocks[0]
 
@@ -67,3 +68,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 
   return { props: { slug: params.id, title, blocks: blocks } }
 }
+
+Page.getLayout = (page: ReactElement<Props>) => (
+  <Layout title={page.props.title}>{page}</Layout>
+)
