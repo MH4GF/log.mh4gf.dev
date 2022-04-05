@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { ReactElement, ReactNode } from 'react'
 
+import { Footer } from '~/src/components/Footer'
 import { Header } from '~/src/components/Header'
 
 interface Props {
@@ -16,6 +17,7 @@ export const Layout = ({ children, title }: Props): ReactElement => {
       </Head>
       <Header />
       {children}
+      <Footer />
     </div>
   )
 }
