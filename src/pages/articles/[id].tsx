@@ -3,7 +3,7 @@ import { ParsedUrlQuery } from 'querystring'
 import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 import React, { ReactElement } from 'react'
 
-import { Paragraph } from '~/src/components/blocks/Paragraph'
+import { renderBlocks } from '~/src/components/blocks'
 import { Layout } from '~/src/components/Pages/Layout'
 import { NotionClient } from '~/src/lib/notion/client'
 import { BlockObject } from '~/src/lib/notion/type'
@@ -21,12 +21,11 @@ type Props = {
 
 const Page: NextPageWithLayout<Props> = ({ slug, title, blocks }) => {
   const article = new Article({ slug, title })
-  const block = blocks[0]
 
   return (
     <div>
       {article.title}
-      {block.type === 'paragraph' ? <Paragraph block={block} /> : null}
+      {renderBlocks({ blocks })}
     </div>
   )
 }
