@@ -16,3 +16,12 @@ export type BlockObject<T = unknown> = MatchType<
   >,
   { type: T }
 >
+
+export type RichTextObject = ElementType<
+  MatchType<
+    ElementType<
+      Awaited<ReturnType<Client['blocks']['children']['list']>>['results']
+    >,
+    { type: 'paragraph' }
+  >['paragraph']['rich_text']
+>
