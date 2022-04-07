@@ -38,6 +38,7 @@ yarn-error.log*
 
 # docker環境にて、秘匿情報などコミットしたくない環境変数を設定したい際などに使う。
 docker-compose.override.yml
+.env
 
 src/generated/**
 !src/generated/.keep
