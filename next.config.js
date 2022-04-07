@@ -32,9 +32,8 @@ module.exports = {
 
     useEsbuildMinify(config)
     useEsbuildLoader(config, {
-      // Specify `tsx` if you're using TypeScript
-      loader: 'jsx',
-      target: 'es2017',
+      loader: 'tsx',
+      target: 'es2020',
     })
 
     return config
