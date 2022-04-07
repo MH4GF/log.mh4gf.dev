@@ -15,7 +15,9 @@ export type BlockObject<T = unknown> = MatchType<
     Awaited<ReturnType<Client['blocks']['children']['list']>>['results']
   >,
   { type: T }
->
+> & {
+  children?: BlockObject[]
+}
 
 export type RichTextObject = ElementType<
   MatchType<

@@ -1,7 +1,11 @@
 import { FC } from 'react'
 
-import { BlockViewProps } from '..'
+import { BlockViewProps, renderBlocks } from '..'
 
 export const ColumnList: FC<BlockViewProps<'column_list'>> = ({ block }) => {
-  return <div>not supported block type: {block.type}</div>
+  if (!block.children) {
+    return <div></div>
+  }
+
+  return <div>{renderBlocks({ blocks: block.children })}</div>
 }
