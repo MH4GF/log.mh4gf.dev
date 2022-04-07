@@ -86,7 +86,10 @@ export const renderBlocks: FC<Props> = ({ blocks }) => {
       {blocks.map((block) => {
         // TODO: remove any
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        return createElement(blockView[block.type] as any, { block })
+        return createElement(blockView[block.type] as any, {
+          block,
+          key: block.id,
+        })
       })}
     </>
   )
