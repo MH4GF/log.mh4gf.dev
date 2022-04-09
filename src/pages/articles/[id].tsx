@@ -3,11 +3,11 @@ import { ParsedUrlQuery } from 'querystring'
 import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 import React, { ReactElement } from 'react'
 
-import { renderBlocks } from '~/src/components/blocks'
+import { Article } from '~/src/components/Article'
 import { Layout } from '~/src/components/Pages/Layout'
 import { NotionClient } from '~/src/lib/notion/client'
 import { BlockObject } from '~/src/lib/notion/type'
-import { Article } from '~/src/model/Article'
+import { ArticleModel } from '~/src/model/ArticleModel'
 
 interface Params extends ParsedUrlQuery {
   id: string
@@ -19,15 +19,10 @@ type Props = {
   blocks: BlockObject[]
 }
 
-const Page: NextPageWithLayout<Props> = ({ slug, title, blocks }) => {
-  const article = new Article({ slug, title })
+const Page: NextPageWithLayout<Props> = (props) => {
+  const article = new ArticleModel(props)
 
-  return (
-    <div>
-      {article.title}
-      {renderBlocks({ blocks })}
-    </div>
-  )
+  return <Article article={article} />
 }
 
 export default Page
