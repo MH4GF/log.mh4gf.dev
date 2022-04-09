@@ -22,11 +22,28 @@ export class NotionClient {
     return (await this.client.pages.retrieve({ page_id: pageId })) as PageObject
   }
 
-  async fetchBlockChildren(pageId: string): Promise<BlockObject[]> {
-    // TODO: paging
-    const res = await this.client.blocks.children.list({
-      block_id: pageId,
-    })
-    return res.results as BlockObject[]
+  async fetchBlockChildren(blockId: string): Promise<BlockObject[]> {
+    const blocks: BlockObject[] = []
+    let cursor: string | null = null
+
+    do {
+      const { results, next_cursor } = await this.client.blocks.children.list({
+        block_id: blockId,
+      })
+      for (const block of results) {
+        if ('type' in block) {
+          if (block.has_children) {
+            const children = await this.fetchBlockChildren(block.id)
+            blocks.push({ ...block, children })
+          } else {
+            blocks.push(block)
+          }
+        }
+      }
+
+      cursor = next_cursor
+    } while (cursor !== null)
+
+    return blocks
   }
 }
