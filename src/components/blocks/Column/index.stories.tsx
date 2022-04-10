@@ -1,6 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
+import { renderBlocks } from '../../../../.storybook/renderBlocks'
+
 import { Column } from '.'
 
 export default {
@@ -72,4 +74,5 @@ Default.args = {
       },
     ],
   },
+  renderBlocks: renderBlocks,
 }
