@@ -3,7 +3,7 @@ import React from 'react'
 
 import { IndexPage } from 'src/components/Pages/IndexPage'
 import { Layout } from 'src/components/Pages/Layout'
-import { NotionClient } from 'src/lib/notion/client'
+import { NotionClient, LogLevel } from 'src/lib/notion/client'
 
 type Props = {
   articles: {
@@ -20,7 +20,10 @@ const Page: NextPageWithLayout<Props> = ({ articles }) => {
 export default Page
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const client = new NotionClient(process.env.NOTION_TOKEN)
+  const client = new NotionClient({
+    auth: process.env.NOTION_TOKEN,
+    logLevel: LogLevel.DEBUG,
+  })
   const pages = await client.fetchDatabasePages(process.env.NOTION_DATABASE_ID)
   const articles = pages.map((page) => {
     const title =
