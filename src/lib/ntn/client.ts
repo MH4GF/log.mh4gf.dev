@@ -1,9 +1,7 @@
 import { Client } from '@notionhq/client'
 import { ClientOptions } from '@notionhq/client/build/src/Client'
 
-import { BlockObject, PageObject } from './type'
-
-export { LogLevel } from '@notionhq/client'
+import { PageObject, BlockObject } from './type'
 
 export class NotionClient {
   client: Client

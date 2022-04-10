@@ -1,4 +1,4 @@
-import { BlockObject } from '../lib/notion/type'
+import { BlockObject } from '../lib/ntn'
 
 export interface ArticleData {
   slug: string
