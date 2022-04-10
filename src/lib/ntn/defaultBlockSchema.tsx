@@ -101,5 +101,5 @@ export const defaultBlockSchema: BlockSchema = {
   },
   unsupported: {
     render: (block) => <div>{defaultMessage(block.type)}</div>,
-  }
+  },
 }

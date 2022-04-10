@@ -1,11 +1,14 @@
 import { FC } from 'react'
 
-import { BlockViewProps, renderBlocks } from '..'
+import { BlockViewProps } from '~/src/lib/ntn/type'
 
-export const ColumnList: FC<BlockViewProps<'column_list'>> = ({ block }) => {
+export const ColumnList: FC<BlockViewProps<'column_list'>> = ({
+  block,
+  renderBlocks,
+}) => {
   if (!block.children) {
     return <div></div>
   }
 
-  return <div>{renderBlocks({ blocks: block.children })}</div>
+  return <div>{renderBlocks(block.children)}</div>
 }

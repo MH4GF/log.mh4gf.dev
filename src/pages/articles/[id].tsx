@@ -4,9 +4,14 @@ import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 import React, { ReactElement } from 'react'
 
 import { Article } from '~/src/components/Article'
+import { blockSchema } from '~/src/components/blocks/blockSchema'
 import { Layout } from '~/src/components/Pages/Layout'
-import { LogLevel, NotionClient } from '~/src/lib/notion/client'
-import { BlockObject } from '~/src/lib/notion/type'
+import {
+  BlockObject,
+  buildBlockParser,
+  LogLevel,
+  NotionClient,
+} from '~/src/lib/ntn'
 import { ArticleModel } from '~/src/model/ArticleModel'
 
 interface Params extends ParsedUrlQuery {
@@ -60,11 +65,14 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
     logLevel: LogLevel.DEBUG,
   })
   const page = await client.fetchPage(params.id)
-  const blocks = await client.fetchBlockChildren(page.id)
+  const blockObjects = await client.fetchBlockChildren(page.id)
   const title =
     page.properties['title'].type === 'title'
       ? page.properties['title'].title[0].plain_text
       : ''
+
+  const { parser } = buildBlockParser(blockSchema)
+  const blocks = parser.parse(blockObjects)
 
   return { props: { slug: params.id, title, blocks: blocks } }
 }

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { RichTextObject } from '~/src/lib/notion/type'
+import { RichTextObject } from '~/src/lib/ntn'
 
 interface Props {
   richText: RichTextObject

@@ -1,10 +1,12 @@
 import { FC } from 'react'
 
-import { BlockViewProps, renderBlocks } from '..'
 import { RichText } from '../RichText'
+
+import { BlockViewProps } from '~/src/lib/ntn/type'
 
 export const BulletedListItem: FC<BlockViewProps<'bulleted_list_item'>> = ({
   block,
+  renderBlocks,
 }) => {
   return (
     <ul className="list-disc ml-6">
@@ -13,7 +15,7 @@ export const BulletedListItem: FC<BlockViewProps<'bulleted_list_item'>> = ({
           <RichText richText={text} />
         </li>
       ))}
-      {block.children && renderBlocks({ blocks: block.children })}
+      {block.children && renderBlocks(block.children)}
     </ul>
   )
 }
