@@ -1,12 +1,15 @@
 import { Client } from '@notionhq/client'
+import { ClientOptions } from '@notionhq/client/build/src/Client'
 
 import { BlockObject, PageObject } from './type'
+
+export { LogLevel } from '@notionhq/client'
 
 export class NotionClient {
   client: Client
 
-  constructor(key: string) {
-    this.client = new Client({ auth: key })
+  constructor(options: ClientOptions) {
+    this.client = new Client(options)
   }
 
   async fetchDatabasePages(databaseId: string): Promise<PageObject[]> {

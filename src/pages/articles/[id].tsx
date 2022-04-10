@@ -5,7 +5,7 @@ import React, { ReactElement } from 'react'
 
 import { Article } from '~/src/components/Article'
 import { Layout } from '~/src/components/Pages/Layout'
-import { NotionClient } from '~/src/lib/notion/client'
+import { LogLevel, NotionClient } from '~/src/lib/notion/client'
 import { BlockObject } from '~/src/lib/notion/type'
 import { ArticleModel } from '~/src/model/ArticleModel'
 
@@ -28,7 +28,10 @@ const Page: NextPageWithLayout<Props> = (props) => {
 export default Page
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const client = new NotionClient(process.env.NOTION_TOKEN)
+  const client = new NotionClient({
+    auth: process.env.NOTION_TOKEN,
+    logLevel: LogLevel.DEBUG,
+  })
   const pages = await client.fetchDatabasePages(process.env.NOTION_DATABASE_ID)
 
   const paths = pages.map((page) => {
@@ -52,7 +55,10 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
     throw new Error('unexpected state, params is not found')
   }
 
-  const client = new NotionClient(process.env.NOTION_TOKEN)
+  const client = new NotionClient({
+    auth: process.env.NOTION_TOKEN,
+    logLevel: LogLevel.DEBUG,
+  })
   const page = await client.fetchPage(params.id)
   const blocks = await client.fetchBlockChildren(page.id)
   const title =
