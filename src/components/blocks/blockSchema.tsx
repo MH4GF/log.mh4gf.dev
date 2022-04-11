@@ -5,6 +5,7 @@ import { ColumnList } from './ColumnList'
 import { Divider } from './Divider'
 import { Heading1, Heading2, Heading3 } from './Heading'
 import { Paragraph } from './Paragraph'
+import { SyncedBlock } from './SyncedBlock'
 
 import { BlockSchema, defaultBlockSchema } from '~/src/lib/ntn'
 
@@ -46,5 +47,10 @@ export const blockSchema: BlockSchema = {
   },
   divider: {
     render: (block) => <Divider block={block} key={block.id} />,
+  },
+  synced_block: {
+    render: (block, renderBlocks) => (
+      <SyncedBlock block={block} renderBlocks={renderBlocks} key={block.id} />
+    ),
   },
 }

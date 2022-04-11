@@ -36,6 +36,14 @@ export class NotionClient {
           if (block.has_children) {
             const children = await this.fetchBlockChildren(block.id)
             blocks.push({ ...block, children })
+          } else if (
+            block.type === 'synced_block' &&
+            block.synced_block.synced_from?.block_id !== undefined
+          ) {
+            const children = await this.fetchBlockChildren(
+              block.synced_block.synced_from.block_id,
+            )
+            blocks.push({ ...block, children })
           } else {
             blocks.push(block)
           }
