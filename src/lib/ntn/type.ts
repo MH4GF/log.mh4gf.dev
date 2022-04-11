@@ -50,5 +50,5 @@ export type RenderBlocks = (blocks: BlockObject[]) => ReactElement[]
 
 export interface BlockViewProps<T> {
   block: BlockObject<T>
-  renderBlocks: RenderBlocks
+  renderBlocks?: RenderBlocks
 }

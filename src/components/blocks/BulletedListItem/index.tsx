@@ -4,10 +4,9 @@ import { RichText } from '../RichText'
 
 import { BlockViewProps } from '~/src/lib/ntn/type'
 
-export const BulletedListItem: FC<BlockViewProps<'bulleted_list_item'>> = ({
-  block,
-  renderBlocks,
-}) => {
+export const BulletedListItem: FC<
+  Required<BlockViewProps<'bulleted_list_item'>>
+> = ({ block, renderBlocks }) => {
   return (
     <ul className="list-disc ml-6">
       {block.bulleted_list_item.rich_text.map((text) => (
