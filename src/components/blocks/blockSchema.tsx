@@ -1,6 +1,8 @@
 import { BulletedListItem } from './BulletedListItem'
+import { Callout } from './Callout'
 import { Column } from './Column'
 import { ColumnList } from './ColumnList'
+import { Divider } from './Divider'
 import { Heading1, Heading2, Heading3 } from './Heading'
 import { Paragraph } from './Paragraph'
 
@@ -38,5 +40,11 @@ export const blockSchema: BlockSchema = {
         key={block.id}
       />
     ),
+  },
+  callout: {
+    render: (block) => <Callout block={block} key={block.id} />,
+  },
+  divider: {
+    render: (block) => <Divider block={block} key={block.id} />,
   },
 }
