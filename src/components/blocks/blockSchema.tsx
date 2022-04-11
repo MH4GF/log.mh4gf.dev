@@ -32,11 +32,7 @@ export const blockSchema: BlockSchema = {
   },
   bulleted_list_item: {
     render: (block, renderBlocks) => (
-      <BulletedListItem
-        block={block}
-        renderBlocks={renderBlocks}
-        key={block.id}
-      />
+      <BulletedListItem block={block} renderBlocks={renderBlocks} key={block.id} />
     ),
   },
 }
