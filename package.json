@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@notionhq/client": "*",
+    "axios": "*",
     "next": "^12.1.5-canary.0",
     "react": "*",
     "react-dom": "*"
