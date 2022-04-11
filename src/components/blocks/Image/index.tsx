@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { BlockViewProps } from '..'
+import { BlockViewProps } from '~/src/lib/ntn/type'
 
 const ImageBlock: FC<BlockViewProps<'image'>> = ({ block }) => {
   // パフォーマンス・セキュリティ上build時に画像を保存して同一オリジンから配信した方が良さそう

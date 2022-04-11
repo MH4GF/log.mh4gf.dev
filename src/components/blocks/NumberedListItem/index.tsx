@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { BlockViewProps } from '..'
+import { BlockViewProps } from '~/src/lib/ntn/type'
 
 export const NumberedListItem: FC<BlockViewProps<'numbered_list_item'>> = ({
   block,

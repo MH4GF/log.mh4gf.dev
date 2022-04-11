@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { BlockViewProps } from '~/src/lib/ntn/type'
 
-export const ColumnList: FC<BlockViewProps<'column_list'>> = ({
+export const ColumnList: FC<Required<BlockViewProps<'column_list'>>> = ({
   block,
   renderBlocks,
 }) => {

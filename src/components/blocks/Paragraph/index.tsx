@@ -1,4 +1,4 @@
-import { BlockViewProps } from '..'
+import { BlockViewProps } from '~/src/lib/ntn/type'
 
 export const Paragraph: React.FC<BlockViewProps<'paragraph'>> = ({ block }) => {
   const text = block.paragraph.rich_text.map((item) => item.plain_text).join()

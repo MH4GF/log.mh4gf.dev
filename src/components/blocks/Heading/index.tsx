@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { BlockViewProps } from '..'
+import { BlockViewProps } from '~/src/lib/ntn/type'
 
 export const Heading1: FC<BlockViewProps<'heading_1'>> = ({ block }) => {
   const text = block.heading_1.rich_text.map((text) => text.plain_text).join()

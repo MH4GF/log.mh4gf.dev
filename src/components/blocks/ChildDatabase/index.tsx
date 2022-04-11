@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { BlockViewProps } from '..'
+import { BlockViewProps } from '~/src/lib/ntn/type'
 
 export const ChildDatabase: FC<BlockViewProps<'child_database'>> = ({
   block,
