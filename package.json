@@ -20,7 +20,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "yarn build:path && build-storybook",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
-    "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force"
+    "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "@notionhq/client": "*",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "*",
+    "@lhci/cli": "*",
     "@storybook/addon-a11y": "*",
     "@storybook/addon-actions": "*",
     "@storybook/addon-essentials": "*",
