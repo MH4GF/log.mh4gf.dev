@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v3.1.0
@@ -32,3 +34,5 @@ jobs:
       - name: run Lighthouse CI
         run: |
           yarn lhci
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
