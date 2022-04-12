@@ -23,7 +23,9 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
+      - name: Build ‍💻
+        run: yarn build
+
       - name: run Lighthouse CI
         run: |
-          yarn global add @lhci/cli@0.8.x
-          lhci autorun
+          yarn lhci
