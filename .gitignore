@@ -42,3 +42,5 @@ docker-compose.override.yml
 
 src/generated/**
 !src/generated/.keep
+
+/.lighthouseci/
