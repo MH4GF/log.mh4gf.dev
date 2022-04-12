@@ -25,6 +25,9 @@ jobs:
 
       - name: Build ‍💻
         run: yarn build
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
       - name: run Lighthouse CI
         run: |
