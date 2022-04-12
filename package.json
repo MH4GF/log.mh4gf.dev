@@ -24,6 +24,8 @@
     "lhci": "lhci autorun"
   },
   "dependencies": {
+    "@cloudinary/react": "*",
+    "@cloudinary/url-gen": "*",
     "@notionhq/client": "*",
     "next": "^12.1.5-canary.0",
     "react": "*",
