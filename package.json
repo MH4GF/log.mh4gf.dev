@@ -60,7 +60,7 @@
     "jest": "*",
     "npm-run-all": "*",
     "pathpida": "*",
-    "postcss": "*",
+    "postcss": "^8",
     "prettier": "*",
     "tailwindcss": "*",
     "ts-jest": "*",
