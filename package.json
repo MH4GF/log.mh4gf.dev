@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@notionhq/client": "*",
+    "axios": "*",
     "next": "^12.1.5-canary.0",
     "react": "*",
     "react-dom": "*"
@@ -40,6 +41,7 @@
     "@storybook/addon-postcss": "*",
     "@storybook/react": "*",
     "@storybook/testing-library": "*",
+    "@types/jest": "*",
     "@types/node": "*",
     "@types/react": "*",
     "@typescript-eslint/eslint-plugin": "*",
@@ -55,11 +57,13 @@
     "eslint-plugin-import": "*",
     "eslint-plugin-storybook": "*",
     "eslint-plugin-unused-imports": "*",
+    "jest": "*",
     "npm-run-all": "*",
     "pathpida": "*",
-    "postcss": "*",
+    "postcss": "^8",
     "prettier": "*",
     "tailwindcss": "*",
+    "ts-jest": "*",
     "typescript": "*",
     "webpack": "*"
   }
