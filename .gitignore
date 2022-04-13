@@ -44,3 +44,6 @@ src/generated/**
 !src/generated/.keep
 
 /.lighthouseci/
+
+public/tmp/**
+!public/tmp/.keep
