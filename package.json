@@ -26,6 +26,7 @@
   "dependencies": {
     "@notionhq/client": "*",
     "axios": "*",
+    "mime-types": "*",
     "next": "^12.1.5-canary.0",
     "react": "*",
     "react-dom": "*"
@@ -42,6 +43,7 @@
     "@storybook/react": "*",
     "@storybook/testing-library": "*",
     "@types/jest": "*",
+    "@types/mime-types": "^2.1.1",
     "@types/node": "*",
     "@types/react": "*",
     "@typescript-eslint/eslint-plugin": "*",
