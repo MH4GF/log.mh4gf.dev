@@ -25,7 +25,7 @@ describe('download for local file from external file url', () => {
     await download(
       'https://upload.wikimedia.org/wikipedia/commons/1/10/Wikipedia-logo-v2-200px-transparent.png',
       'public/tmp/test-image',
-      true,
+      { addExt: true },
     ).then((data) => {
       expect(data).toBe(filepath)
       expect(existsSync(filepath)).toBeTruthy()
