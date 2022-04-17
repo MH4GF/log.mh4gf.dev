@@ -12,10 +12,10 @@ export const download = async (
   filepath: string,
   addExt = false,
 ): Promise<string> => {
+  let path = filepath
   try {
     const res = await axios.get<ReadStream>(url, { responseType: 'stream' })
     const type = extension(res.headers['content-type'])
-    let path = filepath
     if (addExt && type) {
       path = `${path}.${type}`
     }
@@ -25,5 +25,5 @@ export const download = async (
     console.error(err)
   }
 
-  return filepath
+  return path
 }
