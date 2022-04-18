@@ -2,37 +2,41 @@ import { ReactElement } from 'react'
 
 import {
   BlockObject,
-  BlockParser,
-  BlockSchema,
+  BlockParseRules,
+  BlockRenderRules,
   BuildBlockParser,
   RenderBlocks,
 } from './type'
 
-const runParse = (schema: BlockSchema, blockObjects: BlockObject[]) => {
-  return blockObjects.map((blockObject) => {
-    const beforeParse = schema[blockObject.type].beforeParse
-    // TODO: remove never
-    const block = beforeParse ? beforeParse(blockObject as never) : blockObject
-    if (block.children !== undefined) {
-      block.children = runParse(schema, block.children)
-    }
-    return block
-  })
+const runParse = (rules: BlockParseRules, blockObjects: BlockObject[]) => {
+  return Promise.all(
+    blockObjects.map(async (blockObject) => {
+      let block = blockObject
+      const run = rules[blockObject.type]
+      if (run) {
+        // TODO: remove never
+        block = await run(blockObject as never)
+      }
+
+      if (block.children !== undefined) {
+        block.children = await runParse(rules, block.children)
+      }
+      return block
+    }),
+  )
 }
 
-export const buildBlockParser: BuildBlockParser = (schema) => {
-  const parser: BlockParser = {
-    parse: (blockObjects) => runParse(schema, blockObjects),
+export const buildBlockParser: BuildBlockParser = (rules) => {
+  return {
+    parse: (blockObjects) => runParse(rules, blockObjects),
   }
-
-  return { parser }
 }
 
-export const useRenderBlocks = (schema: BlockSchema) => {
+export const useRenderBlocks = (rules: BlockRenderRules) => {
   const renderBlocks: RenderBlocks = (blocks) => {
     const elms = blocks.map((block) => {
       // TODO: remove never
-      return schema[block.type].render(block as never, renderBlocks)
+      return rules[block.type](block as never, renderBlocks)
     })
     return elms.filter((elm): elm is NonNullable<ReactElement> => elm != null)
   }
@@ -43,5 +47,10 @@ export const useRenderBlocks = (schema: BlockSchema) => {
 export { LogLevel } from '@notionhq/client'
 
 export { defaultBlockSchema } from './defaultBlockSchema'
-export type { BlockObject, RichTextObject, BlockSchema } from './type'
+export type {
+  BlockObject,
+  RichTextObject,
+  BlockRenderRules,
+  BlockParseRules,
+} from './type'
 export { NotionClient } from './client'

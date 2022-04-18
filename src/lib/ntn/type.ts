@@ -29,22 +29,23 @@ export type RichTextObject = ElementType<
   >['paragraph']['rich_text']
 >
 
-interface BlockSpec<T> {
-  beforeParse?: (block: BlockObject<T>) => BlockObject
-  render: (block: BlockObject<T>, renderBlocks: RenderBlocks) => ReactElement
+export type BlockRenderRules = {
+  [key in BlockObject['type']]: (
+    block: BlockObject<key>,
+    renderBlocks: RenderBlocks,
+  ) => ReactElement
 }
 
-export type BlockSchema = {
-  [key in BlockObject['type']]: BlockSpec<key>
+export type BlockParseRules = {
+  [key in BlockObject['type']]?: (
+    block: BlockObject<key>,
+  ) => Promise<BlockObject>
 }
 export interface BlockParser {
-  parse: (blockObjects: BlockObject[]) => BlockObject[]
-}
-type UseBlockParserResult = {
-  parser: BlockParser
+  parse: (blockObjects: BlockObject[]) => Promise<BlockObject[]>
 }
 
-export type BuildBlockParser = (schema: BlockSchema) => UseBlockParserResult
+export type BuildBlockParser = (rules: BlockParseRules) => BlockParser
 
 export type RenderBlocks = (blocks: BlockObject[]) => ReactElement[]
 

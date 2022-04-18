@@ -4,7 +4,7 @@ import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 import React, { ReactElement } from 'react'
 
 import { Article } from '~/src/components/Article'
-import { blockSchema } from '~/src/components/blocks/blockSchema'
+import { blockParseRules } from '~/src/components/blocks/blockParseRules'
 import { Layout } from '~/src/components/Pages/Layout'
 import {
   BlockObject,
@@ -71,8 +71,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
       ? page.properties['title'].title[0].plain_text
       : ''
 
-  const { parser } = buildBlockParser(blockSchema)
-  const blocks = parser.parse(blockObjects)
+  const parser = buildBlockParser(blockParseRules)
+  const blocks = await parser.parse(blockObjects)
 
   return { props: { slug: params.id, title, blocks: blocks } }
 }
