@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { BlockViewProps } from '~/src/lib/ntn/type'
+import { BlockViewProps } from '~/src/lib/ntn'
 
 export const Code: FC<BlockViewProps<'code'>> = ({ block }) => {
   return <div>not supported block type: {block.type}</div>

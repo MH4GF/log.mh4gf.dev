@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { RichText } from '../RichText'
 
-import { BlockViewProps } from '~/src/lib/ntn/type'
+import { BlockViewProps } from '~/src/lib/ntn'
 
 export const BulletedListItem: FC<
   Required<BlockViewProps<'bulleted_list_item'>>
