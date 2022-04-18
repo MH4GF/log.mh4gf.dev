@@ -30,7 +30,8 @@
     "mime-types": "*",
     "next": "^12.1.5-canary.0",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "sharp": "*"
   },
   "devDependencies": {
     "@babel/core": "*",
