@@ -1,10 +1,19 @@
+import Image from 'next/image'
 import { FC } from 'react'
 
-import { BlockViewProps } from '~/src/lib/ntn/type'
+import { BlockObject, BlockViewProps } from '~/src/lib/ntn'
+
+const imageUrl = (block: BlockObject<'image'>) => {
+  switch (block.image.type) {
+    case 'external':
+      return block.image.external.url
+    case 'file':
+      return block.image.file.url
+  }
+}
 
 const ImageBlock: FC<BlockViewProps<'image'>> = ({ block }) => {
-  // パフォーマンス・セキュリティ上build時に画像を保存して同一オリジンから配信した方が良さそう
-  return <div>not supported block type: {block.type}</div>
+  return <Image src={imageUrl(block)} width="600" height="400" alt="" />
 }
 
 export { ImageBlock as Image }

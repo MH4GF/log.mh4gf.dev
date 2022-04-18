@@ -1,4 +1,4 @@
-import { blockSchema } from '../src/components/blocks/blockSchema'
+import { blockRenderRules } from '../src/components/blocks/blockRenderRules'
 import { useRenderBlocks } from '../src/lib/ntn'
 
-export const { renderBlocks } = useRenderBlocks(blockSchema)
+export const { renderBlocks } = useRenderBlocks(blockRenderRules)
