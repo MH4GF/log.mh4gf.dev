@@ -4,6 +4,7 @@ import { Column } from './Column'
 import { ColumnList } from './ColumnList'
 import { Divider } from './Divider'
 import { Heading1, Heading2, Heading3 } from './Heading'
+import { Image } from './Image'
 import { Paragraph } from './Paragraph'
 import { SyncedBlock } from './SyncedBlock'
 
@@ -52,5 +53,12 @@ export const blockSchema: BlockSchema = {
     render: (block, renderBlocks) => (
       <SyncedBlock block={block} renderBlocks={renderBlocks} key={block.id} />
     ),
+  },
+  image: {
+    render: (block) => <Image block={block} key={block.id} />,
+    beforeParse: (block) => {
+      console.log('called beforeParse')
+      return block
+    },
   },
 }
