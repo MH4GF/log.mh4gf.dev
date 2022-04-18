@@ -57,6 +57,7 @@
     "eslint-plugin-import": "*",
     "eslint-plugin-storybook": "*",
     "eslint-plugin-unused-imports": "*",
+    "fishery": "*",
     "jest": "*",
     "npm-run-all": "*",
     "pathpida": "*",
