@@ -52,5 +52,6 @@ export type {
   RichTextObject,
   BlockRenderRules,
   BlockParseRules,
+  BlockViewProps,
 } from './type'
 export { NotionClient } from './client'
