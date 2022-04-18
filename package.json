@@ -26,6 +26,7 @@
   "dependencies": {
     "@notionhq/client": "*",
     "axios": "*",
+    "deepmerge": "*",
     "mime-types": "*",
     "next": "^12.1.5-canary.0",
     "react": "*",
