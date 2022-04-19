@@ -44,6 +44,8 @@
     "@storybook/addon-postcss": "*",
     "@storybook/react": "*",
     "@storybook/testing-library": "*",
+    "@swc/core": "*",
+    "@swc/jest": "*",
     "@types/jest": "*",
     "@types/mime-types": "^2.1.1",
     "@types/node": "*",
@@ -68,7 +70,6 @@
     "postcss": "^8",
     "prettier": "*",
     "tailwindcss": "*",
-    "ts-jest": "*",
     "typescript": "*",
     "webpack": "*"
   }
