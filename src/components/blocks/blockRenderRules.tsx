@@ -6,6 +6,7 @@ import { Divider } from './Divider'
 import { Heading1, Heading2, Heading3 } from './Heading'
 import { Image } from './Image'
 import { Paragraph } from './Paragraph'
+import { Quote } from './Quote'
 import { SyncedBlock } from './SyncedBlock'
 
 import { BlockRenderRules, defaultBlockSchema } from '~/src/lib/ntn'
@@ -36,4 +37,5 @@ export const blockRenderRules: BlockRenderRules = {
     <SyncedBlock block={block} renderBlocks={renderBlocks} key={block.id} />
   ),
   image: (block) => <Image block={block} key={block.id} />,
+  quote: (block) => <Quote block={block} key={block.id} />,
 }

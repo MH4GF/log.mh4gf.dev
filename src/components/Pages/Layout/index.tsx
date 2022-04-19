@@ -11,7 +11,7 @@ interface Props {
 
 export const Layout = ({ children, title }: Props): ReactElement => {
   return (
-    <div>
+    <div className="bg-gradient-to-r from-gray-700 to-gray-900">
       <Head>
         <title>{title || 'log.mh4gf.dev'}</title>
       </Head>

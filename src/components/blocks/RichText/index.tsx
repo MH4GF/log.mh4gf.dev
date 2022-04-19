@@ -7,5 +7,5 @@ interface Props {
 }
 
 export const RichText: FC<Props> = ({ richText }) => {
-  return <p>{richText.plain_text}</p>
+  return <p className="text-white">{richText.plain_text}</p>
 }
