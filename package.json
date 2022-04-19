@@ -70,7 +70,6 @@
     "postcss": "^8",
     "prettier": "*",
     "tailwindcss": "*",
-    "ts-jest": "*",
     "typescript": "*",
     "webpack": "*"
   }
