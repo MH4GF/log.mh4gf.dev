@@ -1,18 +1,35 @@
 import { FC } from 'react'
 
+import { RichText } from '../RichText'
+
 import { BlockViewProps } from '~/src/lib/ntn'
 
 export const Heading1: FC<BlockViewProps<'heading_1'>> = ({ block }) => {
-  const text = block.heading_1.rich_text.map((text) => text.plain_text).join()
-  return <h1>{text}</h1>
+  return (
+    <h1 className="text-2xl font-bold">
+      {block.heading_1.rich_text.map((text) => (
+        <RichText key={text.plain_text} richText={text} />
+      ))}
+    </h1>
+  )
 }
 
 export const Heading2: FC<BlockViewProps<'heading_2'>> = ({ block }) => {
-  const text = block.heading_2.rich_text.map((text) => text.plain_text).join()
-  return <h2>{text}</h2>
+  return (
+    <h2 className="text-xl font-bold">
+      {block.heading_2.rich_text.map((text) => (
+        <RichText key={text.plain_text} richText={text} />
+      ))}
+    </h2>
+  )
 }
 
 export const Heading3: FC<BlockViewProps<'heading_3'>> = ({ block }) => {
-  const text = block.heading_3.rich_text.map((text) => text.plain_text).join()
-  return <h3>{text}</h3>
+  return (
+    <h3 className="text-lg font-bold">
+      {block.heading_3.rich_text.map((text) => (
+        <RichText key={text.plain_text} richText={text} />
+      ))}
+    </h3>
+  )
 }
