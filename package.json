@@ -61,6 +61,7 @@
     "eslint-config-next": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-import": "*",
+    "eslint-plugin-import-access": "*",
     "eslint-plugin-storybook": "*",
     "eslint-plugin-unused-imports": "*",
     "fishery": "*",
