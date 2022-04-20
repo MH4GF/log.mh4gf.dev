@@ -7,9 +7,7 @@ export default {
   component: IndexPage,
 } as ComponentMeta<typeof IndexPage>
 
-const Template: ComponentStory<typeof IndexPage> = (args) => (
-  <IndexPage {...args} />
-)
+const Template: ComponentStory<typeof IndexPage> = (args) => <IndexPage {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

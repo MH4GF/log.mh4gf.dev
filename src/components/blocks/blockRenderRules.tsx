@@ -25,11 +25,7 @@ export const blockRenderRules: BlockRenderRules = {
   heading_2: (block) => <Heading2 block={block} key={block.id} />,
   heading_3: (block) => <Heading3 block={block} key={block.id} />,
   bulleted_list_item: (block, renderBlocks) => (
-    <BulletedListItem
-      block={block}
-      renderBlocks={renderBlocks}
-      key={block.id}
-    />
+    <BulletedListItem block={block} renderBlocks={renderBlocks} key={block.id} />
   ),
   callout: (block) => <Callout block={block} key={block.id} />,
   divider: (block) => <Divider block={block} key={block.id} />,

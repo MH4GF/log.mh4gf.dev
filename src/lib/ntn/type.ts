@@ -18,9 +18,7 @@ export type PageObject = MatchType<
  * @package
  */
 export type BlockObject<T = unknown> = MatchType<
-  ElementType<
-    Awaited<ReturnType<Client['blocks']['children']['list']>>['results']
-  >,
+  ElementType<Awaited<ReturnType<Client['blocks']['children']['list']>>['results']>,
   { type: T }
 > & {
   children?: BlockObject[]
@@ -31,9 +29,7 @@ export type BlockObject<T = unknown> = MatchType<
  */
 export type RichTextObject = ElementType<
   MatchType<
-    ElementType<
-      Awaited<ReturnType<Client['blocks']['children']['list']>>['results']
-    >,
+    ElementType<Awaited<ReturnType<Client['blocks']['children']['list']>>['results']>,
     { type: 'paragraph' }
   >['paragraph']['rich_text']
 >
@@ -52,9 +48,7 @@ export type BlockRenderRules = {
  * @package
  */
 export type BlockParseRules = {
-  [key in BlockObject['type']]?: (
-    block: BlockObject<key>,
-  ) => Promise<BlockObject>
+  [key in BlockObject['type']]?: (block: BlockObject<key>) => Promise<BlockObject>
 }
 
 /**

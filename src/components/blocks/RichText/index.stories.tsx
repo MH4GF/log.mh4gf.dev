@@ -7,9 +7,7 @@ export default {
   component: RichText,
 } as ComponentMeta<typeof RichText>
 
-const Template: ComponentStory<typeof RichText> = (args) => (
-  <RichText {...args} />
-)
+const Template: ComponentStory<typeof RichText> = (args) => <RichText {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

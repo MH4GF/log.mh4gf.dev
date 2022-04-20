@@ -7,9 +7,7 @@ export default {
   component: BulletedListItem,
 } as ComponentMeta<typeof BulletedListItem>
 
-const Template: ComponentStory<typeof BulletedListItem> = (args) => (
-  <BulletedListItem {...args} />
-)
+const Template: ComponentStory<typeof BulletedListItem> = (args) => <BulletedListItem {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

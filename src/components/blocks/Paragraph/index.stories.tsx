@@ -7,9 +7,7 @@ export default {
   component: Paragraph,
 } as ComponentMeta<typeof Paragraph>
 
-const Template: ComponentStory<typeof Paragraph> = (args) => (
-  <Paragraph {...args} />
-)
+const Template: ComponentStory<typeof Paragraph> = (args) => <Paragraph {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
