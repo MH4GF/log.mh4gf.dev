@@ -49,6 +49,9 @@ export type BuildBlockParser = (rules: BlockParseRules) => BlockParser
 
 export type RenderBlocks = (blocks: BlockObject[]) => ReactElement[]
 
+/**
+ * @private
+ */
 export interface BlockViewProps<T> {
   block: BlockObject<T>
   renderBlocks?: RenderBlocks

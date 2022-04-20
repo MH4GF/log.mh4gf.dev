@@ -4,6 +4,11 @@ import React from 'react'
 import { IndexPage } from 'src/components/Pages/IndexPage'
 import { Layout } from 'src/components/Pages/Layout'
 import { NotionClient, LogLevel } from '~/src/lib/ntn'
+import { BlockViewProps } from '~/src/lib/ntn/type'
+
+const hoge: BlockViewProps<"paragraph"> = {
+
+}
 
 type Props = {
   articles: {
