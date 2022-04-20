@@ -1,5 +1,6 @@
 import { BulletedListItem } from './BulletedListItem'
 import { Callout } from './Callout'
+import { Code } from './Code'
 import { Column } from './Column'
 import { ColumnList } from './ColumnList'
 import { Divider } from './Divider'
@@ -34,4 +35,5 @@ export const blockRenderRules: BlockRenderRules = {
   ),
   image: (block) => <Image block={block} key={block.id} />,
   quote: (block) => <Quote block={block} key={block.id} />,
+  code: (block) => <Code block={block} key={block.id} />,
 }
