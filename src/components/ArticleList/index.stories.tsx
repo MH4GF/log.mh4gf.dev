@@ -7,9 +7,7 @@ export default {
   component: ArticleList,
 } as ComponentMeta<typeof ArticleList>
 
-const Template: ComponentStory<typeof ArticleList> = (args) => (
-  <ArticleList {...args} />
-)
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

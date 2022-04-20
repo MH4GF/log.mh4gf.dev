@@ -6,12 +6,7 @@ import React, { ReactElement } from 'react'
 import { Article } from '~/src/components/Article'
 import { blockParseRules } from '~/src/components/blocks/blockParseRules'
 import { Layout } from '~/src/components/Pages/Layout'
-import {
-  BlockObject,
-  buildBlockParser,
-  LogLevel,
-  NotionClient,
-} from '~/src/lib/ntn'
+import { BlockObject, buildBlockParser, LogLevel, NotionClient } from '~/src/lib/ntn'
 import { ArticleModel } from '~/src/model/ArticleModel'
 
 interface Params extends ParsedUrlQuery {
@@ -53,9 +48,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<Props, Params> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
   if (!params) {
     throw new Error('unexpected state, params is not found')
   }
@@ -67,9 +60,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   const page = await client.fetchPage(params.id)
   const blockObjects = await client.fetchBlockChildren(page.id)
   const title =
-    page.properties['title'].type === 'title'
-      ? page.properties['title'].title[0].plain_text
-      : ''
+    page.properties['title'].type === 'title' ? page.properties['title'].title[0].plain_text : ''
 
   const parser = buildBlockParser(blockParseRules)
   const blocks = await parser.parse(blockObjects)
@@ -77,6 +68,4 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   return { props: { slug: params.id, title, blocks: blocks } }
 }
 
-Page.getLayout = (page: ReactElement<Props>) => (
-  <Layout title={page.props.title}>{page}</Layout>
-)
+Page.getLayout = (page: ReactElement<Props>) => <Layout title={page.props.title}>{page}</Layout>

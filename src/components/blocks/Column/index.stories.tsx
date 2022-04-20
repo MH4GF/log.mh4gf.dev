@@ -52,8 +52,7 @@ Default.args = {
             {
               type: 'text',
               text: {
-                content:
-                  'The only limitation of possibility is your imagination',
+                content: 'The only limitation of possibility is your imagination',
                 link: null,
               },
               annotations: {
@@ -64,8 +63,7 @@ Default.args = {
                 code: false,
                 color: 'default',
               },
-              plain_text:
-                'The only limitation of possibility is your imagination',
+              plain_text: 'The only limitation of possibility is your imagination',
               href: null,
             },
           ],

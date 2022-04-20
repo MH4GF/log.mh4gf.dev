@@ -7,9 +7,7 @@ export default {
   component: SyncedBlock,
 } as ComponentMeta<typeof SyncedBlock>
 
-const Template: ComponentStory<typeof SyncedBlock> = (args) => (
-  <SyncedBlock {...args} />
-)
+const Template: ComponentStory<typeof SyncedBlock> = (args) => <SyncedBlock {...args} />
 
 export const SyncedFrom = Template.bind({})
 SyncedFrom.args = {

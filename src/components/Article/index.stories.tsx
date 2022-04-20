@@ -79,8 +79,7 @@ Default.args = {
             {
               type: 'text',
               text: {
-                content:
-                  'Donec sed aliquam sapien, tincidunt tristique neque. ',
+                content: 'Donec sed aliquam sapien, tincidunt tristique neque. ',
                 link: null,
               },
               annotations: {
@@ -91,8 +90,7 @@ Default.args = {
                 code: false,
                 color: 'default',
               },
-              plain_text:
-                'Donec sed aliquam sapien, tincidunt tristique neque. ',
+              plain_text: 'Donec sed aliquam sapien, tincidunt tristique neque. ',
               href: null,
             },
           ],

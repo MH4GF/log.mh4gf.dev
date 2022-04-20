@@ -27,9 +27,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const pages = await client.fetchDatabasePages(process.env.NOTION_DATABASE_ID)
   const articles = pages.map((page) => {
     const title =
-      page.properties['title'].type === 'title'
-        ? page.properties['title'].title[0].plain_text
-        : ''
+      page.properties['title'].type === 'title' ? page.properties['title'].title[0].plain_text : ''
 
     return {
       slug: page.id,
