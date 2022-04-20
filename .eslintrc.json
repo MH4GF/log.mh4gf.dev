@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "unused-imports"],
+  "plugins": ["@typescript-eslint", "unused-imports", "import-access"],
   "extends": [
     "next",
     "next/core-web-vitals",
@@ -34,7 +34,8 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "import-access/jsdoc": ["error"]
   },
   "parserOptions": {
     "project": "./tsconfig.json"
