@@ -3,6 +3,9 @@ import { ClientOptions } from '@notionhq/client/build/src/Client'
 
 import { PageObject, BlockObject } from './type'
 
+/**
+ * @package
+ */
 export class NotionClient {
   client: Client
 

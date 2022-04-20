@@ -2,6 +2,9 @@ import { BlockRenderRules } from './type'
 
 const defaultMessage = (type: string) => `not supported block type: ${type}`
 
+/**
+ * @package
+ */
 export const defaultBlockSchema: BlockRenderRules = {
   audio: (block) => <div>{defaultMessage(block.type)}</div>,
   bookmark: (block) => <div>{defaultMessage(block.type)}</div>,
