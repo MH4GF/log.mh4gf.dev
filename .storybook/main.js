@@ -17,16 +17,6 @@ module.exports = {
     },
   ],
   framework: '@storybook/react',
-  webpackFinal: async (config) => {
-    // @see https://github.com/storybookjs/storybook/issues/3916#issuecomment-407681239
-    config.resolve.modules = [...(config.resolve.modules || []), path.resolve(__dirname, '../src')]
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '~': path.resolve(__dirname, '../'),
-    }
-
-    return config
-  },
   core: {
     builder: 'storybook-builder-vite',
   },
