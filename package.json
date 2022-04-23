@@ -73,6 +73,7 @@
     "pathpida": "*",
     "postcss": "^8",
     "prettier": "*",
+    "storybook-builder-vite": "*",
     "tailwindcss": "*",
     "typescript": "*",
     "webpack": "*"
