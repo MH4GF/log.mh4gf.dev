@@ -30,4 +30,12 @@ module.exports = {
   core: {
     builder: 'storybook-builder-vite',
   },
+  viteFinal: async (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '~': path.resolve(__dirname, '../'),
+    }
+
+    return config
+  },
 }
