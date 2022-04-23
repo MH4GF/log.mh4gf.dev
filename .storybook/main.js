@@ -27,4 +27,7 @@ module.exports = {
 
     return config
   },
+  core: {
+    builder: 'storybook-builder-vite',
+  },
 }
