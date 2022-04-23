@@ -24,6 +24,7 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       '~': path.resolve(__dirname, '../'),
+      'next/image': require.resolve('./NextImage.jsx'),
     }
 
     return config
