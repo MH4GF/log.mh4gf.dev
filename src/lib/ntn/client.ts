@@ -1,6 +1,8 @@
-import { Client } from '@notionhq/client'
+import { Client, LogLevel } from '@notionhq/client'
 import { ClientOptions } from '@notionhq/client/build/src/Client'
+import { Logger, logLevelSeverity, makeConsoleLogger } from '@notionhq/client/build/src/logging'
 
+import packageFile from './package.json'
 import { PageObject, BlockObject } from './type'
 
 /**
@@ -8,9 +10,13 @@ import { PageObject, BlockObject } from './type'
  */
 export class NotionClient {
   client: Client
+  logLevel: LogLevel
+  logger: Logger
 
   constructor(options: ClientOptions) {
     this.client = new Client(options)
+    this.logLevel = options.logLevel ?? LogLevel.WARN
+    this.logger = options.logger ?? makeConsoleLogger(`${packageFile.name}/Client`)
   }
 
   async fetchDatabasePages(databaseId: string): Promise<PageObject[]> {
@@ -55,5 +61,11 @@ export class NotionClient {
     } while (cursor !== null)
 
     return blocks
+  }
+
+  private log(level: LogLevel, message: string, extraInfo: Record<string, unknown>) {
+    if (logLevelSeverity(level) >= logLevelSeverity(this.logLevel)) {
+      this.logger(level, message, extraInfo)
+    }
   }
 }
