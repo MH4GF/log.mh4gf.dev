@@ -43,15 +43,18 @@ export class NotionClient {
       for (const block of results) {
         if ('type' in block) {
           if (block.has_children) {
+            this.log(LogLevel.INFO, 'block has children', { type: block.type, id: block.id })
             const children = await this.fetchBlockChildren(block.id)
             blocks.push({ ...block, children })
           } else if (
             block.type === 'synced_block' &&
             block.synced_block.synced_from?.block_id !== undefined
           ) {
+            this.log(LogLevel.INFO, 'block is synced_block', { type: block.type, id: block.id })
             const children = await this.fetchBlockChildren(block.synced_block.synced_from.block_id)
             blocks.push({ ...block, children })
           } else {
+            this.log(LogLevel.INFO, 'block is leaf node', { type: block.type, id: block.id })
             blocks.push(block)
           }
         }
