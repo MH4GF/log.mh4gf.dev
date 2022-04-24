@@ -20,8 +20,8 @@
     "format": "yarn format:js",
     "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "test": "jest",
-    "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "yarn build:path && build-storybook -s ./public",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "yarn build:path && build-storybook",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
     "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
     "lhci": "lhci autorun"

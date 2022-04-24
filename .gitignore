@@ -47,3 +47,5 @@ src/generated/**
 
 public/tmp/**
 !public/tmp/.keep
+
+/storybook-static
