@@ -9,7 +9,7 @@ export const BulletedListItem: FC<Required<BlockViewProps<'bulleted_list_item'>>
   renderBlocks,
 }) => {
   return (
-    <ul className="list-disc ml-6">
+    <ul className="ml-6 list-disc">
       {block.bulleted_list_item.rich_text.map((text) => (
         <li key={text.plain_text}>
           <RichText richText={text} />

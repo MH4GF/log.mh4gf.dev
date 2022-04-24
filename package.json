@@ -73,6 +73,7 @@
     "pathpida": "*",
     "postcss": "^8",
     "prettier": "*",
+    "prettier-plugin-tailwindcss": "*",
     "tailwindcss": "*",
     "typescript": "*",
     "webpack": "*"
