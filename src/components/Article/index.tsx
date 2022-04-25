@@ -13,7 +13,7 @@ export const Article: FC<Props> = ({ article }) => {
   const { renderBlocks } = useRenderBlocks(blockRenderRules)
 
   return (
-    <article className="mx-auto max-w-2xl">
+    <article>
       <h1 className="text-4xl font-bold text-white">{article.title}</h1>
       {/* TODO: タグ */}
       <div className="mt-6 grid gap-4">{renderBlocks(article.blocks)}</div>

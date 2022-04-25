@@ -19,5 +19,6 @@ Default.args = {
     slug: 'hello-world',
     title: 'Next.js + Notion API + Tailwind CSSでブログを作った',
     publishedAt: '2022/04/03',
+    outerLink: '',
   },
 }
