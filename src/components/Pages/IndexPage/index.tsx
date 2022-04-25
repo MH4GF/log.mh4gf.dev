@@ -5,6 +5,7 @@ type Props = {
     slug: string
     title: string
     publishedAt: string
+    outerLink: string
   }[]
 }
 
