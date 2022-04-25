@@ -9,6 +9,7 @@ interface Props {
   richText: RichTextObject
 }
 
+// TODO: support colors
 const classNames = (annotations: RichTextObject['annotations']) => {
   const classes = ['text-white']
 
