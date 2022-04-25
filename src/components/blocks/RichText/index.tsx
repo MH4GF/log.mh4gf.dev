@@ -9,6 +9,8 @@ interface Props {
   richText: RichTextObject
 }
 
+const underlineClass = 'underline decoration-white'
+
 // TODO: support colors
 const classNames = (annotations: RichTextObject['annotations']) => {
   const classes = ['text-white']
@@ -39,13 +41,18 @@ const href = (richText: RichTextObject): { url: string; internal: boolean } => {
 }
 
 const link = (url: string, internal: boolean, children: ReactNode) => {
+  if (internal) {
+    return (
+      <Link href={pagesPath.articles._id(url).$url()}>
+        <a className={underlineClass}>{children}</a>
+      </Link>
+    )
+  }
+
   return (
-    <ConditionalWrapper
-      cond={internal}
-      node={(c) => <Link href={pagesPath.articles._id(url).$url()}>{c}</Link>}
-    >
-      <a className="underline">{children}</a>
-    </ConditionalWrapper>
+    <a href={url} target="_blank" rel="noreferrer" className={underlineClass}>
+      {children}
+    </a>
   )
 }
 
