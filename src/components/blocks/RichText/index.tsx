@@ -15,10 +15,10 @@ const underlineClass = 'underline decoration-white'
 const classNames = (annotations: RichTextObject['annotations']) => {
   const classes = ['text-white']
 
-  if (annotations.underline) classes.push(...classes, 'underline')
-  if (annotations.code) classes.push(...classes, 'rounded', 'bg-gray-500')
+  if (annotations.underline) classes.push(...classes, underlineClass)
+  if (annotations.code) classes.push(...classes, 'rounded bg-gray-500')
 
-  return classes
+  return classes.join(' ')
 }
 
 const href = (richText: RichTextObject): { url: string; internal: boolean } => {
@@ -65,9 +65,7 @@ export const RichText: FC<Props> = ({ richText }) => {
       <ConditionalWrapper cond={bold} node={(c) => <strong>{c}</strong>}>
         <ConditionalWrapper cond={italic} node={(c) => <em>{c}</em>}>
           <ConditionalWrapper cond={strikethrough} node={(c) => <s>{c}</s>}>
-            <span className={classNames(richText.annotations).join(' ')}>
-              {richText.plain_text}
-            </span>
+            <span className={classNames(richText.annotations)}>{richText.plain_text}</span>
           </ConditionalWrapper>
         </ConditionalWrapper>
       </ConditionalWrapper>
