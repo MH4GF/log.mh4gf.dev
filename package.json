@@ -47,6 +47,7 @@
     "@storybook/addon-postcss": "*",
     "@storybook/react": "*",
     "@storybook/testing-library": "*",
+    "@svgr/webpack": "*",
     "@swc/core": "*",
     "@swc/jest": "*",
     "@types/jest": "*",
