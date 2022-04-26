@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import ExternalLinkIcon from '~/src/assets/svg/external-link.svg'
 import { pagesPath } from '~/src/generated/$path'
 
 type Props = {
@@ -22,6 +23,7 @@ const internalLink = (title: string, slug: string) => {
 const externalLink = (title: string, outerLink: string) => {
   return (
     <a className="text-white underline" href={outerLink} target="_blank" rel="noreferrer">
+      <ExternalLinkIcon />
       {title}
     </a>
   )
