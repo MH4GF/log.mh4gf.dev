@@ -25,6 +25,14 @@ module.exports = {
       ...config.resolve.alias,
       '~': path.resolve(__dirname, '../'),
     }
+    // https://www.npmjs.com/package/@svgr/webpack
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: {
+        and: [/\.(js|ts)x?$/],
+      },
+      use: ['@svgr/webpack'],
+    })
 
     return config
   },
