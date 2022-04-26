@@ -37,6 +37,11 @@ export type RichTextObject = ElementType<
 /**
  * @package
  */
+export type PropertyObject<T = unknown> = MatchType<PageObject['properties']['string'], { type: T }>
+
+/**
+ * @package
+ */
 export type BlockRenderRules = {
   [key in BlockObject['type']]: (
     block: BlockObject<key>,
@@ -75,3 +80,20 @@ export interface BlockViewProps<T> {
   block: BlockObject<T>
   renderBlocks?: RenderBlocks
 }
+
+/**
+ * @package
+ */
+export type PropertyParseRules = {
+  [key: string]: PageObject['properties']['string']['type']
+}
+
+interface PropertySet<R = PropertyParseRules> {
+  find: (key: keyof R) => PropertyObject | undefined
+}
+
+export interface PropertyPerser {
+  parse: (page: PageObject) => PropertySet
+}
+
+export type BuildPropertyParser = (rules: PropertyParseRules) => PropertyPerser
