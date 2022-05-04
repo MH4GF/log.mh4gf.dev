@@ -39,4 +39,6 @@ module.exports = {
 
     return config
   },
+  // @see https://github.com/storybookjs/storybook/issues/15336#issuecomment-906809203
+  typescript: { reactDocgen: false },
 }
