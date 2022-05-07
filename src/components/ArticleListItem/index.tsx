@@ -15,15 +15,15 @@ type Props = {
 const internalLink = (title: string, slug: string) => {
   return (
     <Link href={pagesPath.articles._id(slug).$url()}>
-      <a>{title}</a>
+      <a className="underline">{title}</a>
     </Link>
   )
 }
 
 const externalLink = (title: string, outerLink: string) => {
   return (
-    <a className="text-white underline" href={outerLink} target="_blank" rel="noreferrer">
-      <ExternalLinkIcon />
+    <a className="flex gap-1 underline" href={outerLink} target="_blank" rel="noreferrer">
+      <ExternalLinkIcon width="28" height="28" />
       {title}
     </a>
   )
@@ -32,9 +32,11 @@ const externalLink = (title: string, outerLink: string) => {
 export const ArticleListItem: React.FC<Props> = ({ article }) => {
   return (
     <li>
-      {article.outerLink === ''
-        ? internalLink(article.title, article.slug)
-        : externalLink(article.title, article.outerLink)}
+      <h2 className="text-xl">
+        {article.outerLink === ''
+          ? internalLink(article.title, article.slug)
+          : externalLink(article.title, article.outerLink)}
+      </h2>
       <p>{article.publishedAt}</p>
     </li>
   )
