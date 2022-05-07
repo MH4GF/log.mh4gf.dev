@@ -28,6 +28,11 @@ module.exports = {
       ...config.resolve.alias,
       '~': path.resolve(__dirname, '../'),
     }
+
+    // @see https://github.com/storybookjs/storybook/issues/9070
+    const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test('.svg'))
+    fileLoaderRule.exclude = /\.svg$/
+
     // https://www.npmjs.com/package/@svgr/webpack
     config.module.rules.push({
       test: /\.svg$/,
