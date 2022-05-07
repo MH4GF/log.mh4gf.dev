@@ -5,6 +5,11 @@ import { ArticleListItem } from '.'
 
 export default {
   component: ArticleListItem,
+  parameters: {
+    backgrounds: {
+      default: 'light',
+    },
+  },
 } as ComponentMeta<typeof ArticleListItem>
 
 const Template: ComponentStory<typeof ArticleListItem> = (args) => (
@@ -13,12 +18,22 @@ const Template: ComponentStory<typeof ArticleListItem> = (args) => (
   </ul>
 )
 
-export const Default = Template.bind({})
-Default.args = {
+export const Internal = Template.bind({})
+Internal.args = {
   article: {
     slug: 'hello-world',
     title: 'Next.js + Notion API + Tailwind CSSでブログを作った',
-    publishedAt: '2022/04/03',
+    publishedAt: '2022-04-25T14:31:00.000Z',
     outerLink: '',
+  },
+}
+
+export const External = Template.bind({})
+External.args = {
+  article: {
+    slug: 'hello-world',
+    title: 'Next.js + Notion API + Tailwind CSSでブログを作った',
+    publishedAt: '2022-04-25T14:31:00.000Z',
+    outerLink: 'https://example.com',
   },
 }

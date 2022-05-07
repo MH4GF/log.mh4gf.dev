@@ -1,6 +1,9 @@
 const path = require('path')
 
 module.exports = {
+  core: {
+    builder: 'webpack5',
+  },
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../public'],
   addons: [
@@ -26,6 +29,21 @@ module.exports = {
       '~': path.resolve(__dirname, '../'),
     }
 
+    // @see https://github.com/storybookjs/storybook/issues/9070
+    const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test('.svg'))
+    fileLoaderRule.exclude = /\.svg$/
+
+    // https://www.npmjs.com/package/@svgr/webpack
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: {
+        and: [/\.(js|ts)x?$/],
+      },
+      use: ['@svgr/webpack'],
+    })
+
     return config
   },
+  // @see https://github.com/storybookjs/storybook/issues/15336#issuecomment-906809203
+  typescript: { reactDocgen: false },
 }
