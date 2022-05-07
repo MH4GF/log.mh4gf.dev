@@ -1,6 +1,9 @@
 const path = require('path')
 
 module.exports = {
+  core: {
+    builder: 'webpack5',
+  },
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../public'],
   addons: [
@@ -36,4 +39,6 @@ module.exports = {
 
     return config
   },
+  // @see https://github.com/storybookjs/storybook/issues/15336#issuecomment-906809203
+  typescript: { reactDocgen: false },
 }

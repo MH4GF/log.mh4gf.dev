@@ -31,7 +31,7 @@
     "axios": "*",
     "deepmerge": "*",
     "mime-types": "*",
-    "next": "^12.1.5-canary.0",
+    "next": "^12.1.6",
     "react": "*",
     "react-dom": "*",
     "sharp": "*"
@@ -45,6 +45,8 @@
     "@storybook/addon-interactions": "*",
     "@storybook/addon-links": "*",
     "@storybook/addon-postcss": "*",
+    "@storybook/builder-webpack5": "*",
+    "@storybook/manager-webpack5": "*",
     "@storybook/react": "*",
     "@storybook/testing-library": "*",
     "@svgr/webpack": "*",
