@@ -15,10 +15,10 @@ export const Layout = ({ children, title }: Props): ReactElement => {
       <Head>
         <title>{title || 'log.mh4gf.dev'}</title>
       </Head>
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto flex min-h-screen max-w-2xl flex-col">
         <Header />
         {children}
-        <Footer />
+        <Footer className="mx-auto mt-auto" />
       </div>
     </div>
   )
