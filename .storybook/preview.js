@@ -23,10 +23,14 @@ export const parameters = {
         name: 'dark',
         value: '#111827',
       },
-      {
-        name: 'light',
-        value: '#ffffff',
-      },
     ],
   },
 }
+
+export const decorators = [
+  (Story) => (
+    <div className="text-white">
+      <Story />
+    </div>
+  ),
+]

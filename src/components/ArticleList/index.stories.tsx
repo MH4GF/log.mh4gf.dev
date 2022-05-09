@@ -5,11 +5,6 @@ import { ArticleList } from '.'
 
 export default {
   component: ArticleList,
-  parameters: {
-    backgrounds: {
-      default: 'light',
-    },
-  },
 } as ComponentMeta<typeof ArticleList>
 
 const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />
