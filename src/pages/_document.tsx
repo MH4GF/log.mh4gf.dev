@@ -21,7 +21,7 @@ const MyDocument = () => {
         <meta name="format-detection" content="telephone=no" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
-      <body>
+      <body className="overscroll-y-none">
         <Main />
         <NextScript />
       </body>
