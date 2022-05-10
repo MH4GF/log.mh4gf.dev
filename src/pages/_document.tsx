@@ -2,9 +2,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
 
 const MyDocument = () => {
-  const url = '<https://example.com>'
-  const title = 'Demo Next.js'
-  const description = 'Demo of Next.js'
+  const url = 'https://log.mh4gf.dev'
+  const title = 'log.mh4gf.dev'
+  const description = 'Logs by Hirotaka Miyagi'
 
   return (
     <Html lang="ja-JP">
