@@ -25,16 +25,24 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     auth: process.env.NOTION_TOKEN,
     logLevel: LogLevel.DEBUG,
   })
-  const pages = await client.fetchDatabasePages(process.env.NOTION_DATABASE_ID)
+  const pages = await client.fetchDatabasePages({
+    database_id: process.env.NOTION_DATABASE_ID,
+    filter: { property: 'published', checkbox: { equals: true } },
+    sorts: [{ property: 'publishedAt', direction: 'descending' }],
+  })
   const articles = pages.map((page) => {
+    const publishedAt =
+      (page.properties['publishedAt'].type === 'date' &&
+        page.properties['publishedAt'].date?.start) ||
+      ''
     const title =
       page.properties['title'].type === 'title' ? page.properties['title'].title[0].plain_text : ''
     const outerLink =
-      page.properties['outer_link'].type === 'url' ? page.properties['outer_link'].url || '' : ''
+      page.properties['outerLink'].type === 'url' ? page.properties['outerLink'].url || '' : ''
 
     return {
       slug: page.id,
-      publishedAt: page.created_time,
+      publishedAt,
       title,
       outerLink,
     }
