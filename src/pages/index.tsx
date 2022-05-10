@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     const title =
       page.properties['title'].type === 'title' ? page.properties['title'].title[0].plain_text : ''
     const outerLink =
-      page.properties['outer_link'].type === 'url' ? page.properties['outer_link'].url || '' : ''
+      page.properties['outerLink'].type === 'url' ? page.properties['outerLink'].url || '' : ''
 
     return {
       slug: page.id,
