@@ -27,6 +27,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   })
   const pages = await client.fetchDatabasePages({
     database_id: process.env.NOTION_DATABASE_ID,
+    filter: { property: 'published', checkbox: { equals: true } },
     sorts: [{ property: 'publishedAt', direction: 'descending' }],
   })
   const articles = pages.map((page) => {
