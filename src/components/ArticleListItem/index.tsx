@@ -23,9 +23,9 @@ const internalLink = (title: string, slug: string) => {
 
 const externalLink = (title: string, outerLink: string) => {
   return (
-    <a className="flex gap-1 underline" href={outerLink} target="_blank" rel="noreferrer">
-      <ExternalLinkIcon width="28" height="28" />
+    <a className="underline" href={outerLink} target="_blank" rel="noreferrer">
       {title}
+      <ExternalLinkIcon width="20" height="20" className="ml-1 inline-block" />
     </a>
   )
 }
