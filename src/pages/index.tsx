@@ -27,6 +27,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   })
   const pages = await client.fetchDatabasePages(process.env.NOTION_DATABASE_ID)
   const articles = pages.map((page) => {
+    const publishedAt =
+      (page.properties['publishedAt'].type === 'date' &&
+        page.properties['publishedAt'].date?.start) ||
+      ''
     const title =
       page.properties['title'].type === 'title' ? page.properties['title'].title[0].plain_text : ''
     const outerLink =
@@ -34,7 +38,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
     return {
       slug: page.id,
-      publishedAt: page.created_time,
+      publishedAt,
       title,
       outerLink,
     }
