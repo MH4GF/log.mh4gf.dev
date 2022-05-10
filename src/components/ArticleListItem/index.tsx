@@ -16,14 +16,14 @@ type Props = {
 const internalLink = (title: string, slug: string) => {
   return (
     <Link href={pagesPath.articles._id(slug).$url()}>
-      <a className="underline">{title}</a>
+      <a className="hover:underline">{title}</a>
     </Link>
   )
 }
 
 const externalLink = (title: string, outerLink: string) => {
   return (
-    <a className="underline" href={outerLink} target="_blank" rel="noreferrer">
+    <a className="hover:underline" href={outerLink} target="_blank" rel="noreferrer">
       {title}
       <ExternalLinkIcon width="20" height="20" className="ml-1 inline-block" />
     </a>
