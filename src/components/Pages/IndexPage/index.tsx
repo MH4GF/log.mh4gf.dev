@@ -10,5 +10,9 @@ type Props = {
 }
 
 export const IndexPage: React.FC<Props> = ({ articles }) => {
-  return <ArticleList articles={articles} />
+  return (
+    <div className="my-16">
+      <ArticleList articles={articles} />
+    </div>
+  )
 }
