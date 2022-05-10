@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import ExternalLinkIcon from '~/src/assets/svg/external-link.svg'
 import { pagesPath } from '~/src/generated/$path'
+import { dateFormat } from '~/src/utils/dateFormat'
 
 type Props = {
   article: {
@@ -37,7 +38,7 @@ export const ArticleListItem: React.FC<Props> = ({ article }) => {
           ? internalLink(article.title, article.slug)
           : externalLink(article.title, article.outerLink)}
       </h2>
-      <p>{article.publishedAt}</p>
+      <p className="text-gray-200">{dateFormat(new Date(Date.parse(article.publishedAt)))}</p>
     </li>
   )
 }
