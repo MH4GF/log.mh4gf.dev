@@ -1,4 +1,5 @@
 import { Client, LogLevel } from '@notionhq/client'
+import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
 import { ClientOptions } from '@notionhq/client/build/src/Client'
 import { Logger, logLevelSeverity, makeConsoleLogger } from '@notionhq/client/build/src/logging'
 
@@ -19,9 +20,9 @@ export class NotionClient {
     this.logger = options.logger ?? makeConsoleLogger(`${packageFile.name}/Client`)
   }
 
-  async fetchDatabasePages(databaseId: string): Promise<PageObject[]> {
+  async fetchDatabasePages(params: QueryDatabaseParameters): Promise<PageObject[]> {
     const pages: PageObject[] = []
-    const res = await this.client.databases.query({ database_id: databaseId })
+    const res = await this.client.databases.query(params)
     // TODO: paging
     pages.push(...(res.results as PageObject[]))
 

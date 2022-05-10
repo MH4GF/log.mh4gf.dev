@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     auth: process.env.NOTION_TOKEN,
     logLevel: LogLevel.DEBUG,
   })
-  const pages = await client.fetchDatabasePages(process.env.NOTION_DATABASE_ID)
+  const pages = await client.fetchDatabasePages({ database_id: process.env.NOTION_DATABASE_ID })
   const articles = pages.map((page) => {
     const publishedAt =
       (page.properties['publishedAt'].type === 'date' &&
