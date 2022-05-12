@@ -79,6 +79,7 @@
     "prettier-plugin-tailwindcss": "*",
     "tailwindcss": "*",
     "typescript": "*",
+    "vitest": "*",
     "webpack": "*"
   },
   "prettier": {
