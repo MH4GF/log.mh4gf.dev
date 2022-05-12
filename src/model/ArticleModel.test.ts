@@ -42,4 +42,18 @@ describe('ArticleModel', () => {
       expect(article.blocks).not.toEqual([])
     })
   })
+
+  describe('toJSON', () => {
+    it('return JSON serializable object', () => {
+      const page = pageFactory.build()
+      const article = ArticleModel.fromPage(page)
+      expect(article.toJSON()).toEqual({
+        slug: '',
+        title: 'waiwai',
+        publishedAt: '2021-05-30T13:31:00.000+00:00',
+        outerLink: 'https://zenn.dev/mh4gf/articles/d917c809991808',
+        blocks: [],
+      })
+    })
+  })
 })
