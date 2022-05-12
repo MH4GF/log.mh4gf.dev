@@ -1,6 +1,6 @@
 import { BlockObject, PageObject, SelectColor } from '../lib/ntn'
 
-type Tag = {
+export type Tag = {
   name: string
   color: SelectColor
 }
