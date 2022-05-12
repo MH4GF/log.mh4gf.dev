@@ -20,6 +20,7 @@ Internal.args = {
     title: 'Next.js + Notion API + Tailwind CSSでブログを作った',
     publishedAt: '2022-04-25T14:31:00.000Z',
     outerLink: '',
+    blocks: [],
   },
 }
 
@@ -30,5 +31,6 @@ External.args = {
     title: 'Next.js + Notion API + Tailwind CSSでブログを作った',
     publishedAt: '2022-04-25T14:31:00.000Z',
     outerLink: 'https://example.com',
+    blocks: [],
   },
 }

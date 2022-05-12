@@ -48,6 +48,7 @@ export { LogLevel } from '@notionhq/client'
 
 export { defaultBlockSchema } from './defaultBlockSchema'
 export type {
+  PageObject,
   BlockObject,
   RichTextObject,
   BlockRenderRules,

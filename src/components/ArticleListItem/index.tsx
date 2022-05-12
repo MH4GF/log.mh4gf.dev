@@ -2,15 +2,11 @@ import Link from 'next/link'
 
 import ExternalLinkIcon from '~/src/assets/svg/external-link.svg'
 import { pagesPath } from '~/src/generated/$path'
+import { ArticleData } from '~/src/model/ArticleModel'
 import { dateFormat } from '~/src/utils/dateFormat'
 
 type Props = {
-  article: {
-    slug: string
-    title: string
-    publishedAt: string
-    outerLink: string
-  }
+  article: ArticleData
 }
 
 const internalLink = (title: string, slug: string) => {

@@ -16,6 +16,8 @@ Default.args = {
   article: new ArticleModel({
     slug: 'delonghi-magnifica-s',
     title: 'デロンギ マグニフィカS',
+    publishedAt: '2021-11-19T07:44:00.000Z',
+    outerLink: '',
     blocks: [
       {
         object: 'block',

@@ -3,15 +3,11 @@ import React from 'react'
 
 import { IndexPage } from 'src/components/Pages/IndexPage'
 import { Layout } from 'src/components/Pages/Layout'
+import { ArticleData, ArticleModel } from 'src/model/ArticleModel'
 import { NotionClient, LogLevel } from '~/src/lib/ntn'
 
 type Props = {
-  articles: {
-    slug: string
-    title: string
-    publishedAt: string
-    outerLink: string
-  }[]
+  articles: ArticleData[]
 }
 
 const Page: NextPageWithLayout<Props> = ({ articles }) => {
@@ -30,23 +26,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     filter: { property: 'published', checkbox: { equals: true } },
     sorts: [{ property: 'publishedAt', direction: 'descending' }],
   })
-  const articles = pages.map((page) => {
-    const publishedAt =
-      (page.properties['publishedAt'].type === 'date' &&
-        page.properties['publishedAt'].date?.start) ||
-      ''
-    const title =
-      page.properties['title'].type === 'title' ? page.properties['title'].title[0].plain_text : ''
-    const outerLink =
-      page.properties['outerLink'].type === 'url' ? page.properties['outerLink'].url || '' : ''
-
-    return {
-      slug: page.id,
-      publishedAt,
-      title,
-      outerLink,
-    }
-  })
+  const articles = pages.map((page) => ArticleModel.fromPage(page).toJSON())
 
   return { props: { articles } }
 }

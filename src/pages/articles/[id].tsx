@@ -6,21 +6,19 @@ import React, { ReactElement } from 'react'
 import { Article } from '~/src/components/Article'
 import { blockParseRules } from '~/src/components/blocks/blockParseRules'
 import { Layout } from '~/src/components/Pages/Layout'
-import { BlockObject, buildBlockParser, LogLevel, NotionClient } from '~/src/lib/ntn'
-import { ArticleModel } from '~/src/model/ArticleModel'
+import { buildBlockParser, LogLevel, NotionClient } from '~/src/lib/ntn'
+import { ArticleData, ArticleModel } from '~/src/model/ArticleModel'
 
 interface Params extends ParsedUrlQuery {
   id: string
 }
 
 type Props = {
-  slug: string
-  title: string
-  blocks: BlockObject[]
+  article: ArticleData
 }
 
 const Page: NextPageWithLayout<Props> = (props) => {
-  const article = new ArticleModel(props)
+  const article = new ArticleModel(props.article)
 
   return <Article article={article} />
 }
@@ -59,13 +57,12 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) 
   })
   const page = await client.fetchPage(params.id)
   const blockObjects = await client.fetchBlockChildren(page.id)
-  const title =
-    page.properties['title'].type === 'title' ? page.properties['title'].title[0].plain_text : ''
-
   const parser = buildBlockParser(blockParseRules)
   const blocks = await parser.parse(blockObjects)
 
-  return { props: { slug: params.id, title, blocks: blocks } }
+  return { props: { article: ArticleModel.fromPage(page, blocks).toJSON() } }
 }
 
-Page.getLayout = (page: ReactElement<Props>) => <Layout title={page.props.title}>{page}</Layout>
+Page.getLayout = (page: ReactElement<Props>) => (
+  <Layout title={page.props.article.title}>{page}</Layout>
+)
