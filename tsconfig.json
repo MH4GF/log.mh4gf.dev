@@ -24,7 +24,8 @@
       {
         "name": "eslint-plugin-import-access"
       }
-    ]
+    ],
+    "types": ["vitest/globals"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
