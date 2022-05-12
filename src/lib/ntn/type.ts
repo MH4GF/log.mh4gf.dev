@@ -37,6 +37,21 @@ export type RichTextObject = ElementType<
 /**
  * @package
  */
+export type SelectColor =
+  | 'default'
+  | 'gray'
+  | 'brown'
+  | 'orange'
+  | 'yellow'
+  | 'green'
+  | 'blue'
+  | 'purple'
+  | 'pink'
+  | 'red'
+
+/**
+ * @package
+ */
 export type BlockRenderRules = {
   [key in BlockObject['type']]: (
     block: BlockObject<key>,

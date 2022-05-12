@@ -13,6 +13,7 @@ describe('ArticleModel', () => {
       expect(article.title).toEqual('waiwai')
       expect(article.publishedAt).toEqual('2021-05-30T13:31:00.000+00:00')
       expect(article.outerLink).toEqual('https://zenn.dev/mh4gf/articles/d917c809991808')
+      expect(article.tags).toEqual([{ color: 'blue', name: 'Zenn' }])
       expect(article.blocks).toEqual([])
     })
 
@@ -52,6 +53,7 @@ describe('ArticleModel', () => {
         title: 'waiwai',
         publishedAt: '2021-05-30T13:31:00.000+00:00',
         outerLink: 'https://zenn.dev/mh4gf/articles/d917c809991808',
+        tags: [{ color: 'blue', name: 'Zenn' }],
         blocks: [],
       })
     })
