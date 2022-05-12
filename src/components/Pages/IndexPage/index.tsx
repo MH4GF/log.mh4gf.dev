@@ -1,12 +1,8 @@
 import { ArticleList } from '~/src/components/ArticleList'
+import { ArticleData } from '~/src/model/ArticleModel'
 
 type Props = {
-  articles: {
-    slug: string
-    title: string
-    publishedAt: string
-    outerLink: string
-  }[]
+  articles: ArticleData[]
 }
 
 export const IndexPage: React.FC<Props> = ({ articles }) => {
