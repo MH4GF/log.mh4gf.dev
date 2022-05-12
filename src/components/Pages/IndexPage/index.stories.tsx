@@ -17,6 +17,7 @@ Default.args = {
       title: 'デロンギ マグニフィカS',
       publishedAt: '2022-04-25T14:31:00.000Z',
       outerLink: '',
+      tags: [{ name: 'gadget', color: 'gray' }],
       blocks: [],
     },
     {
@@ -24,6 +25,7 @@ Default.args = {
       title: 'Next.js + Notion API + Tailwind CSSでブログを作った',
       publishedAt: '2022-04-25T14:31:00.000Z',
       outerLink: '',
+      tags: [{ name: 'Tech', color: 'red' }],
       blocks: [],
     },
     {
@@ -31,6 +33,7 @@ Default.args = {
       title: '外部執筆ページ',
       publishedAt: '2022-04-25T14:31:00.000Z',
       outerLink: 'https://example.com',
+      tags: [{ name: 'Zenn', color: 'blue' }],
       blocks: [],
     },
   ],

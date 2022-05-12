@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import { TagChip } from '../TagChip'
+
 import ExternalLinkIcon from '~/src/assets/svg/external-link.svg'
 import { pagesPath } from '~/src/generated/$path'
 import { ArticleData } from '~/src/model/ArticleModel'
@@ -28,13 +30,20 @@ const externalLink = (title: string, outerLink: string) => {
 
 export const ArticleListItem: React.FC<Props> = ({ article }) => {
   return (
-    <li>
+    <li className="grid gap-1">
       <h2 className="text-xl">
         {article.outerLink === ''
           ? internalLink(article.title, article.slug)
           : externalLink(article.title, article.outerLink)}
       </h2>
-      <p className="text-gray-200">{dateFormat(new Date(Date.parse(article.publishedAt)))}</p>
+      <div className="flex justify-between">
+        <div className="flex gap-1">
+          {article.tags.map((tag) => (
+            <TagChip key={tag.name} tag={tag} />
+          ))}
+        </div>
+        <p className="text-gray-200">{dateFormat(new Date(Date.parse(article.publishedAt)))}</p>
+      </div>
     </li>
   )
 }

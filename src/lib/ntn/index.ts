@@ -54,5 +54,6 @@ export type {
   BlockRenderRules,
   BlockParseRules,
   BlockViewProps,
+  SelectColor,
 } from './type'
 export { NotionClient } from './client'

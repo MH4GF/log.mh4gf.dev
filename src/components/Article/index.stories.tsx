@@ -18,6 +18,7 @@ Default.args = {
     title: 'デロンギ マグニフィカS',
     publishedAt: '2021-11-19T07:44:00.000Z',
     outerLink: '',
+    tags: [{ name: 'Gadget', color: 'gray' }],
     blocks: [
       {
         object: 'block',
