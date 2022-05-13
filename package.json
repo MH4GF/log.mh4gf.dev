@@ -13,6 +13,7 @@
     "build": "run-p build:*",
     "build:next": "next build",
     "build:path": "pathpida --output src/generated",
+    "analyze": "ANALYZE=true yarn build",
     "test:compile": "tsc --noEmit",
     "start": "next start",
     "lint": "yarn lint:js",
@@ -28,6 +29,7 @@
     "lhci": "lhci autorun"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "*",
     "@notionhq/client": "*",
     "axios": "*",
     "deepmerge": "*",
