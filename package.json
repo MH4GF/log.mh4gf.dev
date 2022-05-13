@@ -28,6 +28,7 @@
     "lhci": "lhci autorun"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "*",
     "@notionhq/client": "*",
     "axios": "*",
     "deepmerge": "*",
