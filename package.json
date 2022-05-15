@@ -15,6 +15,7 @@
     "build:path": "pathpida --output src/generated",
     "analyze": "ANALYZE=true yarn build",
     "test:compile": "tsc --noEmit",
+    "depcruise": "depcruise --include-only '^src' --output-type dot --ts-config tsconfig.json src | dot -T svg > dependencygraph.svg",
     "start": "next start",
     "lint": "yarn lint:js",
     "lint:js": "next lint --fix",
