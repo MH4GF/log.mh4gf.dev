@@ -1,0 +1,15 @@
+name: 'depcruise'
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  report:
+    permissions:
+      issues: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: MH4GF/dependency-cruiser-report-action@v0
