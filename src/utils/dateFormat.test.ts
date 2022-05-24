@@ -9,4 +9,8 @@ describe('dateFormat', () => {
     const date = new Date(Date.parse('2022-12-31T15:00:00.000Z'))
     expect(dateFormat(date)).toBe('2023/1/1')
   })
+  it('should return empty value if passed invalid date', () => {
+    const date = new Date(Date.parse(''))
+    expect(dateFormat(date)).toBe('')
+  })
 })
