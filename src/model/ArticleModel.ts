@@ -58,6 +58,10 @@ export class ArticleModel implements ArticleData {
     const properties = page.properties
     validateProperties(properties)
 
+    const slug =
+      properties['slug'].type === 'rich_text'
+        ? properties['slug'].rich_text.map((text) => text.plain_text).join('')
+        : ''
     const title =
       properties['title'].type === 'title' ? properties['title'].title[0].plain_text : ''
     const publishedAt =
@@ -72,7 +76,7 @@ export class ArticleModel implements ArticleData {
         : []
 
     const data = {
-      slug: '',
+      slug,
       title,
       publishedAt,
       outerLink,
