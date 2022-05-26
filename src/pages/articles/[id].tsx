@@ -24,11 +24,11 @@ const Page: NextPageWithLayout<Props> = (props) => {
 
 export default Page
 
+const client = new NotionClient({
+  auth: process.env.NOTION_TOKEN,
+  logLevel: LogLevel.DEBUG,
+})
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const client = new NotionClient({
-    auth: process.env.NOTION_TOKEN,
-    logLevel: LogLevel.DEBUG,
-  })
   const articles = await articlePathRepository(client)
 
   const paths = articles.map((article) => {
@@ -49,11 +49,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) 
   if (!params) {
     throw new Error('unexpected state, params is not found')
   }
-
-  const client = new NotionClient({
-    auth: process.env.NOTION_TOKEN,
-    logLevel: LogLevel.DEBUG,
-  })
   const articleModel = await articleDetailRepository(client, params.id)
 
   return { props: { article: articleModel.toJSON() } }
