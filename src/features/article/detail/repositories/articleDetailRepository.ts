@@ -19,8 +19,7 @@ const getPage = async (client: NotionClient, slug: string) => {
       page = pages[0]
       break
     case 0:
-      page = await client.fetchPage(slug)
-      break
+      throw new Error(`page not found with passed slug, slug: ${slug}`)
     default:
       throw new Error(`passed slug is not unique. count: ${pages.length}, slug: ${slug}`)
   }

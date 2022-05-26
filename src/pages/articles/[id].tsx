@@ -6,6 +6,7 @@ import React, { ReactElement } from 'react'
 import { Article } from '~/src/components/Article'
 import { Layout } from '~/src/components/Pages/Layout'
 import { articleDetailRepository } from '~/src/features/article/detail/repositories/articleDetailRepository'
+import { articlePathRepository } from '~/src/features/article/detail/repositories/articlePathRepository'
 import { LogLevel, NotionClient } from '~/src/lib/ntn'
 import { ArticleData, ArticleModel } from '~/src/model/ArticleModel'
 
@@ -30,14 +31,12 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
     auth: process.env.NOTION_TOKEN,
     logLevel: LogLevel.DEBUG,
   })
-  const pages = await client.fetchDatabasePages({ database_id: process.env.NOTION_DATABASE_ID })
+  const articles = await articlePathRepository(client)
 
-  const paths = pages.map((page) => {
-    const article = ArticleModel.fromPage(page)
-
+  const paths = articles.map((article) => {
     return {
       params: {
-        id: article.slug !== '' ? article.slug : page.id,
+        id: article.slug,
       },
     }
   })
