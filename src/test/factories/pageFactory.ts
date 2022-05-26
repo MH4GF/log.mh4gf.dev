@@ -43,6 +43,29 @@ export const pageFactory = Factory.define<PageObject>(() => ({
         time_zone: null,
       },
     },
+    slug: {
+      id: 'sO%3D_',
+      type: 'rich_text',
+      rich_text: [
+        {
+          type: 'text',
+          text: {
+            content: 'my-slug',
+            link: null,
+          },
+          annotations: {
+            bold: false,
+            italic: false,
+            strikethrough: false,
+            underline: false,
+            code: false,
+            color: 'default',
+          },
+          plain_text: 'my-slug',
+          href: null,
+        },
+      ],
+    },
     title: {
       id: 'title',
       type: 'title',
