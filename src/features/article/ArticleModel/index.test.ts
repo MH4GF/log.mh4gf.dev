@@ -1,6 +1,6 @@
-import { BlockObject } from '../lib/ntn'
+import { BlockObject } from '../../../lib/ntn'
 
-import { ArticleModel, Tag } from './ArticleModel'
+import { ArticleModel, Tag } from '.'
 
 import { imageFactory } from '~/src/test/factories/blocks/imageFactory'
 import { quoteFactory } from '~/src/test/factories/blocks/quoteFactory'

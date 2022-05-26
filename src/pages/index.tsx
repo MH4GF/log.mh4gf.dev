@@ -3,7 +3,7 @@ import React from 'react'
 
 import { IndexPage } from 'src/components/Pages/IndexPage'
 import { Layout } from 'src/components/Pages/Layout'
-import { ArticleData, ArticleModel } from 'src/model/ArticleModel'
+import { ArticleData, ArticleModel } from '~/src/features/article/ArticleModel'
 import { NotionClient, LogLevel } from '~/src/lib/ntn'
 
 type Props = {

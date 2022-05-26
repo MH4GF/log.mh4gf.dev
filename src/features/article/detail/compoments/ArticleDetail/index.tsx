@@ -1,8 +1,9 @@
 import { FC } from 'react'
 
+import { ArticleData } from '../../../ArticleModel'
+
 import { blockRenderRules } from '~/src/components/blocks/blockRenderRules'
 import { useRenderBlocks } from '~/src/lib/ntn'
-import { ArticleData } from '~/src/model/ArticleModel'
 
 interface Props {
   article: ArticleData

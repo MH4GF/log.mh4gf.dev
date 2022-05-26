@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { ArticleDetail } from '.'
+import { ArticleModel } from '../../../ArticleModel'
 
-import { ArticleModel } from '~/src/model/ArticleModel'
+import { ArticleDetail } from '.'
 
 export default {
   component: ArticleDetail,

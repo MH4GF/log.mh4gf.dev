@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { TagChip } from '../TagChip'
 
 import ExternalLinkIcon from '~/src/assets/svg/external-link.svg'
+import { ArticleData } from '~/src/features/article/ArticleModel'
 import { pagesPath } from '~/src/generated/$path'
-import { ArticleData } from '~/src/model/ArticleModel'
 import { dateFormat } from '~/src/utils/dateFormat'
 
 type Props = {

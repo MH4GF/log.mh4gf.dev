@@ -4,11 +4,11 @@ import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 import React, { ReactElement } from 'react'
 
 import { Layout } from '~/src/components/Pages/Layout'
+import { ArticleData } from '~/src/features/article/ArticleModel'
 import { ArticleDetail } from '~/src/features/article/detail/compoments/ArticleDetail'
 import { articleDetailRepository } from '~/src/features/article/detail/repositories/articleDetailRepository'
 import { articlePathRepository } from '~/src/features/article/detail/repositories/articlePathRepository'
 import { LogLevel, NotionClient } from '~/src/lib/ntn'
-import { ArticleData } from '~/src/model/ArticleModel'
 
 interface Params extends ParsedUrlQuery {
   id: string
