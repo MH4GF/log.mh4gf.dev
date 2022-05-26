@@ -4,9 +4,9 @@ import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 import React, { ReactElement } from 'react'
 
 import { Article } from '~/src/components/Article'
-import { blockParseRules } from '~/src/components/blocks/blockParseRules'
 import { Layout } from '~/src/components/Pages/Layout'
-import { buildBlockParser, LogLevel, NotionClient, PageObject } from '~/src/lib/ntn'
+import { articleDetailRepository } from '~/src/features/article/detail/repositories/articleDetailRepository'
+import { LogLevel, NotionClient } from '~/src/lib/ntn'
 import { ArticleData, ArticleModel } from '~/src/model/ArticleModel'
 
 interface Params extends ParsedUrlQuery {
@@ -57,27 +57,9 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) 
     auth: process.env.NOTION_TOKEN,
     logLevel: LogLevel.DEBUG,
   })
-  let page: PageObject | undefined = undefined
-  const pages = await client.fetchDatabasePages({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: { property: 'slug', rich_text: { contains: params.id } },
-  })
-  switch (pages.length) {
-    case 1:
-      page = pages[0]
-      break
-    case 0:
-      page = await client.fetchPage(params.id)
-      break
-    default:
-      throw new Error(`passed slug is not unique. count: ${pages.length}, slug: ${params.id}`)
-  }
+  const articleModel = await articleDetailRepository(client, params.id)
 
-  const blockObjects = await client.fetchBlockChildren(page.id)
-  const parser = buildBlockParser(blockParseRules)
-  const blocks = await parser.parse(blockObjects)
-
-  return { props: { article: ArticleModel.fromPage(page, blocks).toJSON() } }
+  return { props: { article: articleModel.toJSON() } }
 }
 
 Page.getLayout = (page: ReactElement<Props>) => (
