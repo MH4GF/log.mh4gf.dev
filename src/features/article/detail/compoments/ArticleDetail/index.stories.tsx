@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { Article } from '.'
+import { ArticleDetail } from '.'
 
 import { ArticleModel } from '~/src/model/ArticleModel'
 
 export default {
-  component: Article,
-} as ComponentMeta<typeof Article>
+  component: ArticleDetail,
+} as ComponentMeta<typeof ArticleDetail>
 
-const Template: ComponentStory<typeof Article> = (args) => <Article {...args} />
+const Template: ComponentStory<typeof ArticleDetail> = (args) => <ArticleDetail {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

@@ -3,12 +3,12 @@ import { ParsedUrlQuery } from 'querystring'
 import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 import React, { ReactElement } from 'react'
 
-import { Article } from '~/src/components/Article'
 import { Layout } from '~/src/components/Pages/Layout'
+import { ArticleDetail } from '~/src/features/article/detail/compoments/ArticleDetail'
 import { articleDetailRepository } from '~/src/features/article/detail/repositories/articleDetailRepository'
 import { articlePathRepository } from '~/src/features/article/detail/repositories/articlePathRepository'
 import { LogLevel, NotionClient } from '~/src/lib/ntn'
-import { ArticleData, ArticleModel } from '~/src/model/ArticleModel'
+import { ArticleData } from '~/src/model/ArticleModel'
 
 interface Params extends ParsedUrlQuery {
   id: string
@@ -19,9 +19,7 @@ type Props = {
 }
 
 const Page: NextPageWithLayout<Props> = (props) => {
-  const article = new ArticleModel(props.article)
-
-  return <Article article={article} />
+  return <ArticleDetail article={props.article} />
 }
 
 export default Page
