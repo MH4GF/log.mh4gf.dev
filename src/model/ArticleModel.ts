@@ -1,5 +1,17 @@
 import { BlockObject, PageObject, SelectColor } from '../lib/ntn'
 
+const TARGET_PROPERTIES = ['title', 'publishedAt', 'outerLink', 'tags']
+const validateProperties = (properties: PageObject['properties']) => {
+  const missing: Array<string> = []
+  TARGET_PROPERTIES.forEach((name) => {
+    if (properties[name] === undefined) missing.push(name)
+  })
+
+  if (missing.length > 0) {
+    throw new Error(`missing properties: ${missing.join(',')}`)
+  }
+}
+
 export type Tag = {
   name: string
   color: SelectColor
@@ -44,6 +56,12 @@ export class ArticleModel implements ArticleData {
 
   static fromPage = (page: PageObject, blocks?: BlockObject[]): ArticleModel => {
     const properties = page.properties
+    validateProperties(properties)
+
+    const slug =
+      properties['slug'].type === 'rich_text'
+        ? properties['slug'].rich_text.map((text) => text.plain_text).join('')
+        : ''
     const title =
       properties['title'].type === 'title' ? properties['title'].title[0].plain_text : ''
     const publishedAt =
@@ -58,7 +76,7 @@ export class ArticleModel implements ArticleData {
         : []
 
     const data = {
-      slug: '',
+      slug,
       title,
       publishedAt,
       outerLink,
