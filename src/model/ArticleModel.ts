@@ -14,6 +14,17 @@ export interface ArticleData {
   blocks: BlockObject[]
 }
 
+const REQUIRED_PROPERTIES: Array<keyof ArticleData> = ['title', 'publishedAt']
+const mustBeExistRequiredFields = (data: ArticleData) => {
+  const missings: string[] = []
+  REQUIRED_PROPERTIES.forEach((property) => {
+    if (data[property] === '') missings.push(property)
+  })
+  if (missings.length > 0) {
+    throw new Error(`required fields do not exist: ${missings.join(', ')}`)
+  }
+}
+
 const mustBeOnlyOneOfSlugAndOuterLinkHasValue = (slug: string, outerLink: string) => {
   if (slug !== '' && outerLink !== '') {
     throw new Error(
@@ -23,6 +34,7 @@ const mustBeOnlyOneOfSlugAndOuterLinkHasValue = (slug: string, outerLink: string
 }
 
 const validate = (data: ArticleData) => {
+  mustBeExistRequiredFields(data)
   mustBeOnlyOneOfSlugAndOuterLinkHasValue(data.slug, data.outerLink)
 }
 

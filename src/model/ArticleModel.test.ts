@@ -12,6 +12,8 @@ describe('ArticleModel', () => {
     const publishedAt = '2021-05-30T13:31:00.000+00:00'
     const tags: Tag[] = []
     const blocks: BlockObject[] = []
+    const slug = 'my-slug'
+    const outerLink = ''
 
     it('throw error if both slug and outerLink have values', () => {
       const slug = 'my-slug'
@@ -22,6 +24,18 @@ describe('ArticleModel', () => {
       ).toThrowError(
         `there must not be a value for both slug and outerLink. slug: ${slug}, outerLink: ${outerLink}`,
       )
+    })
+
+    it('throw error If a required fields do not exist', () => {
+      expect(
+        () => new ArticleModel({ slug, title: '', publishedAt: '', outerLink, tags, blocks }),
+      ).toThrowError(`required fields do not exist: title, publishedAt`)
+      expect(
+        () => new ArticleModel({ slug, title, publishedAt: '', outerLink, tags, blocks }),
+      ).toThrowError(`required fields do not exist: publishedAt`)
+      expect(
+        () => new ArticleModel({ slug, title: '', publishedAt, outerLink, tags, blocks }),
+      ).toThrowError(`required fields do not exist: title`)
     })
   })
 
@@ -34,21 +48,6 @@ describe('ArticleModel', () => {
       expect(article.publishedAt).toEqual('2021-05-30T13:31:00.000+00:00')
       expect(article.outerLink).toEqual('')
       expect(article.tags).toEqual([{ color: 'blue', name: 'Zenn' }])
-      expect(article.blocks).toEqual([])
-    })
-
-    it('works even if some information on the page is missing', () => {
-      const page = pageFactory.build({
-        properties: {
-          outerLink: { url: '' },
-          publishedAt: { date: { start: '' } },
-        },
-      })
-      const article = ArticleModel.fromPage(page)
-      expect(article.slug).toEqual('my-slug')
-      expect(article.title).toEqual('waiwai')
-      expect(article.publishedAt).toEqual('')
-      expect(article.outerLink).toEqual('')
       expect(article.blocks).toEqual([])
     })
 
