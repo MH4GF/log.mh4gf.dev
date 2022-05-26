@@ -1,6 +1,5 @@
+import { ArticleData } from '../../../ArticleModel'
 import { ArticleListItem } from '../ArticleListItem'
-
-import { ArticleData } from '~/src/features/article/ArticleModel'
 
 type Props = {
   articles: ArticleData[]
