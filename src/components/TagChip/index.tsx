@@ -1,4 +1,4 @@
-import { Tag } from '~/src/features/article/ArticleModel'
+import { Tag } from '~/src/model/ArticleModel'
 
 type Props = {
   tag: Tag

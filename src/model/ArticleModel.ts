@@ -1,4 +1,16 @@
-import { BlockObject, PageObject, SelectColor } from '../../../lib/ntn'
+import { BlockObject, PageObject, SelectColor } from '../lib/ntn'
+
+const TARGET_PROPERTIES = ['title', 'publishedAt', 'outerLink', 'tags']
+const validateProperties = (properties: PageObject['properties']) => {
+  const missing: Array<string> = []
+  TARGET_PROPERTIES.forEach((name) => {
+    if (properties[name] === undefined) missing.push(name)
+  })
+
+  if (missing.length > 0) {
+    throw new Error(`missing properties: ${missing.join(',')}`)
+  }
+}
 
 export type Tag = {
   name: string
@@ -14,42 +26,6 @@ export interface ArticleData {
   blocks: BlockObject[]
 }
 
-const REQUIRED_PROPERTIES: Array<keyof ArticleData> = ['title', 'publishedAt']
-const mustBeExistRequiredFields = (data: ArticleData) => {
-  const missings: string[] = []
-  REQUIRED_PROPERTIES.forEach((property) => {
-    if (data[property] === '') missings.push(property)
-  })
-  if (missings.length > 0) {
-    throw new Error(`required fields do not exist: ${missings.join(', ')}`)
-  }
-}
-
-const mustBeOnlyOneOfSlugAndOuterLinkHasValue = (slug: string, outerLink: string) => {
-  if (slug !== '' && outerLink !== '') {
-    throw new Error(
-      `there must not be a value for both slug and outerLink. slug: ${slug}, outerLink: ${outerLink}`,
-    )
-  }
-}
-
-const validate = (data: ArticleData) => {
-  mustBeExistRequiredFields(data)
-  mustBeOnlyOneOfSlugAndOuterLinkHasValue(data.slug, data.outerLink)
-}
-
-const TARGET_PROPERTIES = ['title', 'publishedAt', 'outerLink', 'tags']
-const validatePropertyNames = (properties: PageObject['properties']) => {
-  const missing: Array<string> = []
-  TARGET_PROPERTIES.forEach((name) => {
-    if (properties[name] === undefined) missing.push(name)
-  })
-
-  if (missing.length > 0) {
-    throw new Error(`missing properties: ${missing.join(',')}`)
-  }
-}
-
 export class ArticleModel implements ArticleData {
   readonly slug: string
   readonly title: string
@@ -59,7 +35,6 @@ export class ArticleModel implements ArticleData {
   readonly blocks: BlockObject[]
 
   constructor(data: ArticleData) {
-    validate(data)
     this.slug = data.slug
     this.title = data.title
     this.publishedAt = data.publishedAt
@@ -81,7 +56,7 @@ export class ArticleModel implements ArticleData {
 
   static fromPage = (page: PageObject, blocks?: BlockObject[]): ArticleModel => {
     const properties = page.properties
-    validatePropertyNames(properties)
+    validateProperties(properties)
 
     const slug =
       properties['slug'].type === 'rich_text'
