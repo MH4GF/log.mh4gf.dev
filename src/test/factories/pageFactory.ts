@@ -32,7 +32,7 @@ export const pageFactory = Factory.define<PageObject>(() => ({
     outerLink: {
       id: '%5DFUT',
       type: 'url',
-      url: '',
+      url: 'https://zenn.dev/mh4gf/articles/d917c809991808',
     },
     publishedAt: {
       id: 'sO%3D_',

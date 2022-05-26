@@ -1,5 +1,6 @@
-import { ArticleData } from '../../../ArticleModel'
 import { ArticleListItem } from '../ArticleListItem'
+
+import { ArticleData } from '~/src/model/ArticleModel'
 
 type Props = {
   articles: ArticleData[]

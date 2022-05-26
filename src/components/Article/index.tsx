@@ -1,15 +1,15 @@
 import { FC } from 'react'
 
-import { ArticleData } from '../../../ArticleModel'
+import { blockRenderRules } from '../blocks/blockRenderRules'
 
-import { blockRenderRules } from '~/src/components/blocks/blockRenderRules'
 import { useRenderBlocks } from '~/src/lib/ntn'
+import { ArticleModel } from '~/src/model/ArticleModel'
 
 interface Props {
-  article: ArticleData
+  article: ArticleModel
 }
 
-export const ArticleDetail: FC<Props> = ({ article }) => {
+export const Article: FC<Props> = ({ article }) => {
   const { renderBlocks } = useRenderBlocks(blockRenderRules)
 
   return (
