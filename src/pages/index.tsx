@@ -3,7 +3,8 @@ import React from 'react'
 
 import { IndexPage } from 'src/components/Pages/IndexPage'
 import { Layout } from 'src/components/Pages/Layout'
-import { ArticleData, ArticleModel } from 'src/model/ArticleModel'
+import { ArticleData } from '~/src/features/article/ArticleModel'
+import { articleListRepository } from '~/src/features/article/list/repositories/articleListRepository'
 import { NotionClient, LogLevel } from '~/src/lib/ntn'
 
 type Props = {
@@ -21,13 +22,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     auth: process.env.NOTION_TOKEN,
     logLevel: LogLevel.DEBUG,
   })
-  const pages = await client.fetchDatabasePages({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: { property: 'published', checkbox: { equals: true } },
-    sorts: [{ property: 'publishedAt', direction: 'descending' }],
-  })
-  const articles = pages.map((page) => ArticleModel.fromPage(page).toJSON())
-
+  const articles = await articleListRepository(client)
   return { props: { articles } }
 }
 
