@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
-import { TagChip } from '../TagChip'
+import { ArticleData } from '../../../ArticleModel'
 
 import ExternalLinkIcon from '~/src/assets/svg/external-link.svg'
+import { TagChip } from '~/src/components/TagChip'
 import { pagesPath } from '~/src/generated/$path'
-import { ArticleData } from '~/src/model/ArticleModel'
 import { dateFormat } from '~/src/utils/dateFormat'
 
 type Props = {
