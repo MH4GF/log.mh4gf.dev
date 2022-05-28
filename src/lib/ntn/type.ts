@@ -53,7 +53,7 @@ export type SelectColor =
  * @package
  */
 export type BlockRenderRules = {
-  [key in BlockObject['type']]: (
+  [key in BlockObject['type']]?: (
     block: BlockObject<key>,
     renderBlocks: RenderBlocks,
   ) => ReactElement
