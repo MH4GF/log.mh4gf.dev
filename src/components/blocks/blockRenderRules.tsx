@@ -10,10 +10,9 @@ import { Paragraph } from './Paragraph'
 import { Quote } from './Quote'
 import { SyncedBlock } from './SyncedBlock'
 
-import { BlockRenderRules, defaultBlockSchema } from '~/src/lib/ntn'
+import { BlockRenderRules } from '~/src/lib/ntn'
 
 export const blockRenderRules: BlockRenderRules = {
-  ...defaultBlockSchema,
   paragraph: (block) => <Paragraph block={block} key={block.id} />,
   column: (block, renderBlocks) => (
     <Column block={block} renderBlocks={renderBlocks} key={block.id} />
