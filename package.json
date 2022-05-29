@@ -37,7 +37,8 @@
     "next": "^12.1.6",
     "react": "*",
     "react-dom": "*",
-    "sharp": "*"
+    "sharp": "*",
+    "swr": "*"
   },
   "devDependencies": {
     "@babel/core": "*",
