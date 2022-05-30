@@ -2,13 +2,10 @@ name: chromatic
 
 on:
   push:
-    branches-ignore:
-      - 'dependabot/**'
 
 jobs:
   chromatic-deployment:
     runs-on: ubuntu-latest
-    if: ${{ github.actor != 'dependabot[bot]' }}
     strategy:
       matrix:
         node-version: [14]
