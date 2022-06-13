@@ -1,3 +1,4 @@
+import { Bookmark } from './Bookmark'
 import { BulletedListItem } from './BulletedListItem'
 import { Callout } from './Callout'
 import { Code } from './Code'
@@ -35,4 +36,5 @@ export const blockRenderRules: BlockRenderRules = {
   image: (block) => <Image block={block} key={block.id} />,
   quote: (block) => <Quote block={block} key={block.id} />,
   code: (block) => <Code block={block} key={block.id} />,
+  bookmark: (block) => <Bookmark block={block} key={block.id} />,
 }
