@@ -73,6 +73,7 @@
     "eslint-plugin-storybook": "*",
     "eslint-plugin-unused-imports": "*",
     "fishery": "*",
+    "msw": "*",
     "npm-run-all": "*",
     "pathpida": "*",
     "postcss": "^8",
