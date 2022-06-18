@@ -1,5 +1,6 @@
 import '../src/styles/tailwind.css'
 import * as NextImage from 'next/image'
+import { initialize, mswDecorator } from 'msw-storybook-addon'
 
 const OriginalNextImage = NextImage.default
 
@@ -27,7 +28,11 @@ export const parameters = {
   },
 }
 
+// msw
+initialize()
+
 export const decorators = [
+  mswDecorator,
   (Story) => (
     <div className="text-white">
       <Story />

@@ -33,11 +33,14 @@
     "@notionhq/client": "*",
     "axios": "*",
     "deepmerge": "*",
+    "jsdom": "*",
     "mime-types": "*",
     "next": "^12.1.6",
+    "next-connect": "*",
     "react": "*",
     "react-dom": "*",
-    "sharp": "*"
+    "sharp": "*",
+    "swr": "*"
   },
   "devDependencies": {
     "@babel/core": "*",
@@ -53,6 +56,7 @@
     "@storybook/react": "*",
     "@storybook/testing-library": "*",
     "@svgr/webpack": "*",
+    "@types/jsdom": "*",
     "@types/mime-types": "^2.1.1",
     "@types/node": "*",
     "@types/react": "*",
@@ -72,6 +76,8 @@
     "eslint-plugin-storybook": "*",
     "eslint-plugin-unused-imports": "*",
     "fishery": "*",
+    "msw": "^0.42.1",
+    "msw-storybook-addon": "*",
     "npm-run-all": "*",
     "pathpida": "*",
     "postcss": "^8",
@@ -88,5 +94,8 @@
     "tabWidth": 2,
     "trailingComma": "all",
     "printWidth": 100
+  },
+  "msw": {
+    "workerDirectory": ".storybook/public"
   }
 }

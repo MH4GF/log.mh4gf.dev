@@ -5,7 +5,7 @@ module.exports = {
     builder: 'webpack5',
   },
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  staticDirs: ['../public'],
+  staticDirs: ['../public', './public'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -46,4 +46,8 @@ module.exports = {
   },
   // @see https://github.com/storybookjs/storybook/issues/15336#issuecomment-906809203
   typescript: { reactDocgen: false },
+  env: (config) => ({
+    ...config,
+    NEXT_PUBLIC_VERCEL_URL: 'localhost:3000',
+  }),
 }
