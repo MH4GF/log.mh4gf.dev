@@ -1,16 +1,14 @@
-import axios from 'axios'
 import useSWR from 'swr'
 
 import type { OGPResult } from '../../types'
+
+import { apiRoutesAxios } from '~/src/lib/axios/apiRoutesAxios'
 
 type UseOGP = (url: string) => {
   result: OGPResult
 }
 
-const fetcher = (url: string) =>
-  axios
-    .get<OGPResult>(url, { baseURL: process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000' })
-    .then((res) => res.data)
+const fetcher = (url: string) => apiRoutesAxios.get<OGPResult>(url).then((res) => res.data)
 
 export const useOGP: UseOGP = (url) => {
   const { data } = useSWR<OGPResult>(`api/ogp?url=${url}`, fetcher, {
