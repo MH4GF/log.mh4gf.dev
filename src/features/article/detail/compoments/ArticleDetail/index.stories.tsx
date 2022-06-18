@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof ArticleDetail> = (args) => <ArticleDetail 
 export const Default = Template.bind({})
 Default.args = {
   article: new ArticleModel({
+    id: 'article-id',
     slug: 'delonghi-magnifica-s',
     title: 'デロンギ マグニフィカS',
     publishedAt: '2021-11-19T07:44:00.000Z',
