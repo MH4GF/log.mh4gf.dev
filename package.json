@@ -47,7 +47,7 @@
     "@lhci/cli": "*",
     "@storybook/addon-a11y": "*",
     "@storybook/addon-actions": "*",
-    "@storybook/addon-essentials": "6.5.0-alpha.52",
+    "@storybook/addon-essentials": "6.5.9",
     "@storybook/addon-interactions": "*",
     "@storybook/addon-links": "*",
     "@storybook/addon-postcss": "*",
