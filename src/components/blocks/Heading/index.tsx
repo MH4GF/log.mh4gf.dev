@@ -6,7 +6,7 @@ import { BlockViewProps } from '~/src/lib/ntn'
 
 export const Heading1: FC<BlockViewProps<'heading_1'>> = ({ block }) => {
   return (
-    <h1 className="text-2xl font-bold">
+    <h1 className="mt-5 text-2xl font-bold">
       {block.heading_1.rich_text.map((text) => (
         <RichText key={text.plain_text} richText={text} />
       ))}
@@ -16,7 +16,7 @@ export const Heading1: FC<BlockViewProps<'heading_1'>> = ({ block }) => {
 
 export const Heading2: FC<BlockViewProps<'heading_2'>> = ({ block }) => {
   return (
-    <h2 className="text-xl font-bold">
+    <h2 className="mt-4 text-xl font-bold">
       {block.heading_2.rich_text.map((text) => (
         <RichText key={text.plain_text} richText={text} />
       ))}
@@ -26,7 +26,7 @@ export const Heading2: FC<BlockViewProps<'heading_2'>> = ({ block }) => {
 
 export const Heading3: FC<BlockViewProps<'heading_3'>> = ({ block }) => {
   return (
-    <h3 className="text-lg font-bold">
+    <h3 className="mt-3 text-lg font-bold">
       {block.heading_3.rich_text.map((text) => (
         <RichText key={text.plain_text} richText={text} />
       ))}
