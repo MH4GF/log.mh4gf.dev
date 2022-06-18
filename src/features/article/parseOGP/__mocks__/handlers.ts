@@ -33,7 +33,18 @@ const SAMPLE_HTML = `
 `
 
 export const handlers = {
-  default: rest.get(SAMPLE_URL, (_req, res, ctx) => {
+  api: rest.get('http://localhost:3000/api/ogp', (_req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        url: SAMPLE_URL,
+        title: 'Example Domain',
+        description: 'Hello! This is example :)',
+        image: 'https://mh4gf.dev/assets/images/social-card.png',
+      }),
+    )
+  }),
+  sample: rest.get(SAMPLE_URL, (_req, res, ctx) => {
     return res(ctx.status(200), ctx.body(SAMPLE_HTML))
   }),
   nodata: rest.get(NO_DATA_URL, (_req, res, ctx) => {

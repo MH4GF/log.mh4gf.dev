@@ -8,5 +8,5 @@ export const bookmarkFactory = Factory.define<BlockObject<'bookmark'>>(() => ({
   ...baseBlock,
   has_children: false,
   type: 'bookmark',
-  bookmark: { caption: [], url: 'https://cli.github.com/' },
+  bookmark: { caption: [], url: 'https://mh4gf.dev' },
 }))
