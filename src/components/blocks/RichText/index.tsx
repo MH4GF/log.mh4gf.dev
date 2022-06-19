@@ -16,7 +16,7 @@ const classNames = (annotations: RichTextObject['annotations']) => {
   const classes = ['text-white']
 
   if (annotations.underline) classes.push(...classes, underlineClass)
-  if (annotations.code) classes.push(...classes, 'rounded bg-gray-500')
+  if (annotations.code) classes.push(...classes, 'rounded bg-gray-500 px-1')
 
   return classes.join(' ')
 }
