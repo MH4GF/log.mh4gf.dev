@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { Bookmark } from '.'
+import { Bookmark, BookMarkCard } from '.'
 
 import { handlers } from '~/src/features/article/parseOGP/__mocks__/handlers'
 import { bookmarkFactory } from '~/src/test/factories/blocks/bookmarkFactory'
@@ -20,4 +20,8 @@ Default.parameters = {
   msw: {
     handlers: [handlers.api],
   },
+}
+
+export const Loading: ComponentStory<typeof Bookmark> = () => {
+  return <BookMarkCard />
 }
