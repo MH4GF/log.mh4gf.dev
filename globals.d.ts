@@ -4,5 +4,6 @@ declare namespace NodeJS {
     readonly NOTION_DATABASE_ID: string
     readonly NEXT_PUBLIC_GTM_ID: string
     readonly NEXT_PUBLIC_VERCEL_URL: string
+    readonly NEXT_PUBLIC_VERCEL_ALIAS_URL?: string
   }
 }
