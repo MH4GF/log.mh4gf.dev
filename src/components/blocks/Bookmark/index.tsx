@@ -5,13 +5,16 @@ import { useOGP } from '~/src/features/article/parseOGP/hooks/useOGP'
 import { BlockViewProps } from '~/src/lib/ntn'
 
 type Props = {
-  url: string
-  title: string
-  description: string
-  image: string
+  url?: string
+  title?: string
+  description?: string
+  image?: string
 }
 
-const BookMarkCard: FC<Props> = (props) => {
+/**
+ * @package
+ */
+export const BookMarkCard: FC<Props> = (props) => {
   const { url, title, description, image } = props
   const headingId = useId()
 
@@ -52,7 +55,7 @@ const BookmarkBlock: FC<BookmarkBlockProps> = (props) => {
 
 export const Bookmark: FC<BlockViewProps<'bookmark'>> = ({ block }) => {
   return (
-    <Suspense fallback={<div>loading...</div>}>
+    <Suspense fallback={<BookMarkCard />}>
       <BookmarkBlock url={block.bookmark.url} />
     </Suspense>
   )

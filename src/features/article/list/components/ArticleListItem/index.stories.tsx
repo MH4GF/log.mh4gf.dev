@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof ArticleListItem> = (args) => (
 export const Internal = Template.bind({})
 Internal.args = {
   article: {
+    id: 'article-id',
     slug: 'hello-world',
     title: 'Next.js + Notion API + Tailwind CSSでブログを作った',
     publishedAt: '2022-04-25T14:31:00.000Z',
@@ -28,6 +29,7 @@ Internal.args = {
 export const External = Template.bind({})
 External.args = {
   article: {
+    id: 'article-id',
     slug: 'hello-world',
     title: 'Next.js + Notion API + Tailwind CSSでブログを作った',
     publishedAt: '2022-04-25T14:31:00.000Z',

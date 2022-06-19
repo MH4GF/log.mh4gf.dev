@@ -19,7 +19,7 @@ export const Layout = ({ children, title }: Props): ReactElement => {
         <title>{title || 'log.mh4gf.dev'}</title>
       </Head>
       <GoogleTagManager gtmId={gtmId} />
-      <div className="mx-auto flex min-h-screen max-w-2xl flex-col">
+      <div className="mx-auto flex min-h-screen max-w-2xl flex-col gap-16">
         <Header />
         {children}
         <Footer className="mx-auto mt-auto" />

@@ -6,6 +6,7 @@ export type Tag = {
 }
 
 export interface ArticleData {
+  id: string
   slug: string
   title: string
   publishedAt: string
@@ -51,6 +52,7 @@ const validatePropertyNames = (properties: PageObject['properties']) => {
 }
 
 export class ArticleModel implements ArticleData {
+  readonly id: string
   readonly slug: string
   readonly title: string
   readonly publishedAt: string
@@ -60,6 +62,7 @@ export class ArticleModel implements ArticleData {
 
   constructor(data: ArticleData) {
     validate(data)
+    this.id = data.id
     this.slug = data.slug
     this.title = data.title
     this.publishedAt = data.publishedAt
@@ -70,6 +73,7 @@ export class ArticleModel implements ArticleData {
 
   toJSON = (): ArticleData => {
     return {
+      id: this.id,
       slug: this.slug,
       title: this.title,
       publishedAt: this.publishedAt,
@@ -83,6 +87,7 @@ export class ArticleModel implements ArticleData {
     const properties = page.properties
     validatePropertyNames(properties)
 
+    const id = page.id
     const slug =
       properties['slug'].type === 'rich_text'
         ? properties['slug'].rich_text.map((text) => text.plain_text).join('')
@@ -101,6 +106,7 @@ export class ArticleModel implements ArticleData {
         : []
 
     const data = {
+      id,
       slug,
       title,
       publishedAt,
