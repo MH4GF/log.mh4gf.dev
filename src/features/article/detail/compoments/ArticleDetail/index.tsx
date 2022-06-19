@@ -16,7 +16,7 @@ export const ArticleDetail: FC<Props> = ({ article }) => {
     <article>
       <h1 className="text-4xl font-bold text-white">{article.title}</h1>
       {/* TODO: タグ */}
-      <div className="mt-6 grid gap-4">{renderBlocks(article.blocks)}</div>
+      <div className="mt-6 grid gap-3">{renderBlocks(article.blocks)}</div>
     </article>
   )
 }
