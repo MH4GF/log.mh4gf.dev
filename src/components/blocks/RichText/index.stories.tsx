@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof RichText>
 
 export const Default: ComponentStory<typeof RichText> = () => (
-  <div className="grid gap-4 text-white">
+  <div className="grid gap-4">
     <div>
       <p className="text-gray-300">default</p>
       <RichText richText={richTextFactory.build()} />
