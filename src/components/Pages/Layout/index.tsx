@@ -3,6 +3,7 @@ import { ReactElement, ReactNode } from 'react'
 
 import { Footer } from '~/src/components/Footer'
 import { Header } from '~/src/components/Header'
+import { Ogp } from '~/src/components/layout/Ogp'
 import { GoogleTagManaagerId, GoogleTagManager } from '~/src/components/utils/GoogleTagManager'
 
 interface Props {
@@ -18,6 +19,7 @@ export const Layout = ({ children, title }: Props): ReactElement => {
       <Head>
         <title>{title || 'log.mh4gf.dev'}</title>
       </Head>
+      <Ogp title={title} />
       <GoogleTagManager gtmId={gtmId} />
       <div className="mx-auto flex min-h-screen max-w-2xl flex-col gap-16">
         <Header />
