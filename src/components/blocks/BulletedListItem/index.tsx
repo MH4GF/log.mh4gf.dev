@@ -11,8 +11,8 @@ export const BulletedListItem: FC<Required<BlockViewProps<'bulleted_list_item'>>
   return (
     <ul className="ml-6 list-disc">
       <li>
-        {block.bulleted_list_item.rich_text.map((text) => (
-          <RichText key={text.plain_text} richText={text} />
+        {block.bulleted_list_item.rich_text.map((text, index) => (
+          <RichText key={`${block.id}_${index}`} richText={text} />
         ))}
       </li>
       {block.children && renderBlocks(block.children)}
