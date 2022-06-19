@@ -13,10 +13,10 @@ const underlineClass = 'underline decoration-white'
 
 // TODO: support colors
 const classNames = (annotations: RichTextObject['annotations']) => {
-  const classes = ['text-white']
+  const classes: string[] = []
 
   if (annotations.underline) classes.push(...classes, underlineClass)
-  if (annotations.code) classes.push(...classes, 'rounded bg-gray-500 px-1')
+  if (annotations.code) classes.push(...classes, 'rounded bg-zinc-600 px-1 py-0.5')
 
   return classes.join(' ')
 }

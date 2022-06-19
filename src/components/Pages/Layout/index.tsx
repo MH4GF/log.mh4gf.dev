@@ -14,7 +14,7 @@ const gtmId = process.env.NEXT_PUBLIC_GTM_ID as GoogleTagManaagerId
 
 export const Layout = ({ children, title }: Props): ReactElement => {
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-zinc-700 via-zinc-900 to-zinc-800 p-8 text-white">
+    <div className="min-h-screen bg-gradient-to-tr from-zinc-700 via-zinc-900 to-zinc-800 p-8 text-zinc-100">
       <Head>
         <title>{title || 'log.mh4gf.dev'}</title>
       </Head>
