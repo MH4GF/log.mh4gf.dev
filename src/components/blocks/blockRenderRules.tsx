@@ -1,3 +1,5 @@
+import { AxiosInstance } from 'axios'
+
 import { Bookmark } from './Bookmark'
 import { BulletedListItem } from './BulletedListItem'
 import { Callout } from './Callout'
@@ -13,7 +15,11 @@ import { SyncedBlock } from './SyncedBlock'
 
 import { BlockRenderRules } from '~/src/lib/ntn'
 
-export const blockRenderRules: BlockRenderRules = {
+export type Meta = {
+  fetcher: AxiosInstance
+}
+
+export const blockRenderRules: BlockRenderRules<Meta> = {
   paragraph: (block) => <Paragraph block={block} key={block.id} />,
   column: (block, renderBlocks) => (
     <Column block={block} renderBlocks={renderBlocks} key={block.id} />

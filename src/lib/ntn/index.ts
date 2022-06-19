@@ -32,15 +32,15 @@ export const buildBlockParser: BuildBlockParser = (rules) => {
   }
 }
 
-export const useRenderBlocks = (rules: BlockRenderRules) => {
-  const renderBlocks: RenderBlocks = (blocks) => {
+export const useRenderBlocks = <M>(rules: BlockRenderRules<M>) => {
+  const renderBlocks: RenderBlocks<M> = (blocks, meta) => {
     const elms = blocks.map((block) => {
       const rule = rules[block.type]
       if (!rule) {
         console.debug(`not supported block type: ${block.type}`)
         return null
       }
-      return rule(block as never, renderBlocks)
+      return rule(block as never, renderBlocks, meta)
     })
     return elms.filter((elm): elm is NonNullable<ReactElement> => elm != null)
   }

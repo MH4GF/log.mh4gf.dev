@@ -52,10 +52,11 @@ export type SelectColor =
 /**
  * @package
  */
-export type BlockRenderRules = {
+export type BlockRenderRules<M> = {
   [key in BlockObject['type']]?: (
     block: BlockObject<key>,
-    renderBlocks: RenderBlocks,
+    renderBlocks: RenderBlocks<M>,
+    meta: M,
   ) => ReactElement
 }
 
@@ -81,12 +82,12 @@ export type BuildBlockParser = (rules: BlockParseRules) => BlockParser
 /**
  * @package
  */
-export type RenderBlocks = (blocks: BlockObject[]) => ReactElement[]
+export type RenderBlocks<M> = (blocks: BlockObject[], meta: M) => ReactElement[]
 
 /**
  * @package
  */
-export interface BlockViewProps<T> {
+export interface BlockViewProps<T, M> {
   block: BlockObject<T>
-  renderBlocks?: RenderBlocks
+  renderBlocks?: RenderBlocks<M>
 }

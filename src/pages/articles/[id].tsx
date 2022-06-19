@@ -18,7 +18,14 @@ type Props = {
   article: ArticleData
 }
 
+// type ServerSideProps = {
+//   baseUrl: string
+// }
+
 const Page: NextPageWithLayout<Props> = (props) => {
+  // const meta = {
+  //   fetcher: axios.create({ baseURL: origin }),
+  // }
   return <ArticleDetail article={props.article} />
 }
 
