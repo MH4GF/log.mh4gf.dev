@@ -26,6 +26,7 @@ export const parameters = {
       },
     ],
   },
+  chromatic: { viewports: [320, 1200] },
 }
 
 // msw
