@@ -1,3 +1,4 @@
+import { withSentry } from '@sentry/nextjs'
 import type { NextApiResponse } from 'next'
 
 import { parseHTML } from '~/src/features/article/parseOGP/server/parseHTML'
@@ -5,7 +6,7 @@ import { OGPResult } from '~/src/features/article/parseOGP/types'
 import { apiHandler } from '~/src/server/apiHandler'
 import { ValidationError } from '~/src/server/errors'
 
-export default apiHandler.get(async (req, res: NextApiResponse<OGPResult>) => {
+const handler = apiHandler.get(async (req, res: NextApiResponse<OGPResult>) => {
   let url = req.query.url
   if (url instanceof Array) {
     if (url.length === 1) {
@@ -19,3 +20,5 @@ export default apiHandler.get(async (req, res: NextApiResponse<OGPResult>) => {
 
   res.status(200).json(result)
 })
+
+export default withSentry(handler)
