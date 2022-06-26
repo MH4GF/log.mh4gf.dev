@@ -17,7 +17,6 @@ const handler = apiHandler.get(async (req, res: NextApiResponse<OGPResult>) => {
   }
 
   const result = await parseHTML(url)
-  throw new Error('error with sentry')
 
   res.status(200).json(result)
 })
