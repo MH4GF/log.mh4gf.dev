@@ -36,6 +36,7 @@
   "dependencies": {
     "@next/bundle-analyzer": "*",
     "@notionhq/client": "*",
+    "@sentry/nextjs": "*",
     "axios": "*",
     "deepmerge": "*",
     "jsdom": "*",
