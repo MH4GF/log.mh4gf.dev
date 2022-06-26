@@ -58,6 +58,7 @@
     "@storybook/addon-interactions": "*",
     "@storybook/addon-links": "*",
     "@storybook/addon-postcss": "*",
+    "@storybook/addon-viewport": "*",
     "@storybook/builder-webpack5": "*",
     "@storybook/manager-webpack5": "*",
     "@storybook/react": "*",

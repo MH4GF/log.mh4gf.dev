@@ -26,6 +26,7 @@ export const parameters = {
       },
     ],
   },
+  chromatic: { viewports: [320, 414, 834, 1200] }, // same as default of @storybook/addon-viewport
 }
 
 // msw
@@ -34,7 +35,7 @@ initialize()
 export const decorators = [
   mswDecorator,
   (Story) => (
-    <div className="text-white">
+    <div style={{ color: 'white' }}>
       <Story />
     </div>
   ),
