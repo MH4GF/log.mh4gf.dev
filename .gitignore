@@ -49,3 +49,6 @@ public/tmp/**
 !public/tmp/.keep
 
 /storybook-static
+
+# Sentry
+.sentryclirc
