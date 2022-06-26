@@ -35,7 +35,7 @@ initialize()
 export const decorators = [
   mswDecorator,
   (Story) => (
-    <div className="text-white">
+    <div style={{ color: 'white' }}>
       <Story />
     </div>
   ),
