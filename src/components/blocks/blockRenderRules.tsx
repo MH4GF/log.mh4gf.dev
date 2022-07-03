@@ -33,6 +33,7 @@ export const blockRenderRules: BlockRenderRules = {
   synced_block: (block, renderBlocks) => (
     <SyncedBlock block={block} renderBlocks={renderBlocks} key={block.id} />
   ),
+  // eslint-disable-next-line jsx-a11y/alt-text
   image: (block) => <Image block={block} key={block.id} />,
   quote: (block) => <Quote block={block} key={block.id} />,
   code: (block) => <Code block={block} key={block.id} />,
