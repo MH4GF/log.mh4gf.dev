@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
 
     steps:
       - name: Checkout 🛎
@@ -21,17 +20,8 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Setup node env 🏗
-        uses: actions/setup-node@v3.2.0
-        with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
-
-      - name: Install dependencies 👨🏻‍💻
-        run: yarn
-
       - name: run Lighthouse CI
         run: |
-          yarn lhci collect --url ${{ github.event.deployment_status.target_url }}
+          npx -p @lhci/cli lhci collect --url ${{ github.event.deployment_status.target_url }}
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
