@@ -1,17 +1,17 @@
-name: CI
-on:
-  push:
-    branches:
-      - main
+name: lighthouce-ci
+on: deployment_status
+
 jobs:
   lhci:
-    name: Lighthouse
+    if: |
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment_status.environment == 'Preview'
+
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
 
     steps:
       - name: Checkout 🛎
@@ -19,23 +19,8 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Setup node env 🏗
-        uses: actions/setup-node@v3.2.0
-        with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
-
-      - name: Install dependencies 👨🏻‍💻
-        run: yarn
-
-      - name: Build ‍💻
-        run: yarn build
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-
       - name: run Lighthouse CI
         run: |
-          yarn lhci
+          npx -p @lhci/cli lhci collect --url ${{ github.event.deployment_status.target_url }}
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

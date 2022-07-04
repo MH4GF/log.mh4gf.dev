@@ -52,7 +52,6 @@
     "@babel/core": "*",
     "@commitlint/cli": "*",
     "@commitlint/config-conventional": "*",
-    "@lhci/cli": "*",
     "@storybook/addon-a11y": "*",
     "@storybook/addon-actions": "*",
     "@storybook/addon-essentials": "6.5.0-alpha.52",
