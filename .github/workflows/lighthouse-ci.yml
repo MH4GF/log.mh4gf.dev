@@ -1,4 +1,4 @@
-name: CI
+name: lighthouce-ci
 on: deployment_status
 
 jobs:
@@ -7,7 +7,6 @@ jobs:
       github.event.deployment_status.state == 'success' &&
       github.event.deployment_status.environment == 'Preview'
 
-    name: Lighthouse
     runs-on: ${{ matrix.os }}
 
     strategy:
