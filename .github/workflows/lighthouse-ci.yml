@@ -1,10 +1,12 @@
 name: CI
-on:
-  push:
-    branches:
-      - main
+on: deployment_status
+
 jobs:
   lhci:
+    if: |
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment_status.environment == 'Preview'
+
     name: Lighthouse
     runs-on: ${{ matrix.os }}
 
@@ -28,14 +30,8 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
-      - name: Build ‍💻
-        run: yarn build
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-
       - name: run Lighthouse CI
         run: |
-          yarn lhci
+          yarn lhci collect --url ${{ github.event.deployment_status.target_url }}
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
