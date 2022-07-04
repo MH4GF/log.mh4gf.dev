@@ -16,4 +16,4 @@ jobs:
         uses: actions/setup-node@v3.2.0
         with:
           node-version: 14
-      - uses: MH4GF/dependency-cruiser-report-action@v0.1.2
+      - uses: MH4GF/dependency-cruiser-report-action@v0.1.3
