@@ -85,6 +85,7 @@
     "eslint-plugin-unused-imports": "*",
     "fishery": "*",
     "husky": "*",
+    "lint-staged": "*",
     "msw": "^0.42.3",
     "msw-storybook-addon": "*",
     "npm-run-all": "*",
@@ -107,5 +108,11 @@
   },
   "msw": {
     "workerDirectory": ".storybook/public"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "yarn lint",
+      "yarn format"
+    ]
   }
 }
