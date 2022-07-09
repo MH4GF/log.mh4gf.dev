@@ -52,6 +52,7 @@
     "@babel/core": "*",
     "@commitlint/cli": "*",
     "@commitlint/config-conventional": "*",
+    "@size-limit/preset-app": "*",
     "@storybook/addon-a11y": "*",
     "@storybook/addon-actions": "*",
     "@storybook/addon-essentials": "6.5.0-alpha.52",
@@ -115,5 +116,10 @@
       "yarn lint",
       "yarn format"
     ]
-  }
+  },
+  "size-limit": [
+    {
+      "path": ".next/**/*.js"
+    }
+  ]
 }
