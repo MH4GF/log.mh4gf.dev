@@ -29,7 +29,7 @@
     "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
     "lhci": "lhci autorun",
     "setup-vercel": "vercel link",
-    "env-pull": "vercel env pull .env.development.local",
+    "env-pull": "vercel env pull .env.local",
     "prepare:husky": "husky install",
     "prepare": "run-p prepare:*"
   },
