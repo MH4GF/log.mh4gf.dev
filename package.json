@@ -93,6 +93,7 @@
     "postcss": "^8",
     "prettier": "*",
     "prettier-plugin-tailwindcss": "*",
+    "size-limit": "*",
     "tailwindcss": "*",
     "typescript": "*",
     "vercel": "*",
