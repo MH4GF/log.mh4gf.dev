@@ -29,7 +29,7 @@
     "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
     "lhci": "lhci autorun",
     "setup-vercel": "vercel link",
-    "env-pull": "vercel env pull .env.development.local",
+    "env-pull": "vercel env pull .env.local",
     "prepare:husky": "husky install",
     "prepare": "run-p prepare:*"
   },
@@ -52,6 +52,7 @@
     "@babel/core": "*",
     "@commitlint/cli": "*",
     "@commitlint/config-conventional": "*",
+    "@size-limit/preset-app": "*",
     "@storybook/addon-a11y": "*",
     "@storybook/addon-actions": "*",
     "@storybook/addon-essentials": "6.5.0-alpha.52",
@@ -93,6 +94,7 @@
     "postcss": "^8",
     "prettier": "*",
     "prettier-plugin-tailwindcss": "*",
+    "size-limit": "*",
     "tailwindcss": "*",
     "typescript": "*",
     "vercel": "*",
@@ -114,5 +116,10 @@
       "yarn lint",
       "yarn format"
     ]
-  }
+  },
+  "size-limit": [
+    {
+      "path": ".next/**/*.js"
+    }
+  ]
 }
