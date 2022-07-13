@@ -37,9 +37,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# docker環境にて、秘匿情報などコミットしたくない環境変数を設定したい際などに使う。
-docker-compose.override.yml
-
 src/generated/**
 !src/generated/.keep
 
