@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { FC } from 'react'
+import type { FC } from 'react'
 
 const DEFAULT_URL = 'https://log.mh4gf.dev'
 const DEFAULT_TITLE = 'log.mh4gf.dev'

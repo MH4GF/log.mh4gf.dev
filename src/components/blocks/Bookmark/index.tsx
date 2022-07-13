@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { FC, Suspense, useId } from 'react'
+import type { FC } from 'react'
+import { Suspense, useId } from 'react'
 
 import { useOGP } from '~/src/features/article/parseOGP/hooks/useOGP'
-import { BlockViewProps } from '~/src/lib/ntn'
+import type { BlockViewProps } from '~/src/lib/ntn'
 
 type Props = {
   url?: string

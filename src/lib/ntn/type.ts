@@ -1,5 +1,5 @@
-import { Client } from '@notionhq/client'
-import { ReactElement } from 'react'
+import type { Client } from '@notionhq/client'
+import type { ReactElement } from 'react'
 
 type ElementType<T> = T extends (infer U)[] ? U : never
 type MatchType<T, U, V = never> = T extends U ? T : V

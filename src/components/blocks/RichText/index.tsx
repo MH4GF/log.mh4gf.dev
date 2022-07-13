@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 
 import { ConditionalWrapper } from '~/src/components/utils/ConditionalWrapper'
 import { pagesPath } from '~/src/generated/$path'
-import { RichTextObject } from '~/src/lib/ntn'
+import type { RichTextObject } from '~/src/lib/ntn'
 
 interface Props {
   richText: RichTextObject

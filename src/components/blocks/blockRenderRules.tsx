@@ -11,7 +11,7 @@ import { Paragraph } from './Paragraph'
 import { Quote } from './Quote'
 import { SyncedBlock } from './SyncedBlock'
 
-import { BlockRenderRules } from '~/src/lib/ntn'
+import type { BlockRenderRules } from '~/src/lib/ntn'
 
 export const blockRenderRules: BlockRenderRules = {
   paragraph: (block) => <Paragraph block={block} key={block.id} />,

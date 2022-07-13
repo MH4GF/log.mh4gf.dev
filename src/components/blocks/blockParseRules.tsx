@@ -1,6 +1,6 @@
 import merge from 'deepmerge'
 
-import { BlockParseRules } from '~/src/lib/ntn'
+import type { BlockParseRules } from '~/src/lib/ntn'
 import { fileDownload } from '~/src/utils/blocks/fileDownload'
 import { servingStaticFilePath } from '~/src/utils/servingStaticFilePath'
 

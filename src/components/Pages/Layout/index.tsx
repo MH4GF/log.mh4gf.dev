@@ -1,10 +1,11 @@
 import Head from 'next/head'
-import { ReactElement, ReactNode } from 'react'
+import type { ReactElement, ReactNode } from 'react'
 
 import { Footer } from '~/src/components/Footer'
 import { Header } from '~/src/components/Header'
 import { Ogp } from '~/src/components/layout/Ogp'
-import { GoogleTagManaagerId, GoogleTagManager } from '~/src/components/utils/GoogleTagManager'
+import type { GoogleTagManaagerId } from '~/src/components/utils/GoogleTagManager'
+import { GoogleTagManager } from '~/src/components/utils/GoogleTagManager'
 
 interface Props {
   children: ReactNode
