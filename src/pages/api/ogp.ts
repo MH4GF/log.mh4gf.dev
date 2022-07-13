@@ -2,7 +2,7 @@ import { withSentry } from '@sentry/nextjs'
 import type { NextApiResponse } from 'next'
 
 import { parseHTML } from '~/src/features/article/parseOGP/server/parseHTML'
-import { OGPResult } from '~/src/features/article/parseOGP/types'
+import type { OGPResult } from '~/src/features/article/parseOGP/types'
 import { apiHandler } from '~/src/server/apiHandler'
 import { ValidationError } from '~/src/server/errors'
 

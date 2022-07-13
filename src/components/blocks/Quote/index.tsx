@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 
 import { RichText } from '../RichText'
 
-import { BlockViewProps } from '~/src/lib/ntn'
+import type { BlockViewProps } from '~/src/lib/ntn'
 
 export const Quote: FC<BlockViewProps<'quote'>> = ({ block }) => {
   return (

@@ -3,7 +3,7 @@ import React from 'react'
 
 import { IndexPage } from 'src/components/Pages/IndexPage'
 import { Layout } from 'src/components/Pages/Layout'
-import { ArticleData } from '~/src/features/article/ArticleModel'
+import type { ArticleData } from '~/src/features/article/ArticleModel'
 import { articleListRepository } from '~/src/features/article/list/repositories/articleListRepository'
 import { NotionClient, LogLevel } from '~/src/lib/ntn'
 

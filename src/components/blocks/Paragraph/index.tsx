@@ -1,6 +1,6 @@
 import { RichText } from '../RichText'
 
-import { BlockViewProps } from '~/src/lib/ntn'
+import type { BlockViewProps } from '~/src/lib/ntn'
 
 export const Paragraph: React.FC<BlockViewProps<'paragraph'>> = ({ block }) => {
   return (

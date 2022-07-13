@@ -35,7 +35,8 @@
         }
       }
     ],
-    "import-access/jsdoc": ["error"]
+    "import-access/jsdoc": ["error"],
+    "@typescript-eslint/consistent-type-imports": ["error"]
   },
   "parserOptions": {
     "project": "./tsconfig.json"

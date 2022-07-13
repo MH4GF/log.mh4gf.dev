@@ -1,4 +1,4 @@
-import { ArticleData } from '~/src/features/article/ArticleModel'
+import type { ArticleData } from '~/src/features/article/ArticleModel'
 import { ArticleList } from '~/src/features/article/list/components/ArticleList'
 
 type Props = {

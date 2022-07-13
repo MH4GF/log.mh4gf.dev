@@ -1,10 +1,11 @@
 import { Client, LogLevel } from '@notionhq/client'
-import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
-import { ClientOptions } from '@notionhq/client/build/src/Client'
-import { Logger, logLevelSeverity, makeConsoleLogger } from '@notionhq/client/build/src/logging'
+import type { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
+import type { ClientOptions } from '@notionhq/client/build/src/Client'
+import type { Logger } from '@notionhq/client/build/src/logging'
+import { logLevelSeverity, makeConsoleLogger } from '@notionhq/client/build/src/logging'
 
 import packageFile from './package.json'
-import { PageObject, BlockObject } from './type'
+import type { PageObject, BlockObject } from './type'
 
 /**
  * @package
