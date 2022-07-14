@@ -5,5 +5,18 @@
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["apps/blog"]
+  "workspaces": [
+    "apps/blog"
+  ],
+  "scripts": {
+    "lint:commit": "commitlint -e $GIT_PARAMS",
+    "prepare:husky": "husky install",
+    "prepare": "run-p prepare:*"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "*",
+    "@commitlint/config-conventional": "*",
+    "husky": "*",
+    "npm-run-all": "*"
+  }
 }

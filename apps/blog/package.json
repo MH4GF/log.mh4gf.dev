@@ -18,7 +18,6 @@
     "start": "next start",
     "lint": "yarn lint:js",
     "lint:js": "next lint --fix",
-    "lint:commit": "commitlint -e $GIT_PARAMS",
     "format": "yarn format:js",
     "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "test": "vitest",
@@ -29,9 +28,7 @@
     "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
     "lhci": "lhci autorun",
     "setup-vercel": "vercel link",
-    "env-pull": "vercel env pull .env.local",
-    "prepare:husky": "husky install",
-    "prepare": "run-p prepare:*"
+    "env-pull": "vercel env pull .env.local"
   },
   "dependencies": {
     "@next/bundle-analyzer": "*",
@@ -50,8 +47,6 @@
   },
   "devDependencies": {
     "@babel/core": "*",
-    "@commitlint/cli": "*",
-    "@commitlint/config-conventional": "*",
     "@size-limit/preset-app": "*",
     "@storybook/addon-a11y": "*",
     "@storybook/addon-actions": "*",
@@ -85,7 +80,6 @@
     "eslint-plugin-storybook": "*",
     "eslint-plugin-unused-imports": "*",
     "fishery": "*",
-    "husky": "*",
     "lint-staged": "*",
     "msw": "^0.42.3",
     "msw-storybook-addon": "*",
