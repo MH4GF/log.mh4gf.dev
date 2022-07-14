@@ -1,0 +1,9 @@
+{
+  "name": "mh4gf.dev",
+  "version": "0.0.1",
+  "repository": "git@github.com:MH4GF/log.mh4gf.dev.git",
+  "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["apps/blog"]
+}
