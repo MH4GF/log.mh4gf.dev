@@ -81,7 +81,7 @@
     "eslint-plugin-unused-imports": "*",
     "fishery": "*",
     "lint-staged": "*",
-    "msw": "^0.42.3",
+    "msw": "^0.44.1",
     "msw-storybook-addon": "*",
     "npm-run-all": "*",
     "pathpida": "*",
