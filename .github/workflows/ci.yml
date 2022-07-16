@@ -31,7 +31,7 @@ jobs:
         run: yarn
 
       - name: Build pathpida type file 👨🏻‍💻
-        run: yarn build:path
+        run: yarn workspace blog build:path
 
       - name: Run linter 👀
         run: yarn lint

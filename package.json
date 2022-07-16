@@ -9,6 +9,10 @@
     "apps/blog"
   ],
   "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev",
     "lint:commit": "commitlint -e $GIT_PARAMS",
     "prepare:husky": "husky install",
     "prepare": "run-p prepare:*"
