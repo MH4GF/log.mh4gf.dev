@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "apps/blog"
+    "apps/*"
   ],
   "scripts": {
     "build": "turbo run build",
