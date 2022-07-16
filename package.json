@@ -17,6 +17,7 @@
     "@commitlint/cli": "*",
     "@commitlint/config-conventional": "*",
     "husky": "*",
-    "npm-run-all": "*"
+    "npm-run-all": "*",
+    "turbo": "*"
   }
 }
