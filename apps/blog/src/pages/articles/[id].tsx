@@ -2,7 +2,6 @@ import type { ParsedUrlQuery } from 'querystring'
 
 import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 import type { ReactElement } from 'react'
-import React from 'react'
 
 import { Layout } from '~/src/components/Pages/Layout'
 import type { ArticleData } from '~/src/features/article/ArticleModel'
