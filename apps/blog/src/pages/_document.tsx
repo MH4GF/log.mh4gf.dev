@@ -1,5 +1,4 @@
 import { Html, Main, NextScript, Head } from 'next/document'
-import React from 'react'
 
 const MyDocument = () => {
   return (

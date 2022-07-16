@@ -1,5 +1,4 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
 
 import { Heading1, Heading2, Heading3 } from '.'
 
