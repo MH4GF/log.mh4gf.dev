@@ -1,4 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import React from 'react'
 
 import { BulletedListItem } from '.'
 
