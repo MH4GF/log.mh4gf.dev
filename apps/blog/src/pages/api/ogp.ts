@@ -15,6 +15,9 @@ const handler = apiHandler.get(async (req, res: NextApiResponse<OGPResult>) => {
       throw new ValidationError('url query parameter must be a single value')
     }
   }
+  if (url === undefined) {
+    throw new ValidationError('url query parameter must be a presence')
+  }
 
   const result = await parseHTML(url)
 
