@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "yarn lint:js",
+    "lint:js": "next lint --fix"
   },
   "dependencies": {
     "next": "*",
