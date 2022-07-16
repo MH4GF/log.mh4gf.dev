@@ -12,9 +12,6 @@
     "noEmit": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"]
-    },
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,

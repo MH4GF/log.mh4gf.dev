@@ -194,7 +194,7 @@ module.exports = {
        - dynamic: a boolean indicating whether to ignore dynamic (true) or static (false) dependencies.
           leave out if you want to exclude neither (recommended!)
     */
-    exclude: ['src/lib/ntn'],
+    exclude: ['app/blog/src/lib/ntn'],
 
     /* pattern specifying which files to include (regular expression)
        dependency-cruiser will skip everything not matching this pattern

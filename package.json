@@ -1,125 +1,28 @@
 {
-  "name": "next-js-project",
-  "version": "0.1.0",
+  "name": "mh4gf.dev",
+  "version": "0.0.1",
+  "repository": "git@github.com:MH4GF/log.mh4gf.dev.git",
+  "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "license": "MIT",
   "private": true,
-  "engines": {
-    "node": "16.x"
-  },
+  "workspaces": [
+    "apps/blog"
+  ],
   "scripts": {
-    "dev": "run-p dev:*",
-    "dev:next": "next dev",
-    "dev:path": "pathpida --watch --output src/generated",
-    "ts": "node -r esbuild-register",
-    "build": "run-p build:*",
-    "build:next": "next build",
-    "build:path": "pathpida --output src/generated",
-    "analyze": "ANALYZE=true yarn build",
-    "test:compile": "tsc --noEmit",
-    "start": "next start",
-    "lint": "yarn lint:js",
-    "lint:js": "next lint --fix",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "dev": "turbo run dev",
     "lint:commit": "commitlint -e $GIT_PARAMS",
-    "format": "yarn format:js",
-    "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "yarn build:path && build-storybook",
-    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
-    "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
-    "lhci": "lhci autorun",
-    "setup-vercel": "vercel link",
-    "env-pull": "vercel env pull .env.local",
     "prepare:husky": "husky install",
     "prepare": "run-p prepare:*"
   },
-  "dependencies": {
-    "@next/bundle-analyzer": "*",
-    "@notionhq/client": "*",
-    "@sentry/nextjs": "*",
-    "axios": "*",
-    "deepmerge": "*",
-    "jsdom": "*",
-    "mime-types": "*",
-    "next": "^12.1.6",
-    "next-connect": "*",
-    "react": "*",
-    "react-dom": "*",
-    "sharp": "*",
-    "swr": "*"
-  },
   "devDependencies": {
-    "@babel/core": "*",
     "@commitlint/cli": "*",
     "@commitlint/config-conventional": "*",
-    "@size-limit/preset-app": "*",
-    "@storybook/addon-a11y": "*",
-    "@storybook/addon-actions": "*",
-    "@storybook/addon-essentials": "6.5.0-alpha.52",
-    "@storybook/addon-interactions": "*",
-    "@storybook/addon-links": "*",
-    "@storybook/addon-postcss": "*",
-    "@storybook/addon-viewport": "*",
-    "@storybook/builder-webpack5": "*",
-    "@storybook/manager-webpack5": "*",
-    "@storybook/react": "*",
-    "@storybook/testing-library": "*",
-    "@svgr/webpack": "*",
-    "@types/jsdom": "*",
-    "@types/mime-types": "^2.1.1",
-    "@types/node": "*",
-    "@types/react": "*",
-    "@typescript-eslint/eslint-plugin": "*",
-    "@typescript-eslint/parser": "*",
-    "autoprefixer": "*",
-    "babel-loader": "*",
-    "chromatic": "*",
-    "dependency-cruiser": "*",
-    "esbuild-loader": "*",
-    "esbuild-register": "*",
-    "eslint": "*",
-    "eslint-config-next": "*",
-    "eslint-config-prettier": "*",
-    "eslint-plugin-import": "*",
-    "eslint-plugin-import-access": "*",
-    "eslint-plugin-storybook": "*",
-    "eslint-plugin-unused-imports": "*",
-    "fishery": "*",
     "husky": "*",
-    "lint-staged": "*",
-    "msw": "^0.42.3",
-    "msw-storybook-addon": "*",
     "npm-run-all": "*",
-    "pathpida": "*",
-    "postcss": "^8",
-    "prettier": "*",
-    "prettier-plugin-tailwindcss": "*",
-    "size-limit": "*",
-    "tailwindcss": "*",
-    "typescript": "*",
-    "vercel": "*",
-    "vitest": "*",
-    "webpack": "*"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "all",
-    "printWidth": 100
-  },
-  "msw": {
-    "workerDirectory": ".storybook/public"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "yarn lint",
-      "yarn format"
-    ]
-  },
-  "size-limit": [
-    {
-      "path": ".next/**/*.js"
-    }
-  ]
+    "turbo": "*"
+  }
 }
