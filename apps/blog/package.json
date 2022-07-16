@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "*",
-    "@notionhq/client": "*",
+    "@notionhq/client": "< 2",
     "@sentry/nextjs": "*",
     "axios": "*",
     "deepmerge": "*",
