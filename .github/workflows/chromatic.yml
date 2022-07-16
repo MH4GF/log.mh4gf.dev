@@ -21,8 +21,10 @@ jobs:
           cache: 'yarn'
       - name: install
         run: yarn install --frozen-lockfile
+        working-directory: apps/blog
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          workingDir: apps/blog
