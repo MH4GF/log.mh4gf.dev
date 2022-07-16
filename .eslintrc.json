@@ -9,8 +9,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/typescript",
-    "plugin:storybook/recommended",
-    "plugin:react/jsx-runtime"
+    "plugin:storybook/recommended"
   ],
   "rules": {
     "no-unused-vars": "off",

@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPageWithLayout } from 'next'
+import React from 'react'
 
 import { IndexPage } from '~/src/components/Pages/IndexPage'
 import { Layout } from '~/src/components/Pages/Layout'
