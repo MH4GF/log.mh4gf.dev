@@ -22,6 +22,7 @@
     "@types/react-dom": "*",
     "eslint": "*",
     "eslint-config-next": "*",
+    "tailwindcss": "*",
     "typescript": "*"
   }
 }
