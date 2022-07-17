@@ -1,7 +1,6 @@
 import Image from 'next/image'
+import type { BlockObject, BlockViewProps } from 'notn'
 import type { FC } from 'react'
-
-import type { BlockObject, BlockViewProps } from '~/src/lib/ntn'
 
 const imageUrl = (block: BlockObject<'image'>) => {
   switch (block.image.type) {

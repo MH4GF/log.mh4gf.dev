@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { ArticleData } from '../../../ArticleModel'
 
 import { blockRenderRules } from '~/src/components/blocks/blockRenderRules'
-import { useRenderBlocks } from '~/src/lib/ntn'
+import { useRenderBlocks } from 'notn'
 
 interface Props {
   article: ArticleData

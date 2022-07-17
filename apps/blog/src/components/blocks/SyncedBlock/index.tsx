@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 
-import type { BlockViewProps } from '~/src/lib/ntn'
+import type { BlockViewProps } from '~/src/components/blocks/types'
 
 export const SyncedBlock: FC<Required<BlockViewProps<'synced_block'>>> = ({
   block,

@@ -40,6 +40,8 @@
     "mime-types": "*",
     "next": "^12.1.6",
     "next-connect": "*",
+    "next-transpile-modules": "9",
+    "notn": "*",
     "react": "*",
     "react-dom": "*",
     "sharp": "*",

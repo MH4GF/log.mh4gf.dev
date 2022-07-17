@@ -1,6 +1,7 @@
+import type { NotionClient } from 'notn'
+
 import { articleDetailRepository } from './articleDetailRepository'
 
-import { NotionClient } from '~/src/lib/ntn'
 import { richTextFactory } from '~/src/test/factories/blocks/richTextFactory'
 import { pageFactory } from '~/src/test/factories/pageFactory'
 

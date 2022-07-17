@@ -1,3 +1,5 @@
+import type { BlockRenderRules } from 'notn'
+
 import { Bookmark } from './Bookmark'
 import { BulletedListItem } from './BulletedListItem'
 import { Callout } from './Callout'
@@ -10,8 +12,6 @@ import { Image } from './Image'
 import { Paragraph } from './Paragraph'
 import { Quote } from './Quote'
 import { SyncedBlock } from './SyncedBlock'
-
-import type { BlockRenderRules } from '~/src/lib/ntn'
 
 export const blockRenderRules: BlockRenderRules = {
   paragraph: (block) => <Paragraph block={block} key={block.id} />,

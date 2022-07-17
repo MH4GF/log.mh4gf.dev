@@ -2,7 +2,7 @@ import { existsSync, mkdirSync } from 'fs'
 
 import { download } from '../download'
 
-import { BlockObject } from '~/src/lib/ntn'
+import { BlockObject } from 'notn'
 
 const uploadDir = (type: string) => `public/tmp/${type}`
 
