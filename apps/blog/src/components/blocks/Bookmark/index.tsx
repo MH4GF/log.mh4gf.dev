@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import type { BlockViewProps } from 'notn'
 import type { FC } from 'react'
 import { Suspense, useId } from 'react'
 
+import type { BlockViewProps } from '~/src/components/blocks/types'
 import { useOGP } from '~/src/features/article/parseOGP/hooks/useOGP'
 
 type Props = {

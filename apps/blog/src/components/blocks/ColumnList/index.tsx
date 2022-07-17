@@ -1,5 +1,6 @@
-import type { BlockViewProps } from 'notn'
 import type { FC } from 'react'
+
+import type { BlockViewProps } from '~/src/components/blocks/types'
 
 export const ColumnList: FC<Required<BlockViewProps<'column_list'>>> = ({
   block,
