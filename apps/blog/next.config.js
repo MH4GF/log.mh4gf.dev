@@ -19,5 +19,8 @@ const { withSentryConfig } = require('@sentry/nextjs')
 const sentryWebpackPluginOptions = {
   dryRun: process.env.RELEASE !== 'true',
 }
+const withTM = require('next-transpile-modules')(['notn'])
 
-module.exports = withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
+module.exports = withBundleAnalyzer(
+  withTM(withSentryConfig(nextConfig, sentryWebpackPluginOptions)),
+)
