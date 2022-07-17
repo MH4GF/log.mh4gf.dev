@@ -1,6 +1,5 @@
+import type { BlockViewProps } from 'notn'
 import type { FC } from 'react'
-
-import type { BlockViewProps } from '~/src/lib/ntn'
 
 export const Column: FC<Required<BlockViewProps<'column'>>> = ({ block, renderBlocks }) => {
   if (!block.children) {

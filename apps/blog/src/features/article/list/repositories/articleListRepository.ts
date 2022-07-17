@@ -1,6 +1,6 @@
-import { ArticleModel } from '../../ArticleModel'
+import type { NotionClient } from 'notn'
 
-import { NotionClient } from '~/src/lib/ntn'
+import { ArticleModel } from '../../ArticleModel'
 
 export const articleListRepository = async (client: NotionClient) => {
   const pages = await client.fetchDatabasePages({

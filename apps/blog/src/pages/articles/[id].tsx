@@ -1,6 +1,7 @@
 import type { ParsedUrlQuery } from 'querystring'
 
 import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
+import { LogLevel, NotionClient } from 'notn'
 import type { ReactElement } from 'react'
 import React from 'react'
 
@@ -9,7 +10,6 @@ import type { ArticleData } from '~/src/features/article/ArticleModel'
 import { ArticleDetail } from '~/src/features/article/detail/compoments/ArticleDetail'
 import { articleDetailRepository } from '~/src/features/article/detail/repositories/articleDetailRepository'
 import { articlePathRepository } from '~/src/features/article/detail/repositories/articlePathRepository'
-import { LogLevel, NotionClient } from '~/src/lib/ntn'
 
 interface Params extends ParsedUrlQuery {
   id: string

@@ -3,7 +3,7 @@ import { Factory } from 'fishery'
 import { baseBlock } from './baseBlock'
 import { richTextFactory } from './richTextFactory'
 
-import { BlockObject } from '~/src/lib/ntn'
+import { BlockObject } from 'notn'
 
 export const heading1Factory = Factory.define<BlockObject<'heading_1'>>(() => ({
   ...baseBlock,

@@ -1,8 +1,7 @@
 import { Factory } from 'fishery'
+import type { BlockObject } from 'notn'
 
 import { baseBlock } from './baseBlock'
-
-import { BlockObject } from '~/src/lib/ntn'
 
 export const imageFactory = Factory.define<BlockObject<'image'>>(() => ({
   ...baseBlock,

@@ -1,4 +1,4 @@
-import { BlockObject } from '~/src/lib/ntn'
+import type { BlockObject } from 'notn'
 
 export const baseBlock: Omit<BlockObject, 'has_children' | 'type'> = {
   object: 'block',

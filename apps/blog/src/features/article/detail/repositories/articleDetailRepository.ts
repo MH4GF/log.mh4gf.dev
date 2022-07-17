@@ -1,7 +1,9 @@
+import type { NotionClient, PageObject } from 'notn'
+import { buildBlockParser } from 'notn'
+
 import { ArticleModel } from '../../ArticleModel'
 
 import { blockParseRules } from '~/src/components/blocks/blockParseRules'
-import { buildBlockParser, NotionClient, PageObject } from '~/src/lib/ntn'
 
 const getPage = async (client: NotionClient, slug: string) => {
   let page: PageObject | undefined = undefined

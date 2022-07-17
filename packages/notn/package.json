@@ -9,6 +9,9 @@
   "keywords": [
     "notion"
   ],
+  "devDependencies": {
+    "@types/react": "*"
+  },
   "author": "MH4GF",
   "license": "ISC"
 }
