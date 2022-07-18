@@ -18,8 +18,6 @@
     "start": "next start",
     "lint": "yarn lint:js",
     "lint:js": "next lint --fix",
-    "format": "yarn format:js",
-    "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "storybook": "start-storybook -p 6006",
@@ -88,21 +86,12 @@
     "npm-run-all": "*",
     "pathpida": "*",
     "postcss": "^8",
-    "prettier": "*",
-    "prettier-plugin-tailwindcss": "*",
     "size-limit": "*",
     "tailwindcss": "*",
     "typescript": "*",
     "vercel": "*",
     "vitest": "*",
     "webpack": "*"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "all",
-    "printWidth": 100
   },
   "msw": {
     "workerDirectory": ".storybook/public"

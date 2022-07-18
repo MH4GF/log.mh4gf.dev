@@ -8,7 +8,10 @@ export const pageFactory = Factory.define<PageObject>(() => ({
   created_time: '2022-05-10T00:06:00.000Z',
   last_edited_time: '2022-05-11T17:26:00.000Z',
   created_by: { object: 'user', id: 'ab25a488-8808-41be-86f0-1ba5198ea33c' },
-  last_edited_by: { object: 'user', id: 'ab25a488-8808-41be-86f0-1ba5198ea33c' },
+  last_edited_by: {
+    object: 'user',
+    id: 'ab25a488-8808-41be-86f0-1ba5198ea33c',
+  },
   cover: null,
   icon: null,
   parent: {

@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "yarn lint:js",
-    "lint:js": "next lint --fix",
-    "format": "yarn format:js",
-    "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
+    "lint:js": "next lint --fix"
   },
   "dependencies": {
     "next": "*",

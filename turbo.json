@@ -3,24 +3,16 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "build": {
-      "outputs": [
-        ".next/**"
-      ]
+      "outputs": [".next/**"]
     },
     "dev": {
       "outputs": []
     },
     "test": {
       "outputs": [],
-      "inputs": [
-        "src/**/*.tsx",
-        "src/**/*.ts"
-      ]
+      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
     },
     "lint": {
-      "outputs": []
-    },
-    "format": {
       "outputs": []
     }
   }

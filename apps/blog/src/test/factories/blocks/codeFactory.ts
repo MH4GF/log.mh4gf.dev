@@ -12,7 +12,12 @@ export const codeFactory = Factory.define<BlockObject<'code'>>(() => ({
   type: 'code',
   code: {
     caption: [],
-    rich_text: [richTextFactory.build({ text: { content: htmlText }, plain_text: htmlText })],
+    rich_text: [
+      richTextFactory.build({
+        text: { content: htmlText },
+        plain_text: htmlText,
+      }),
+    ],
     language: 'html',
   },
 }))

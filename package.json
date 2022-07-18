@@ -13,7 +13,7 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
-    "format": "turbo run format",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "dev": "turbo run dev",
     "lint:commit": "commitlint -e $GIT_PARAMS",
     "prepare:husky": "husky install",
@@ -24,6 +24,15 @@
     "@commitlint/config-conventional": "*",
     "husky": "*",
     "npm-run-all": "*",
+    "prettier": "*",
+    "prettier-plugin-tailwindcss": "*",
     "turbo": "*"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "printWidth": 100
   }
 }
