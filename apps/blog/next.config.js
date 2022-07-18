@@ -14,7 +14,6 @@ const nextConfig = {
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-
 const { withSentryConfig } = require('@sentry/nextjs')
 const sentryWebpackPluginOptions = {
   dryRun: process.env.RELEASE !== 'true',

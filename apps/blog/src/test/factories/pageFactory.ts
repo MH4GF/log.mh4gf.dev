@@ -1,6 +1,5 @@
 import { Factory } from 'fishery'
-
-import { PageObject } from 'notn'
+import type { PageObject } from 'notn'
 
 export const pageFactory = Factory.define<PageObject>(() => ({
   object: 'page',

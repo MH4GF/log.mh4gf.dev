@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { JSDOM } from 'jsdom'
 
-import { OGPResult } from '../types'
+import type { OGPResult } from '../types'
 
 const extractOGP = (head: HTMLHeadElement): OGPResult => {
   const properties: { [key in string]: string } = {}

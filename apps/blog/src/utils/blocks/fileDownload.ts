@@ -1,8 +1,8 @@
 import { existsSync, mkdirSync } from 'fs'
 
-import { download } from '../download'
+import type { BlockObject } from 'notn'
 
-import { BlockObject } from 'notn'
+import { download } from '../download'
 
 const uploadDir = (type: string) => `public/tmp/${type}`
 

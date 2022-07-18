@@ -1,9 +1,8 @@
 import { Factory } from 'fishery'
+import type { BlockObject } from 'notn'
 
 import { baseBlock } from './baseBlock'
 import { richTextFactory } from './richTextFactory'
-
-import { BlockObject } from 'notn'
 
 const htmlText = '<html>\n\t<head>\n\t\t<title> Hello Nobelium! </title> \n\t</head> \n</html>'
 export const codeFactory = Factory.define<BlockObject<'code'>>(() => ({
