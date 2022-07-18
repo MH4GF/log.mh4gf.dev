@@ -20,8 +20,10 @@
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
+    "autoprefixer": "*",
     "eslint": "*",
     "eslint-config-next": "*",
+    "postcss": "^8",
     "tailwindcss": "*",
     "typescript": "*"
   }
