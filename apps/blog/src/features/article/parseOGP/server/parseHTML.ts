@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { JSDOM } from 'jsdom'
 
-import { OGPResult } from '../types'
+import type { OGPResult } from '../types'
 
 const extractOGP = (head: HTMLHeadElement): OGPResult => {
   const properties: { [key in string]: string } = {}
@@ -25,7 +25,10 @@ const extractOGP = (head: HTMLHeadElement): OGPResult => {
 
 export const parseHTML = async (url: string): Promise<OGPResult> => {
   const headers = { 'User-Agent': 'bot' }
-  const res = await axios.get<string>(url, { headers, responseType: 'document' })
+  const res = await axios.get<string>(url, {
+    headers,
+    responseType: 'document',
+  })
   const dom = new JSDOM(res.data)
 
   return extractOGP(dom.window.document.head)

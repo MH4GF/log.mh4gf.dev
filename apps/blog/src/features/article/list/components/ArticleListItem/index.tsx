@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { ArticleData } from '../../../ArticleModel'
+import type { ArticleData } from '../../../ArticleModel'
 
 import ExternalLinkIcon from '~/src/assets/svg/external-link.svg'
 import { TagChip } from '~/src/components/TagChip'

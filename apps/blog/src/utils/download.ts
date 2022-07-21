@@ -1,4 +1,5 @@
-import { createWriteStream, ReadStream } from 'fs'
+import type { ReadStream } from 'fs'
+import { createWriteStream } from 'fs'
 import * as stream from 'stream'
 import { promisify } from 'util'
 

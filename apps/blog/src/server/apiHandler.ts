@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next'
 import nextConnect from 'next-connect'
 
 import { ValidationError } from './errors'

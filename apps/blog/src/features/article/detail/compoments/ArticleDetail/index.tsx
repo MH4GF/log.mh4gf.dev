@@ -1,9 +1,9 @@
-import { FC } from 'react'
+import { useRenderBlocks } from 'notn'
+import type { FC } from 'react'
 
-import { ArticleData } from '../../../ArticleModel'
+import type { ArticleData } from '../../../ArticleModel'
 
 import { blockRenderRules } from '~/src/components/blocks/blockRenderRules'
-import { useRenderBlocks } from 'notn'
 
 interface Props {
   article: ArticleData

@@ -1,6 +1,5 @@
 import { Factory } from 'fishery'
-
-import { RichTextObject } from 'notn'
+import type { RichTextObject } from 'notn'
 
 const annotations: RichTextObject['annotations'] = {
   bold: false,

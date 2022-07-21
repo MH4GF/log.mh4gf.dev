@@ -7,12 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "yarn lint:js",
-    "lint:js": "next lint --fix",
-    "format": "yarn format:js",
-    "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
+    "lint:js": "next lint --fix"
   },
   "dependencies": {
-    "next": "*",
+    "next": "^12.2.2",
     "react": "*",
     "react-dom": "*"
   },
@@ -20,8 +18,11 @@
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
+    "autoprefixer": "*",
     "eslint": "*",
     "eslint-config-next": "*",
+    "postcss": "^8",
+    "tailwindcss": "*",
     "typescript": "*"
   }
 }

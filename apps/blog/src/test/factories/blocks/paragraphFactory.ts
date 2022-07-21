@@ -1,9 +1,8 @@
 import { Factory } from 'fishery'
+import type { BlockObject } from 'notn'
 
 import { baseBlock } from './baseBlock'
 import { richTextFactory } from './richTextFactory'
-
-import { BlockObject } from 'notn'
 
 export const paragraphFactory = Factory.define<BlockObject<'paragraph'>>(() => ({
   ...baseBlock,

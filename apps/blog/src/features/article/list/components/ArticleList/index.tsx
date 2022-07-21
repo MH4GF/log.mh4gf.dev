@@ -1,4 +1,4 @@
-import { ArticleData } from '../../../ArticleModel'
+import type { ArticleData } from '../../../ArticleModel'
 import { ArticleListItem } from '../ArticleListItem'
 
 type Props = {

@@ -25,7 +25,11 @@ export const Default: ComponentStory<typeof RichText> = () => (
     </div>
     <div>
       <p className="text-gray-300">strikethrough</p>
-      <RichText richText={richTextFactory.build({ annotations: { strikethrough: true } })} />
+      <RichText
+        richText={richTextFactory.build({
+          annotations: { strikethrough: true },
+        })}
+      />
     </div>
     <div>
       <p className="text-gray-300">underline</p>
@@ -39,7 +43,10 @@ export const Default: ComponentStory<typeof RichText> = () => (
       <p className="text-gray-300">colors</p>
       <RichText
         richText={richTextFactory.build({
-          text: { content: 'https://example.com/', link: { url: 'https://example.com/' } },
+          text: {
+            content: 'https://example.com/',
+            link: { url: 'https://example.com/' },
+          },
           plain_text: 'https://example.com/',
         })}
       />
@@ -60,7 +67,10 @@ export const Default: ComponentStory<typeof RichText> = () => (
       <p className="text-gray-300">text with link</p>
       <RichText
         richText={richTextFactory.build({
-          text: { content: 'https://example.com/', link: { url: 'https://example.com/' } },
+          text: {
+            content: 'https://example.com/',
+            link: { url: 'https://example.com/' },
+          },
           plain_text: 'https://example.com/',
         })}
       />
