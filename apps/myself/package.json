@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "yarn lint:js",
-    "lint:js": "next lint --fix"
+    "lint:js": "next lint --fix",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "next": "^12.2.2",
@@ -15,10 +17,20 @@
     "react-dom": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
     "autoprefixer": "*",
+    "babel-loader": "^8.2.5",
     "eslint": "*",
     "eslint-config-next": "*",
     "postcss": "^8",
