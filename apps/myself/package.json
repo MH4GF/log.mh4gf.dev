@@ -14,7 +14,11 @@
   "dependencies": {
     "next": "^12.2.2",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "react-remark": "*",
+    "rehype-parse": "*",
+    "rehype-react": "*",
+    "unified": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
