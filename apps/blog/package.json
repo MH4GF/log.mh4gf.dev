@@ -47,7 +47,6 @@
   },
   "devDependencies": {
     "@babel/core": "*",
-    "@size-limit/preset-app": "*",
     "@storybook/addon-a11y": "*",
     "@storybook/addon-actions": "*",
     "@storybook/addon-essentials": "6.5.0-alpha.52",
@@ -86,7 +85,6 @@
     "npm-run-all": "*",
     "pathpida": "*",
     "postcss": "^8",
-    "size-limit": "*",
     "tailwindcss": "*",
     "typescript": "*",
     "vercel": "*",
@@ -101,10 +99,5 @@
       "yarn lint",
       "yarn format"
     ]
-  },
-  "size-limit": [
-    {
-      "path": ".next/**/*.js"
-    }
-  ]
+  }
 }
