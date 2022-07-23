@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import type { ComponentPropsWithoutRef, FC } from 'react'
+import React from 'react'
 
 type Props = ComponentPropsWithoutRef<'img'>
 
