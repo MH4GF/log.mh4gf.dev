@@ -8,7 +8,7 @@
 
 # 宮城広隆
 
-![%E5%BA%83%E9%9A%86%207065185d6a9e4ad99d034eaee28f3e1b/Works%20c46483c8ba064eb5be24bb020441247a/Business%20Unit%20fcf8eec9aad94cb09cc4fda83d4a3837/Branding%2094469cd5c901438b97ebdb8ac1e667d2/Hirotaka%20Miyagi%20bb9ee2fa075043ee8c859ad4435ed333/profile2.jpg](%E5%BA%83%E9%9A%86%207065185d6a9e4ad99d034eaee28f3e1b/Works%20c46483c8ba064eb5be24bb020441247a/Business%20Unit%20fcf8eec9aad94cb09cc4fda83d4a3837/Branding%2094469cd5c901438b97ebdb8ac1e667d2/Hirotaka%20Miyagi%20bb9ee2fa075043ee8c859ad4435ed333/profile2.jpg)
+![profile.jpeg](/assets/profile.jpeg)
 
 ## 現在のステータス
 
