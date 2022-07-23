@@ -12,6 +12,12 @@ jobs:
   ci:
     runs-on: ${{ matrix.os }}
 
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      NOTION_TOKEN: $${{ secrets.NOTION_TOKEN }}
+      NOTION_DATABASE_ID: $${{ secrets.NOTION_DATABASE_ID }}
+
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -29,9 +35,6 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn
-
-      - name: Build pathpida type file 👨🏻‍💻
-        run: yarn workspace blog build:path
 
       - name: Run linter 👀
         run: yarn lint

@@ -6,6 +6,11 @@ on:
 jobs:
   chromatic-deployment:
     runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      NOTION_TOKEN: $${{ secrets.NOTION_TOKEN }}
+      NOTION_DATABASE_ID: $${{ secrets.NOTION_DATABASE_ID }}
     strategy:
       matrix:
         node-version: [16]
