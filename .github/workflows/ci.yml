@@ -36,9 +36,6 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
-      - name: Run linter 👀
-        run: yarn lint
-
       - name: Check format 👀
         run: |
           yarn format
@@ -46,3 +43,6 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
+
+      - name: Run linter 👀
+        run: yarn lint
