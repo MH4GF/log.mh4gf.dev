@@ -1,4 +1,5 @@
 import '~/src/styles/tailwind.css'
+import 'ui/dist/style.css'
 import type { AppPropsWithLayout } from 'next/app'
 import React from 'react'
 
