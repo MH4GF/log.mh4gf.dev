@@ -19,7 +19,8 @@
     "react-remark": "*",
     "rehype-parse": "*",
     "rehype-react": "*",
-    "unified": "*"
+    "unified": "*",
+    "ui": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
