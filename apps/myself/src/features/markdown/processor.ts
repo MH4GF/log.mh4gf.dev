@@ -4,7 +4,7 @@ import remarkParse from 'remark-parse'
 import remark2Rehype from 'remark-rehype'
 import { unified } from 'unified'
 
-import { Image } from './components/tags'
+import { H1, Image } from './components/tags'
 
 export const processor = unified()
   .use(remarkParse)
@@ -13,7 +13,7 @@ export const processor = unified()
     createElement,
     Fragment,
     components: {
-      h1: 'h1',
+      h1: H1,
       img: Image,
     },
   })

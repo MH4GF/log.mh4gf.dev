@@ -13,9 +13,14 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "types": "./types/main.d.ts",
+  "style": "./dist/style.css",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -31,5 +36,9 @@
     "@vitejs/plugin-react": "^2.0.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.7.2",
+    "@vanilla-extract/vite-plugin": "^3.2.1"
   }
 }
