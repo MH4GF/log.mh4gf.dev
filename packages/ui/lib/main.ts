@@ -1,1 +1,1 @@
-export * from './components'
+export { Heading1, Heading2, Heading3 } from './components'
