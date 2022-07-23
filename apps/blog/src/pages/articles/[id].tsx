@@ -25,6 +25,8 @@ const Page: NextPageWithLayout<Props> = (props) => {
 
 export default Page
 
+console.log(process.env.NOTION_TOKEN)
+console.log(process.env)
 const client = new NotionClient({
   auth: process.env.NOTION_TOKEN,
   logLevel: LogLevel.DEBUG,
