@@ -2,8 +2,9 @@ import { readFile } from 'fs/promises'
 
 import type { Article } from '../types'
 
+import { DEFAULT_PATH } from './constants'
+
 type ArticleDetailRepository = (slug: string, path?: string) => Promise<Article>
-const DEFAULT_PATH = 'contents/articles'
 
 /**
  * @package
