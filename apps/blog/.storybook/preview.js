@@ -1,4 +1,5 @@
 import '../src/styles/tailwind.css'
+import 'ui/dist/style.css'
 import * as NextImage from 'next/image'
 import { initialize, mswDecorator } from 'msw-storybook-addon'
 
