@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof Heading1>
 
 export const Default: ComponentStory<typeof Heading1> = () => (
-  <div className="grid gap-4">
+  <div className="grid gap-5">
     <Heading1 block={heading1Factory.build()} />
     <Heading2 block={heading2Factory.build()} />
     <Heading3 block={heading3Factory.build()} />
