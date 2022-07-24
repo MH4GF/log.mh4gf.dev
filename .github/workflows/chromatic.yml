@@ -18,10 +18,13 @@ jobs:
         uses: actions/setup-node@v3.2.0
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: yarn
       - name: install
-        run: yarn install --frozen-lockfile
-        working-directory: apps/blog
+        run: yarn
+      - run: npx turbo run build --filter=ui
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:

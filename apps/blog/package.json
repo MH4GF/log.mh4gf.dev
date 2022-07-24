@@ -10,7 +10,7 @@
     "dev:next": "next dev",
     "dev:path": "pathpida --watch --output src/generated",
     "ts": "node -r esbuild-register",
-    "build": "run-p build:*",
+    "build": "yarn run build:path && yarn run build:next",
     "build:next": "next build",
     "build:path": "pathpida --output src/generated",
     "analyze": "ANALYZE=true yarn build",
@@ -43,7 +43,8 @@
     "react": "*",
     "react-dom": "*",
     "sharp": "*",
-    "swr": "*"
+    "swr": "*",
+    "ui": "*"
   },
   "devDependencies": {
     "@babel/core": "*",

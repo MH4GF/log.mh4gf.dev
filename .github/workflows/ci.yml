@@ -11,35 +11,30 @@ on:
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
         os: [ubuntu-latest]
         node: [16]
-
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v3
-
       - name: Setup node env 🏗
         uses: actions/setup-node@v3.2.0
         with:
           node-version: ${{ matrix.node }}
           cache: yarn
-
       - name: Install dependencies 👨🏻‍💻
         run: yarn
-
       - name: Build pathpida type file 👨🏻‍💻
         run: yarn workspace blog build:path
-
       - name: Run linter 👀
         run: yarn lint
-
       - name: Check format 👀
         run: |
           yarn format
           git diff --exit-code
-
       - name: Run tests 🧪
         run: yarn test
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}

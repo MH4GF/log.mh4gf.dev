@@ -3,12 +3,21 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "build": {
+      "dependsOn": ["^build"],
       "outputs": [".next/**"]
     },
+    "blog#build": {
+      "dependsOn": ["^build", "$NOTION_DATABASE_ID", "$NOTION_TOKEN", "$RELEASE"]
+    },
+    "ui#build": {
+      "outputs": ["dist/**", "types/**"]
+    },
     "dev": {
+      "dependsOn": ["ui#build"],
       "outputs": []
     },
     "test": {
+      "dependsOn": ["ui#build"],
       "outputs": [],
       "inputs": ["src/**/*.tsx", "src/**/*.ts"]
     },
