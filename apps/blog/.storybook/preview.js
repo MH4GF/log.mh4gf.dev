@@ -27,7 +27,7 @@ export const parameters = {
       },
     ],
   },
-  chromatic: { viewports: [320, 414, 834, 1200] }, // same as default of @storybook/addon-viewport
+  chromatic: { viewports: [320, 1200] },
 }
 
 // msw
