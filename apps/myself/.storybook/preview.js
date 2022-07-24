@@ -1,3 +1,6 @@
+import 'the-new-css-reset/css/reset.css'
+import 'ui/dist/style.css'
+
 import * as NextImage from 'next/image'
 
 const OriginalNextImage = NextImage.default
