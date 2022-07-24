@@ -38,13 +38,10 @@
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
-    "autoprefixer": "*",
     "babel-loader": "^8.2.5",
     "eslint": "*",
     "eslint-config-next": "*",
     "jsdom": "^20.0.0",
-    "postcss": "^8",
-    "tailwindcss": "*",
     "typescript": "*",
     "vitest": "^0.18.1"
   }
