@@ -19,8 +19,9 @@
     "react-remark": "*",
     "rehype-parse": "*",
     "rehype-react": "*",
-    "unified": "*",
-    "ui": "*"
+    "the-new-css-reset": "^1.7.2",
+    "ui": "*",
+    "unified": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
