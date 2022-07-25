@@ -41,6 +41,7 @@
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
+    "@vanilla-extract/webpack-plugin": "^2.1.11",
     "babel-loader": "^8.2.5",
     "eslint": "*",
     "eslint-config-next": "*",
