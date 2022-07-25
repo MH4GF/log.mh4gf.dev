@@ -3,6 +3,7 @@ import type { ParsedUrlQuery } from 'querystring'
 import type { GetStaticPaths, GetStaticProps, NextPageWithLayout } from 'next'
 
 import { ArticlePage } from '~/src/components/pages/ArticlePage'
+import { Layout } from '~/src/components/pages/Layout'
 import type { Article } from '~/src/features/article'
 import { articleDetailRepository, articlePathRepository } from '~/src/features/article/server'
 
@@ -38,3 +39,5 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) 
 
   return { props: { article } }
 }
+
+Page.getLayout = (page) => <Layout>{page}</Layout>
