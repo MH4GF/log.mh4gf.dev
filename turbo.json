@@ -23,6 +23,9 @@
     },
     "lint": {
       "outputs": []
+    },
+    "storybook": {
+      "outputs": []
     }
   }
 }
