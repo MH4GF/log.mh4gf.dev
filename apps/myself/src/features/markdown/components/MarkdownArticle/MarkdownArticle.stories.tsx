@@ -11,6 +11,9 @@ const Template: ComponentStory<typeof MarkdownArticle> = (args) => <MarkdownArti
 
 export const Default = Template.bind({})
 Default.args = {
-  markdownText: `# Hello, world!
+  markdownText: `
+  # Heading 1
+  ## Heading 2
+  ### Heading 3
   Welcome to my page 👀`,
 }
