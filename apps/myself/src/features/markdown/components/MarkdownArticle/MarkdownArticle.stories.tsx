@@ -15,5 +15,9 @@ Default.args = {
   # Heading 1
   ## Heading 2
   ### Heading 3
-  Welcome to my page 👀`,
+  This is paragraph 👀
+  - list item 1
+  - list item 2
+    - list item 2-1
+  `,
 }

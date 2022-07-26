@@ -9,7 +9,7 @@
     "lint": "yarn lint:js",
     "lint:js": "next lint --fix",
     "test": "vitest",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
