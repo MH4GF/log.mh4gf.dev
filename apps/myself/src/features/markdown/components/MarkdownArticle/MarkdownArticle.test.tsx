@@ -8,6 +8,6 @@ describe('MarkdownArticle', () => {
   const { Default } = composeStories(stories)
   it('should render from markdown', () => {
     render(<Default />)
-    expect(screen.getByRole('article'))
+    expect(screen.getByRole('article')).toBeInTheDocument()
   })
 })
