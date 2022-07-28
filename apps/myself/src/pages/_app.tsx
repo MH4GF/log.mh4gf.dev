@@ -1,9 +1,13 @@
 import 'the-new-css-reset/css/reset.css'
 import 'ui/dist/style.css'
-import type { AppProps } from 'next/app'
+import '~/src/styles/global.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import type { AppPropsWithLayout } from 'next/app'
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page)
+
+  return getLayout(<Component {...pageProps} />)
 }
 
 export default MyApp
