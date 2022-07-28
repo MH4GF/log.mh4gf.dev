@@ -7,4 +7,5 @@ globalStyle('body', {
   fontFamily:
     'Inter,Helvetica Neue,Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif;',
   color: theme.color.text,
+  lineHeight: 2,
 })

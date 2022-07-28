@@ -15,7 +15,12 @@ Default.args = {
   # Heading 1
   ## Heading 2
   ### Heading 3
-  This is paragraph 👀
+
+  This is paragraph,\n
+  This is line 2
+
+  This is line 3 with 1 space
+
   - list item 1
   - list item 2
     - list item 2-1
