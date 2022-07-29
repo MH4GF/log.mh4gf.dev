@@ -1,4 +1,5 @@
 import type { FC } from 'react'
+import { UnorderedList } from 'ui'
 
 import { RichText } from '../RichText'
 
@@ -9,13 +10,13 @@ export const BulletedListItem: FC<Required<BlockViewProps<'bulleted_list_item'>>
   renderBlocks,
 }) => {
   return (
-    <ul className="ml-6 list-disc">
+    <UnorderedList>
       <li>
         {block.bulleted_list_item.rich_text.map((text, index) => (
           <RichText key={`${block.id}_${index}`} richText={text} />
         ))}
       </li>
       {block.children && renderBlocks(block.children)}
-    </ul>
+    </UnorderedList>
   )
 }

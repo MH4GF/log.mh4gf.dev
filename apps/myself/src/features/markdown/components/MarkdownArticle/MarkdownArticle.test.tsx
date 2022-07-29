@@ -8,6 +8,18 @@ describe('MarkdownArticle', () => {
   const { Default } = composeStories(stories)
   it('should render from markdown', () => {
     render(<Default />)
-    expect(screen.getByRole('article'))
+
+    const targets = [
+      ['article'],
+      ['heading', { name: 'Heading 1' }],
+      ['heading', { name: 'Heading 2' }],
+      ['heading', { name: 'Heading 3' }],
+    ]
+
+    targets.forEach((target) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      expect(screen.getByRole(...target)).toBeInTheDocument()
+    })
   })
 })
