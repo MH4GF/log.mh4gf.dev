@@ -1,3 +1,5 @@
+import 'the-new-css-reset/css/reset.css'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
