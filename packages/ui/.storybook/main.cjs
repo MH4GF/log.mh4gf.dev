@@ -1,3 +1,5 @@
+const { vanillaExtractPlugin } = require('@vanilla-extract/vite-plugin')
+
 module.exports = {
   stories: ['../lib/**/*.stories.@(ts|tsx)'],
   addons: [
@@ -11,5 +13,9 @@ module.exports = {
   },
   features: {
     storyStoreV7: true,
+  },
+  async viteFinal(config) {
+    config.plugins.push(vanillaExtractPlugin())
+    return config
   },
 }
