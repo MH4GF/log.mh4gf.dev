@@ -15,6 +15,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "dev": "turbo run dev",
+    "storybook": "turbo run storybook",
     "lint:commit": "commitlint -e $GIT_PARAMS",
     "prepare:husky": "husky install",
     "prepare": "run-p prepare:*"

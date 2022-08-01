@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { FC } from 'react'
-import { Suspense, useId } from 'react'
+import { Suspense } from 'react'
+import { LinkCard } from 'ui'
 
 import type { BlockViewProps } from '~/src/components/blocks/types'
 import { useOGP } from '~/src/features/article/parseOGP/hooks/useOGP'
@@ -15,27 +16,9 @@ type Props = {
 /**
  * @package
  */
-export const BookMarkCard: FC<Props> = (props) => {
-  const { url, title, description, image } = props
-  const headingId = useId()
-
-  return (
-    <section
-      aria-labelledby={headingId}
-      className="h-24 rounded border border-zinc-700 hover:bg-zinc-800"
-    >
-      <a href={url} className="flex h-full" target="_blank" rel="noreferrer">
-        <div className="w-8/12 p-2 md:w-9/12">
-          <h3 id={headingId}>{title}</h3>
-          <p className="text-sm text-zinc-500">{description}</p>
-        </div>
-        <div className="w-4/12 md:w-3/12">
-          <img alt={title} src={image} className="h-full w-full object-cover" />
-        </div>
-      </a>
-    </section>
-  )
-}
+export const BookMarkCard: FC<Props> = (props) => (
+  <LinkCard className="border-zinc-700 hover:bg-zinc-800" {...props} />
+)
 
 type BookmarkBlockProps = {
   url: string

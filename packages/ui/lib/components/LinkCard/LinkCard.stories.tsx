@@ -9,3 +9,10 @@ export default {
 const Template: ComponentStory<typeof LinkCard> = (args) => <LinkCard {...args} />
 
 export const Default = Template.bind({})
+Default.args = {
+  url: 'https://mh4gf.dev',
+  title: 'Me',
+  description: 'my portfolio',
+  imageSrc: 'https://cli.github.com/assets/images/social-card.png',
+  className: 'another-class-name',
+}
