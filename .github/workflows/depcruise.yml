@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: setup node
-        uses: actions/setup-node@v3.2.0
+        uses: actions/setup-node@v3.4.1
         with:
           node-version: 16
       - uses: MH4GF/dependency-cruiser-report-action@v0.1.3
