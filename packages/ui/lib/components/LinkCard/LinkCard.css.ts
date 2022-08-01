@@ -6,7 +6,8 @@ export const linkCardStyle = style({
   width: '100%',
   height: '6rem',
   borderRadius: '0.25rem',
-  border: '1px solid #eaeaea',
+  borderWidth: '1px',
+  borderStyle: 'solid',
 })
 
 export const linkStyle = style({

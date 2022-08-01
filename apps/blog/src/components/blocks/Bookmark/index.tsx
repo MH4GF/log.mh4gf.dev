@@ -17,7 +17,7 @@ type Props = {
  * @package
  */
 export const BookMarkCard: FC<Props> = (props) => (
-  <LinkCard className="border-zinc-800" {...props} />
+  <LinkCard className="border-zinc-700 hover:bg-zinc-800" {...props} />
 )
 
 type BookmarkBlockProps = {
