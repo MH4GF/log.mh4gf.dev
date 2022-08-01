@@ -8,6 +8,9 @@ export const linkCardStyle = style({
   borderRadius: '0.25rem',
   borderWidth: '1px',
   borderStyle: 'solid',
+  ':hover': {
+    cursor: 'pointer',
+  },
 })
 
 export const linkStyle = style({
