@@ -13,25 +13,23 @@ export const linkStyle = style({
   height: '100%',
   display: 'grid',
   gridTemplate: `
-  "title       image" 0fr
-  "description image" 1fr / 1fr 25%
+  "container image" 100% / auto 25%
   `,
+})
+
+export const containerStyle = style({
+  gridArea: 'container',
+  padding: '0.5rem',
 })
 
 export const titleStyle = style([
   typograph.base,
   {
-    gridArea: 'title',
     fontWeight: 'bold',
   },
 ])
 
-export const descriptionStyle = style([
-  typograph.base,
-  {
-    gridArea: 'description',
-  },
-])
+export const descriptionStyle = style([typograph.base])
 
 export const imageStyle = style({
   gridArea: 'image',
