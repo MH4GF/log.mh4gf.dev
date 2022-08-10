@@ -2,7 +2,7 @@ import type { Plugin } from 'unified'
 import type { Node } from 'unist'
 import { visit } from 'unist-util-visit'
 
-import { isParagraph } from '../../utils/finders'
+import { isParagraph } from '../../../utils/finders'
 
 const isTransformLinkcardTarget = (node: Node): boolean => {
   return isParagraph(node) && node.children.length === 1 && node.children[0].type === 'link'
