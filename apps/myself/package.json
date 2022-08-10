@@ -24,7 +24,8 @@
     "rehype-react": "*",
     "the-new-css-reset": "^1.7.2",
     "ui": "*",
-    "unified": "*"
+    "unified": "*",
+    "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
@@ -49,6 +50,9 @@
     "eslint-config-next": "*",
     "jsdom": "^20.0.0",
     "typescript": "*",
+    "unist-builder": "^3.0.0",
+    "unist-util-inspect": "^7.0.1",
+    "unist-util-remove-position": "^4.0.1",
     "vitest": "^0.18.1"
   }
 }
