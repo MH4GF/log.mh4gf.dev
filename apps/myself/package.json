@@ -49,6 +49,7 @@
     "eslint": "*",
     "eslint-config-next": "*",
     "jsdom": "^20.0.0",
+    "mdast": "^3.0.0",
     "typescript": "*",
     "unist-builder": "^3.0.0",
     "unist-util-inspect": "^7.0.1",
