@@ -6,9 +6,11 @@ import { unified } from 'unified'
 
 import { AnchorLink } from './components/links'
 import { H1, H2, H3, Image, UnorderedList } from './components/tags'
+import { dropParagraph } from './features/link'
 
 export const processor = unified()
   .use(remarkParse)
+  .use(dropParagraph)
   .use(remark2Rehype)
   .use(rehypeReact, {
     createElement,
