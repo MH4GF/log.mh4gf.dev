@@ -14,6 +14,8 @@ describe('MarkdownArticle', () => {
       ['heading', { name: 'Heading 1' }],
       ['heading', { name: 'Heading 2' }],
       ['heading', { name: 'Heading 3' }],
+      ['region', { name: 'https://example.com' }],
+      ['link', { name: 'link with name', url: 'https://example.com' }],
     ]
 
     targets.forEach((target) => {
