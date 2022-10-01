@@ -2350,16 +2350,16 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/builder-vite@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@storybook/builder-vite/-/builder-vite-0.2.2.tgz#8d10281bcc39dde3fc6f62b70f80b271980c79e7"
-  integrity sha512-kFY/Rbk+Bu5KmXOCP8CMxp6gfbNGGyNZwikWZe21NHcrVzwHg/aTs+MR37maRqlWcpJvTZmbkKMHak0+vDqpvw==
+"@storybook/builder-vite@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@storybook/builder-vite/-/builder-vite-0.2.3.tgz#6193460435dca53aa280380ea4c1481cdcd1fb47"
+  integrity sha512-qoYLMscM8ih7rYS9vU6WER2ADW28dB/3/TPg/27Q/shJM3yy/++us62arWAa3TJoFx1cB2MhAqhJGYyNH09wuQ==
   dependencies:
     "@joshwooding/vite-plugin-react-docgen-typescript" "0.0.5"
-    "@rollup/pluginutils" "^4.2.1"
     "@storybook/core-common" "^6.4.3"
     "@storybook/mdx1-csf" "^0.0.4"
     "@storybook/node-logger" "^6.4.3"
+    "@storybook/semver" "^7.3.2"
     "@storybook/source-loader" "^6.4.3"
     "@vitejs/plugin-react" "^2.0.0"
     ast-types "^0.14.2"
@@ -3369,29 +3369,13 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.5.12":
+"@storybook/source-loader@6.5.12", "@storybook/source-loader@^6.4.3":
   version "6.5.12"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.5.12.tgz#38b1af69c098a1c63bb1d0091b8714a799efbbda"
   integrity sha512-4iuILFsKNV70sEyjzIkOqgzgQx7CJ8kTEFz590vkmWXQNKz7YQzjgISIwL7GBw/myJgeb04bl5psVgY0cbG5vg==
   dependencies:
     "@storybook/addons" "6.5.12"
     "@storybook/client-logger" "6.5.12"
-    "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    core-js "^3.8.2"
-    estraverse "^5.2.0"
-    global "^4.4.0"
-    loader-utils "^2.0.0"
-    lodash "^4.17.21"
-    prettier ">=2.2.1 <=2.3.0"
-    regenerator-runtime "^0.13.7"
-
-"@storybook/source-loader@^6.4.3":
-  version "6.5.9"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.5.9.tgz#7b6f065c6a6108c4b4ca7e45bfd78707373d84ac"
-  integrity sha512-H03nFKaP6borfWMTTa9igBA+Jm2ph+FoVJImWC/X+LAmLSJYYSXuqSgmiZ/DZvbjxS4k8vccE2HXogne1IvaRA==
-  dependencies:
-    "@storybook/addons" "6.5.9"
-    "@storybook/client-logger" "6.5.9"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     core-js "^3.8.2"
     estraverse "^5.2.0"
