@@ -48,7 +48,7 @@
     "babel-loader": "^8.2.5",
     "eslint": "*",
     "eslint-config-next": "*",
-    "jsdom": "^20.0.0",
+    "jsdom": "^20.0.2",
     "mdast": "^3.0.0",
     "typescript": "*",
     "unist-builder": "^3.0.0",
