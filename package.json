@@ -16,6 +16,7 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "dev": "turbo run dev",
     "storybook": "turbo run storybook",
+    "new:fc": "scaffdog generate component",
     "lint:commit": "commitlint -e $GIT_PARAMS",
     "prepare:husky": "husky install",
     "prepare": "run-p prepare:*"
