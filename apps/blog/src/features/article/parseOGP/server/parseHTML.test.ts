@@ -18,7 +18,7 @@ describe('parseHTML', () => {
       url: 'https://mh4gf.dev/',
       title: 'Example Domain',
       description: 'Hello! This is example :)',
-      image: 'https://mh4gf.dev/assets/images/social-card.png',
+      imageSrc: 'https://mh4gf.dev/assets/images/social-card.png',
     }
     expect(result).toStrictEqual(expected)
   })
@@ -30,7 +30,7 @@ describe('parseHTML', () => {
       url: '',
       title: '',
       description: '',
-      image: '',
+      imageSrc: '',
     }
     expect(result).toStrictEqual(expected)
   })
