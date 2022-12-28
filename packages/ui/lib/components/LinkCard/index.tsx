@@ -2,6 +2,7 @@
 import type { ComponentPropsWithoutRef, FC } from 'react'
 import { useId } from 'react'
 
+import { useHandleError } from './hooks'
 import {
   linkStyle,
   linkCardStyle,
@@ -16,11 +17,13 @@ type Props = ComponentPropsWithoutRef<'section'> & {
   title?: string
   description?: string
   imageSrc?: string
+  fallbackImageSrc: string
 }
 
 export const LinkCard: FC<Props> = (props) => {
-  const { url, title, description, imageSrc, className, ...sectionProps } = props
+  const { url, title, description, imageSrc, fallbackImageSrc, className, ...sectionProps } = props
   const labelledBy = useId()
+  const handleError = useHandleError({ fallbackImageSrc })
 
   return (
     <section
@@ -35,7 +38,7 @@ export const LinkCard: FC<Props> = (props) => {
           </h1>
           <p className={descriptionStyle}>{description}</p>
         </div>
-        <img className={imageStyle} src={imageSrc} alt={title} />
+        <img className={imageStyle} src={imageSrc} alt={title} onError={handleError} />
       </a>
     </section>
   )
