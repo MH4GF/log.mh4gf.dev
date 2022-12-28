@@ -27,6 +27,7 @@
     "npm-run-all": "*",
     "prettier": "*",
     "prettier-plugin-tailwindcss": "*",
+    "scaffdog": "^2.4.0",
     "turbo": "*"
   },
   "prettier": {
