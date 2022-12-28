@@ -1,17 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import type { FC } from 'react'
+import type { ComponentProps, FC } from 'react'
 import { Suspense } from 'react'
 import { LinkCard } from 'ui'
 
 import type { BlockViewProps } from '~/src/components/blocks/types'
 import { useOGP } from '~/src/features/article/parseOGP/hooks/useOGP'
 
-type Props = {
-  url?: string
-  title?: string
-  description?: string
-  image?: string
-}
+const fallbackImageSrc = '/default.png'
+
+type Props = ComponentProps<typeof LinkCard>
 
 /**
  * @package
@@ -32,14 +29,15 @@ const BookmarkBlock: FC<BookmarkBlockProps> = (props) => {
       url={result.url}
       title={result.title}
       description={result.description}
-      image={result.image}
+      imageSrc={result.imageSrc}
+      fallbackImageSrc={fallbackImageSrc}
     />
   )
 }
 
 export const Bookmark: FC<BlockViewProps<'bookmark'>> = ({ block }) => {
   return (
-    <Suspense fallback={<BookMarkCard />}>
+    <Suspense fallback={<BookMarkCard fallbackImageSrc="" />}>
       <BookmarkBlock url={block.bookmark.url} />
     </Suspense>
   )

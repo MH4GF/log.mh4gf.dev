@@ -1,3 +1,3 @@
 export { Heading1, Heading2, Heading3 } from './Heading'
 export { UnorderedList } from './UnorderedList'
-export { LinkCard } from './LinkCard'
+export * from './LinkCard'

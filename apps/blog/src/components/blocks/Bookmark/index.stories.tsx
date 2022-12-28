@@ -23,5 +23,5 @@ Default.parameters = {
 }
 
 export const Loading: ComponentStory<typeof Bookmark> = () => {
-  return <BookMarkCard />
+  return <BookMarkCard fallbackImageSrc="" />
 }

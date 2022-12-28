@@ -1,5 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 
+import { LoadingLinkCard } from './LoadingLinkCard'
+
 import { LinkCard } from '.'
 
 export default {
@@ -16,3 +18,7 @@ Default.args = {
   imageSrc: 'https://cli.github.com/assets/images/social-card.png',
   className: 'another-class-name',
 }
+
+export const Loading: ComponentStory<typeof LoadingLinkCard> = (args) => (
+  <LoadingLinkCard {...args} />
+)
