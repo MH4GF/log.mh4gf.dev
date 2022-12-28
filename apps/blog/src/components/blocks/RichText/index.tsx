@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { RichTextObject } from 'notn'
 import type { FC, ReactNode } from 'react'
+import { Text } from 'ui'
 
 import { ConditionalWrapper } from '~/src/components/utils/ConditionalWrapper'
 import { pagesPath } from '~/src/generated/$path'
@@ -65,7 +66,9 @@ export const RichText: FC<Props> = ({ richText }) => {
       <ConditionalWrapper cond={bold} node={(c) => <strong>{c}</strong>}>
         <ConditionalWrapper cond={italic} node={(c) => <em>{c}</em>}>
           <ConditionalWrapper cond={strikethrough} node={(c) => <s>{c}</s>}>
-            <span className={classNames(richText.annotations)}>{richText.plain_text}</span>
+            <Text as="span" className={classNames(richText.annotations)}>
+              {richText.plain_text}
+            </Text>
           </ConditionalWrapper>
         </ConditionalWrapper>
       </ConditionalWrapper>
