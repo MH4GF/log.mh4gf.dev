@@ -19,7 +19,7 @@ const extractOGP = (head: HTMLHeadElement): OGPResult => {
     url: properties['url'] || '',
     title: properties['title'] || '',
     description: properties['description'] || '',
-    image: properties['image'] || '',
+    imageSrc: properties['image'] || '',
   }
 }
 

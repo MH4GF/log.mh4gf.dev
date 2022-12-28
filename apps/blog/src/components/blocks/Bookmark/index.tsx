@@ -32,7 +32,7 @@ const BookmarkBlock: FC<BookmarkBlockProps> = (props) => {
       url={result.url}
       title={result.title}
       description={result.description}
-      image={result.image}
+      imageSrc={result.imageSrc}
     />
   )
 }
