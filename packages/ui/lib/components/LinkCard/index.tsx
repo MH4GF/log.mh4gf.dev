@@ -19,12 +19,12 @@ type Props = ComponentPropsWithoutRef<'section'> & {
 }
 
 export const LinkCard: FC<Props> = (props) => {
-  const { url, title, description, imageSrc, className } = props
+  const { url, title, description, imageSrc, className, ...sectionProps } = props
   const labelledBy = useId()
 
   return (
     <section
-      {...props}
+      {...sectionProps}
       className={`${linkCardStyle} ${className || ''}`}
       aria-labelledby={labelledBy}
     >
