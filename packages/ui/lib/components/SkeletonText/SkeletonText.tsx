@@ -1,6 +1,8 @@
 import type { FC } from 'react'
 import ContentLoader from 'react-content-loader'
 
+import { colors } from '~/lib/themes/colors.css'
+
 type Props = {
   height?: string
 }
@@ -17,7 +19,7 @@ export const SkeletonText: FC<Props> = (props) => {
       speed={2}
       width={'100%'}
       height={height}
-      backgroundColor="#f3f3f3"
+      backgroundColor={colors.gray[0]}
       foregroundColor="#ecebeb"
     >
       <rect x="0" y="0" rx="3" ry="3" width="100%" height="100%" />
