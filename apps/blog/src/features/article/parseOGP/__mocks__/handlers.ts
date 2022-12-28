@@ -44,6 +44,9 @@ export const handlers = {
       }),
     )
   }),
+  apiLoading: rest.get('http://localhost:3000/api/ogp', (_req, res, ctx) => {
+    return res(ctx.delay('infinite'))
+  }),
   sample: rest.get(SAMPLE_URL, (_req, res, ctx) => {
     return res(ctx.status(200), ctx.body(SAMPLE_HTML))
   }),

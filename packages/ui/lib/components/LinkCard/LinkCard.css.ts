@@ -23,17 +23,30 @@ export const linkStyle = style({
 
 export const containerStyle = style({
   gridArea: 'container',
+  overflow: 'hidden',
   padding: '0.5rem',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5rem',
 })
 
 export const titleStyle = style([
   typograph.base,
   {
     fontWeight: 'bold',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
 ])
 
-export const descriptionStyle = style([typograph.base])
+export const descriptionStyle = style([
+  typograph.small,
+  {
+    overflow: 'hidden',
+    height: '2rem',
+  },
+])
 
 export const imageStyle = style({
   gridArea: 'image',

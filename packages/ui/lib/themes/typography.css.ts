@@ -5,4 +5,8 @@ export const typograph = createGlobalTheme(':root', {
     fontSize: '1rem',
     lineHeight: '1.5',
   },
+  small: {
+    fontSize: '0.75rem',
+    lineHeight: '1.5',
+  },
 })
