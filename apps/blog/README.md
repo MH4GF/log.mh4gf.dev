@@ -7,6 +7,6 @@
 
 ```
 yarn
-yarn setup-vercel && env-pull
-yarn dev
+yarn workspace blog setup-vercel && yarn workspace blog env-pull
+yarn workspace blog dev
 ```
