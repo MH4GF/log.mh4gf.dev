@@ -8,5 +8,5 @@ export const isLinkCard = (href: string | undefined, children: ReactNode): boole
 type Props = ComponentPropsWithoutRef<'a'>
 export const LinkCard: FC<Props> = (props) => {
   const { href } = props
-  return <LinkCardComponent url={href} title={href} />
+  return <LinkCardComponent url={href} title={href} fallbackImageSrc="" />
 }
