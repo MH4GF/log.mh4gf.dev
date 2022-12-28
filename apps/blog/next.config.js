@@ -9,6 +9,9 @@ const nextConfig = {
     })
     return config
   },
+  images: {
+    domains: ['avatars.githubusercontent.com'],
+  },
 }
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
