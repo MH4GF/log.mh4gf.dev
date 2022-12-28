@@ -19,6 +19,16 @@ Default.args = {
   className: 'another-class-name',
 }
 
+export const LongText = Template.bind({})
+LongText.args = {
+  url: 'https://mh4gf.dev',
+  title:
+    '長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル',
+  description:
+    '長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト長いテキスト',
+  imageSrc: 'https://cli.github.com/assets/images/social-card.png',
+}
+
 export const Loading: ComponentStory<typeof LoadingLinkCard> = (args) => (
   <LoadingLinkCard {...args} />
 )
