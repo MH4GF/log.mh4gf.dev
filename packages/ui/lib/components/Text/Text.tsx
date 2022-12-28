@@ -3,14 +3,18 @@ import type { ComponentPropsWithoutRef, FC, ReactNode } from 'react'
 
 import { paragraphStyle } from './Text.css'
 
-type Props = ComponentPropsWithoutRef<'p'> & {
+type As = 'p' | 'span'
+type Props<T extends As = As> = ComponentPropsWithoutRef<T> & {
+  as?: T
   children: ReactNode
 }
 
-export const Text: FC<Props> = ({ children, className, ...props }) => {
+export const Text: FC<Props> = ({ as, children, className, ...props }) => {
+  const Component = as || 'p'
+
   return (
-    <p {...props} className={classNames(paragraphStyle, className)}>
+    <Component {...props} className={classNames(paragraphStyle, className)}>
       {children}
-    </p>
+    </Component>
   )
 }
