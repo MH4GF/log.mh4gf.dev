@@ -19,7 +19,6 @@ export const Ogp: FC<Props> = ({ title }) => {
       <meta property="og:url" content={DEFAULT_URL} />
       <meta property="og:description" content={DEFAULT_DESCRIPTION} />
       <meta property="og:site_name" content={title} />
-      <meta property="og:image" content={`${DEFAULT_URL}/ogp.png`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="format-detection" content="telephone=no" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
