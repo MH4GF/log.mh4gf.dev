@@ -1648,6 +1648,11 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
+"@mh4gf/prettier-config@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@mh4gf/prettier-config/-/prettier-config-0.1.0.tgz#5c710eb07d1ea44ef2e4c67f342795934be6b040"
+  integrity sha512-ZUIgucXOVsEFDJYFhD0cY2wffEigyUGVsOMnnFf6jGFfinPmE4LLRr2ROLlGd+Q6wnHBJ7Pd2+tNH3zoQ5P+1g==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
