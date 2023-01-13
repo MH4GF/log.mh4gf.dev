@@ -15,7 +15,7 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v3
       - name: Setup node env 🏗
-        uses: MH4GF/shared-config/.github/composite-actions/setup-yarn
+        uses: MH4GF/shared-config/.github/composite-actions/setup-yarn@main
         with:
           node-version-file: .node-version
       - name: Build pathpida type file 👨🏻‍💻
