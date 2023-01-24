@@ -1,3 +1,5 @@
+import type { FC } from 'react'
+
 import type { Tag } from '~/src/features/article/ArticleModel'
 
 type Props = {
@@ -35,6 +37,6 @@ const classNames = (color: Tag['color']): string => {
   return classes.join(' ')
 }
 
-export const TagChip: React.FC<Props> = ({ tag }) => {
+export const TagChip: FC<Props> = ({ tag }) => {
   return <span className={classNames(tag.color)}>{tag.name}</span>
 }
