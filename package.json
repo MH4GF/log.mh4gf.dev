@@ -24,7 +24,9 @@
   "devDependencies": {
     "@commitlint/cli": "*",
     "@commitlint/config-conventional": "*",
+    "@mh4gf/eslint-config": "^0.2.0",
     "@mh4gf/prettier-config": "^0.1.0",
+    "eslint-plugin-jest": "^27.2.1",
     "husky": "*",
     "npm-run-all": "*",
     "prettier": "*",
