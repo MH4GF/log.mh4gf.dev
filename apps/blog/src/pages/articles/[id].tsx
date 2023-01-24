@@ -15,7 +15,7 @@ interface Params extends ParsedUrlQuery {
   id: string
 }
 
-type Props = {
+interface Props {
   article: ArticleData
 }
 

@@ -18,7 +18,7 @@ export const Layout = ({ children, title }: Props): ReactElement => {
   return (
     <div className="min-h-screen break-words break-all bg-gradient-to-tr from-zinc-700 via-zinc-900 to-zinc-800 p-8 text-zinc-100">
       <Head>
-        <title>{title || 'log.mh4gf.dev'}</title>
+        <title>{title ?? 'log.mh4gf.dev'}</title>
       </Head>
       <Ogp title={title} />
       <GoogleTagManager gtmId={gtmId} />

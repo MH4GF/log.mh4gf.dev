@@ -7,7 +7,7 @@ import { Layout } from '~/src/components/Pages/Layout'
 import type { ArticleData } from '~/src/features/article/ArticleModel'
 import { articleListRepository } from '~/src/features/article/list/repositories/articleListRepository'
 
-type Props = {
+interface Props {
   articles: ArticleData[]
 }
 

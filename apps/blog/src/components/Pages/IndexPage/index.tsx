@@ -3,7 +3,7 @@ import type { FC } from 'react'
 import type { ArticleData } from '~/src/features/article/ArticleModel'
 import { ArticleList } from '~/src/features/article/list/components/ArticleList'
 
-type Props = {
+interface Props {
   articles: ArticleData[]
 }
 

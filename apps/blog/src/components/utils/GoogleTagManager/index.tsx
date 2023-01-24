@@ -3,7 +3,7 @@ import type { FC } from 'react'
 
 export type GoogleTagManaagerId = `GTM-${string}`
 
-type Props = {
+interface Props {
   gtmId: GoogleTagManaagerId
 }
 

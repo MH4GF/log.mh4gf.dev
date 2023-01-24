@@ -2,7 +2,7 @@ import type { FC } from 'react'
 
 import type { Tag } from '~/src/features/article/ArticleModel'
 
-type Props = {
+interface Props {
   tag: Tag
 }
 
