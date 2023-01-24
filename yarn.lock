@@ -1648,10 +1648,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@mh4gf/eslint-config@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@mh4gf/eslint-config/-/eslint-config-0.2.0.tgz#2dfcca6264ca66b7c5fb8f1d4c804dbbe16aee29"
-  integrity sha512-hciOTAcCrgEcoIAUrs/B1w04K0cZFoi3yySnWWFhvbYPQYOv/FKLtJEJO81TVMZ2/2Z/DHiYYzCU917x9sXuOw==
+"@mh4gf/eslint-config@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@mh4gf/eslint-config/-/eslint-config-0.3.0.tgz#6e3a2128ee89210fbfe5991dfca025fb962eeab6"
+  integrity sha512-WYUvjspd0xfJ+rKNPRywvfqS62KyFZfZJ0pJu1UNWiUlcPLEclk/NPEh/tk21QrNyOyjKm6idEpWO6xvvTVGFg==
   dependencies:
     eslint-plugin-import "^2.27.5"
     eslint-plugin-unused-imports "^2.0.0"
