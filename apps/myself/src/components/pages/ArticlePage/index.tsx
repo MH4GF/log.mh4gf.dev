@@ -5,7 +5,7 @@ import { main } from './ArticlePage.css'
 
 import { MarkdownArticle } from '~/src/features/markdown'
 
-type Props = {
+interface Props {
   markdownText: string
 }
 export const ArticlePage: FC<Props> = (props) => {

@@ -7,7 +7,7 @@ import { Layout } from '~/src/components/pages/Layout'
 import type { Article } from '~/src/features/article'
 import { articleDetailRepository, articlePathRepository } from '~/src/features/article/server'
 
-type Props = {
+interface Props {
   article: Article
 }
 

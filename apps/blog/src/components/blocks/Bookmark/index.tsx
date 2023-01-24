@@ -17,7 +17,7 @@ export const BookMarkCard: FC<Props> = (props) => (
   <LinkCard className="border-zinc-700 hover:bg-zinc-800" {...props} />
 )
 
-type BookmarkBlockProps = {
+interface BookmarkBlockProps {
   url: string
 }
 
