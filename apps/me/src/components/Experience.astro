@@ -1,12 +1,93 @@
 ---
-import { Heading2 } from "ui";
+import { Heading2 } from 'ui'
 
+interface Item {
+  period: string
+  company: string
+  badge: string[]
+  description: string
+}
+
+const items: ReadonlyArray<Item> = [
+  {
+    period: '2022 - now',
+    company: '株式会社ROUTE06',
+    badge: ['Frontend'],
+    description:
+      '大手企業のビジネスモデル変革を支援するDXパートナーであるROUTE06で、Next.js/GraphQLでのアプリケーション開発チームに参加しています。',
+  },
+  {
+    period: '2021 - 2022',
+    company: '株式会社ビットジャーニー',
+    badge: ['Frontend', 'Backend'],
+    description:
+      '個人の力を組織の力にする情報共有ツールKibelaで、Rails/Reactでのアプリケーション開発チームに参加しました。複雑なインタラクションを伴うGUIの開発に取り組みました。',
+  },
+  {
+    period: '2021',
+    company: '株式会社リゾートワークス',
+    badge: ['Frontend', 'Backend', 'AWS'],
+    description:
+      'ワーケーションを通じて働く人の“創造性“を刺激する福利厚生サブスクリプションサービス ResortWorx で、Terraform/AWS/ECSを用いたインフラの技術選定・構築・運用を担当しました。チーム開発としてRails/Nuxtによるアプリケーション開発にも参加しました。',
+  },
+  {
+    period: '2018 - 2021',
+    company: '株式会社タイミー',
+    badge: ['Backend', 'AWS', 'Project Manager'],
+    description:
+      'すぐ働けてすぐお金がもらえるスキマバイトアプリタイミーで、全体では7人目・フルタイムの1人目のバックエンドエンジニアとしてジョインしました。シードからシリーズCまでの多様な壁を解決するべく、様々なロールを担当しました。',
+  },
+]
 ---
 
 <section>
   <Heading2>Experience</Heading2>
-  <ul>
-    <li>Gitブランチのようなフロー図で経歴を表す、並行していることが伝わると良い</li>
-    <li>最下部にレジュメへのリンクを載せる</li>
-  </ul>
+  {
+    items.map((item) => (
+      <div class="item">
+        <div class="period">{item.period}</div>
+        <details class="company">
+          <summary>
+            {item.company}
+            {item.badge.map((badge) => (
+              <span class="badge">{badge}</span>
+            ))}
+          </summary>
+          <p>{item.description}</p>
+        </details>
+      </div>
+    ))
+  }
 </section>
+
+<style>
+  .item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: 1fr;
+    gap: 1em 1em;
+    grid-auto-flow: row;
+  }
+
+  .period {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .company {
+    grid-area: 1 / 2 / 2 / 4;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--base-text);
+  }
+
+  .badge {
+    background-color: var(--green);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+</style>
