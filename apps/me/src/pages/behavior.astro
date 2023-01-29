@@ -1,0 +1,6 @@
+---
+import { getEntryBySlug } from 'astro:content';
+const entry = await getEntryBySlug('me', 'behavior');
+const { Content } = await entry.render();
+---
+<Content />
