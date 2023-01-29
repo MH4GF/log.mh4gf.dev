@@ -50,3 +50,6 @@ public/tmp/**
 # Sentry
 .sentryclirc
 .turbo
+
+# build output
+dist

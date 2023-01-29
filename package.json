@@ -30,6 +30,7 @@
     "husky": "*",
     "npm-run-all": "*",
     "prettier": "*",
+    "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-tailwindcss": "*",
     "scaffdog": "^2.4.0",
     "turbo": "*"
