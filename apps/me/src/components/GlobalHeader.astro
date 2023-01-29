@@ -5,7 +5,22 @@ import Link from './Link.astro'
 <nav>
   <Link href="/"><h1>Hirotaka Miyagi</h1></Link>
   <ul>
-    <li>About</li>
+    <li><Link href="/#about">About</Link></li>
     <li><Link href="https://log.mh4gf.dev/">Blog</Link></li>
   </ul>
 </nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+  }
+</style>
