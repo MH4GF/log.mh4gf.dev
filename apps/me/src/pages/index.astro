@@ -1,18 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { Heading1, Heading2, UnorderedList } from 'ui'
+
 ---
 
 <Layout title="Hirotaka Miyagi">
   <main>
-    <h1>Hirotaka Miyagi</h1>
+    <Heading1>Hirotaka Miyagi</Heading1>
     <section>
-      <h2>About</h2>
-      <ul>
+      <Heading2>About</Heading2>
+      <UnorderedList>
         <li>Ruby, TypeScript, GraphQL, Terraformを扱うフリーランスエンジニアです。</li>
         <li>スタートアップでの活動が長く、ジェネラリストのような振る舞いが得意です。</li>
         <li>インテリア、カメラ、銭湯が好きです。</li>
         <li>🐇と暮らしています。</li>
-      </ul>
+      </UnorderedList>
     </section>
   </main>
 </Layout>
