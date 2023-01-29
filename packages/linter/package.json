@@ -1,0 +1,12 @@
+{
+  "name": "@mh4gf-dev/eslint-config",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.cjs",
+  "dependencies": {
+    "@mh4gf/eslint-config": "^0.3.0",
+    "eslint": "^8.32.0",
+    "eslint-plugin-import-access": "^1.0.1"
+  }
+}
