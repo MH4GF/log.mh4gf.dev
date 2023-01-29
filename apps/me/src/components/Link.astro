@@ -1,0 +1,23 @@
+---
+export interface Props {
+  href: string
+}
+
+const { href } = Astro.props
+---
+
+<a href={href}>
+  <slot />
+</a>
+
+<style>
+  a {
+    color: var(--base-text);
+    text-decoration: none;
+  }
+  a:visited {
+  }
+  a:hover {
+    text-decoration: var(--accent-text) wavy underline;
+  }
+</style>

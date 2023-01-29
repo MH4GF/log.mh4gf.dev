@@ -1,21 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { Heading1, Heading2, UnorderedList } from 'ui'
-
+import { Heading1 } from 'ui'
+import Social from '../components/Social.astro'
+import Experience from '../components/Experience.astro'
+import About from '../components/About.astro'
+import Activity from '../components/Activity.astro'
 ---
 
 <Layout title="Hirotaka Miyagi">
   <main>
     <Heading1>Hirotaka Miyagi</Heading1>
-    <section>
-      <Heading2>About</Heading2>
-      <UnorderedList>
-        <li>Ruby, TypeScript, GraphQL, Terraformを扱うフリーランスエンジニアです。</li>
-        <li>スタートアップでの活動が長く、ジェネラリストのような振る舞いが得意です。</li>
-        <li>インテリア、カメラ、銭湯が好きです。</li>
-        <li>🐇と暮らしています。</li>
-      </UnorderedList>
-    </section>
+    <About />
+    <Social />
+    <Experience />
+    <Activity />
   </main>
 </Layout>
 
