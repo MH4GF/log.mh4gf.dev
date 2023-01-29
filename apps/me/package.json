@@ -12,7 +12,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "astro": "^2.0.2"
+    "@astrojs/react": "^2.0.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^2.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@mh4gf-dev/eslint-config": "*"
