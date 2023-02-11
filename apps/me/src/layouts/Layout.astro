@@ -1,14 +1,14 @@
 ---
-import { SITE } from "@config";
-import "../styles/base.css";
+import { SITE } from '@config'
+import '../styles/base.css'
 
-const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION
 
 export interface Props {
-  title?: string;
-  author?: string;
-  description?: string;
-  ogImage?: string;
+  title?: string
+  author?: string
+  description?: string
+  ogImage?: string
 }
 
 const {
@@ -16,16 +16,13 @@ const {
   author = SITE.author,
   description = SITE.desc,
   ogImage = SITE.ogImage,
-} = Astro.props;
+} = Astro.props
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const socialImageURL = new URL(
-  ogImage ? ogImage : SITE.ogImage,
-  Astro.url.origin
-).href;
+const socialImageURL = new URL(ogImage ? ogImage : SITE.ogImage, Astro.url.origin).href
 
-const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
+const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href
 ---
 
 <!DOCTYPE html>
@@ -56,9 +53,7 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
     <meta property="twitter:description" content={description} />
     <meta
       property="twitter:image"
-      content={socialImageURL.endsWith(".svg")
-        ? fallbackImageURL
-        : socialImageURL}
+      content={socialImageURL.endsWith('.svg') ? fallbackImageURL : socialImageURL}
     />
 
     <!-- Google Font -->
@@ -74,10 +69,7 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
       // include google-site-verification tag in the heading
       // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
       googleSiteVerification && (
-        <meta
-          name="google-site-verification"
-          content={googleSiteVerification}
-        />
+        <meta name="google-site-verification" content={googleSiteVerification} />
       )
     }
 
