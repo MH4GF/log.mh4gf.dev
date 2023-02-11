@@ -1,7 +1,7 @@
 ---
-import { LOGO_IMAGE, SITE } from '@config'
+import { LOGO_IMAGE, SITE, BLOG } from '@config'
 import Hr from './Hr.astro'
-import LinkButton from './LinkButton.astro'
+// import LinkButton from './LinkButton.astro'
 
 import logoPNG from '/assets/logo.png'
 import logoSVG from '/assets/logo.svg'
@@ -46,15 +46,18 @@ const { activeNav } = Astro.props
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
+            <a href={BLOG} target="_blank" rel="noopener noreferrer">Blog</a>
+          </li>
+          <!-- <li>
             <a href="/posts" class={activeNav === 'posts' ? 'active' : ''}> Posts</a>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a href="/tags" class={activeNav === 'tags' ? 'active' : ''}> Tags</a>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a href="/about" class={activeNav === 'about' ? 'active' : ''}> About</a>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <LinkButton
               href="/search"
               className={`focus-outline p-3 sm:p-1 ${activeNav === 'search' ? 'active' : ''}`}
@@ -67,7 +70,7 @@ const { activeNav } = Astro.props
                 ></path>
               </svg>
             </LinkButton>
-          </li>
+          </li> -->
           <li>
             {
               SITE.lightAndDarkMode && (

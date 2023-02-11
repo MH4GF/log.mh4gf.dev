@@ -1,20 +1,20 @@
 ---
-import { getCollection } from 'astro:content'
+// import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
-import LinkButton from '@components/LinkButton.astro'
+// import LinkButton from '@components/LinkButton.astro'
 import Hr from '@components/Hr.astro'
-import Card from '@components/Card'
+// import Card from '@components/Card'
 import Socials from '@components/Socials.astro'
-import getSortedPosts from '@utils/getSortedPosts'
-import slugify from '@utils/slugify'
+// import getSortedPosts from '@utils/getSortedPosts'
+// import slugify from '@utils/slugify'
 import { SOCIALS } from '@config'
 
-const posts = await getCollection('blog')
+// const posts = await getCollection('blog')
 
-const sortedPosts = getSortedPosts(posts)
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
+// const sortedPosts = getSortedPosts(posts)
+// const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
 
 const socialCount = SOCIALS.filter((social) => social.active).length
 ---
@@ -24,7 +24,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
   <main id="main-content">
     <section id="hero">
       <h1>Hirotaka Miyagi</h1>
-      <a target="_blank" href="/rss.xml" class="rss-link" aria-label="rss feed" title="RSS Feed">
+      <!-- <a target="_blank" href="/rss.xml" class="rss-link" aria-label="rss feed" title="RSS Feed">
         <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
           ><path d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"></path><path
             d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"></path><circle
@@ -32,7 +32,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
             cy="18"
             r="2"></circle>
         </svg>
-      </a>
+      </a> -->
 
       <p>I'm a software engineer based in Tokyo, Japan.</p>
       {
@@ -48,7 +48,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
 
     <Hr />
 
-    {
+    <!-- {
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
@@ -62,9 +62,9 @@ const socialCount = SOCIALS.filter((social) => social.active).length
           <Hr />
         </>
       )
-    }
+    } -->
 
-    <section id="recent-posts">
+    <!-- <section id="recent-posts">
       <h2>Recent Posts</h2>
       <ul>
         {
@@ -86,7 +86,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
           </svg>
         </LinkButton>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <Footer />

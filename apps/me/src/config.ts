@@ -2,7 +2,7 @@ import type { SocialObjects } from './types'
 
 export const SITE = {
   website: 'https://astro-paper.pages.dev/',
-  author: 'Sat Naing',
+  author: 'Hirotaka Miyagi',
   desc: 'A minimal, responsive and SEO-friendly Astro blog theme.',
   title: 'mh4gf.dev',
   ogImage: 'astropaper-og.jpg',
@@ -16,6 +16,8 @@ export const LOGO_IMAGE = {
   width: 216,
   height: 46,
 }
+
+export const BLOG = 'https://log.mh4gf.dev'
 
 export const SOCIALS: SocialObjects = [
   {
