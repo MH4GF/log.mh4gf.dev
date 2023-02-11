@@ -1,73 +1,69 @@
-import Fuse from "fuse.js";
-import { useEffect, useRef, useState } from "react";
-import Card from "@components/Card";
-import slugify from "@utils/slugify";
-import type { BlogFrontmatter } from "@content/_schemas";
+import Fuse from 'fuse.js'
+import { useEffect, useRef, useState } from 'react'
+import Card from '@components/Card'
+import slugify from '@utils/slugify'
+import type { BlogFrontmatter } from '@content/_schemas'
 
 export type SearchItem = {
-  title: string;
-  description: string;
-  data: BlogFrontmatter;
-};
+  title: string
+  description: string
+  data: BlogFrontmatter
+}
 
 interface Props {
-  searchList: SearchItem[];
+  searchList: SearchItem[]
 }
 
 interface SearchResult {
-  item: SearchItem;
-  refIndex: number;
+  item: SearchItem
+  refIndex: number
 }
 
 export default function SearchBar({ searchList }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [inputVal, setInputVal] = useState("");
-  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(
-    null
-  );
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [inputVal, setInputVal] = useState('')
+  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    setInputVal(e.currentTarget.value);
-  };
+    setInputVal(e.currentTarget.value)
+  }
 
   const fuse = new Fuse(searchList, {
-    keys: ["title", "description"],
+    keys: ['title', 'description'],
     includeMatches: true,
     minMatchCharLength: 2,
     threshold: 0.5,
-  });
+  })
 
   useEffect(() => {
     // if URL has search query,
     // insert that search query in input field
-    const searchUrl = new URLSearchParams(window.location.search);
-    const searchStr = searchUrl.get("q");
-    if (searchStr) setInputVal(searchStr);
+    const searchUrl = new URLSearchParams(window.location.search)
+    const searchStr = searchUrl.get('q')
+    if (searchStr) setInputVal(searchStr)
 
     // put focus cursor at the end of the string
     setTimeout(function () {
-      inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
-        searchStr?.length || 0;
-    }, 50);
-  }, []);
+      inputRef.current!.selectionStart = inputRef.current!.selectionEnd = searchStr?.length || 0
+    }, 50)
+  }, [])
 
   useEffect(() => {
     // Add search result only if
     // input value is more than one character
-    let inputResult = inputVal.length > 1 ? fuse.search(inputVal) : [];
-    setSearchResults(inputResult);
+    let inputResult = inputVal.length > 1 ? fuse.search(inputVal) : []
+    setSearchResults(inputResult)
 
     // Update search string in URL
     if (inputVal.length > 0) {
-      const searchParams = new URLSearchParams(window.location.search);
-      searchParams.set("q", inputVal);
-      const newRelativePathQuery =
-        window.location.pathname + "?" + searchParams.toString();
-      history.pushState(null, "", newRelativePathQuery);
+      const searchParams = new URLSearchParams(window.location.search)
+      searchParams.set('q', inputVal)
+      const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString()
+      history.pushState(null, '', newRelativePathQuery)
     } else {
-      history.pushState(null, "", window.location.pathname);
+      history.pushState(null, '', window.location.pathname)
     }
-  }, [inputVal]);
+  }, [inputVal])
 
   return (
     <>
@@ -78,10 +74,10 @@ export default function SearchBar({ searchList }: Props) {
           </svg>
         </span>
         <input
-          className="block w-full rounded border border-skin-fill 
-        border-opacity-40 bg-skin-fill py-3 pl-10
-        pr-3 placeholder:italic placeholder:text-opacity-75 
-        focus:border-skin-accent focus:outline-none"
+          className="border-skin-fill bg-skin-fill focus:border-skin-accent block w-full 
+        rounded border border-opacity-40 py-3
+        pl-10 pr-3 placeholder:italic 
+        placeholder:text-opacity-75 focus:outline-none"
           placeholder="Search for anything..."
           type="text"
           name="search"
@@ -96,10 +92,8 @@ export default function SearchBar({ searchList }: Props) {
       {inputVal.length > 1 && (
         <div className="mt-8">
           Found {searchResults?.length}
-          {searchResults?.length && searchResults?.length === 1
-            ? " result"
-            : " results"}{" "}
-          for '{inputVal}'
+          {searchResults?.length && searchResults?.length === 1 ? ' result' : ' results'} for '
+          {inputVal}'
         </div>
       )}
 
@@ -114,5 +108,5 @@ export default function SearchBar({ searchList }: Props) {
           ))}
       </ul>
     </>
-  );
+  )
 }
