@@ -6,7 +6,7 @@
   "main": "src/index.cjs",
   "dependencies": {
     "@mh4gf/eslint-config": "^0.3.0",
-    "eslint": "^8.32.0",
+    "eslint": "^8.34.0",
     "eslint-plugin-import-access": "^1.0.1"
   }
 }
