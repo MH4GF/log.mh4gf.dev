@@ -1,0 +1,26 @@
+{
+  "name": "about",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@astrojs/react": "^2.0.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^2.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "ui": "*"
+  },
+  "devDependencies": {
+    "@mh4gf-dev/eslint-config": "*"
+  }
+}
