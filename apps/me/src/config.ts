@@ -3,9 +3,9 @@ import type { SocialObjects } from './types'
 export const SITE = {
   website: 'https://astro-paper.pages.dev/',
   author: 'Hirotaka Miyagi',
-  desc: 'A minimal, responsive and SEO-friendly Astro blog theme.',
+  desc: 'My portfolio site',
   title: 'mh4gf.dev',
-  ogImage: 'astropaper-og.jpg',
+  ogImage: 'og-image.jpeg',
   lightAndDarkMode: true,
   postPerPage: 3,
 }
