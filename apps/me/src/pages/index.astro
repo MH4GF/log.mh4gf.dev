@@ -3,7 +3,7 @@
 import Layout from '@layouts/Layout.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
-// import LinkButton from '@components/LinkButton.astro'
+import LinkButton from '@components/LinkButton.astro'
 // import Hr from '@components/Hr.astro'
 // import Card from '@components/Card'
 import Socials from '@components/Socials.astro'
@@ -44,17 +44,21 @@ const socialCount = SOCIALS.filter((social) => social.active).length
       </a> -->
 
       <p>I'm a software engineer based in Tokyo, Japan.</p>
-      <!-- <ul>
+      <ul>
         <li>
-          <LinkButton href="/posts">🚀 Call for Job Offers</LinkButton>
+          <LinkButton href="/posts" disabled className="cursor-not-allowed">
+            🚀 Call for Job Offers
+          </LinkButton>
         </li>
         <li>
-          <LinkButton href="/posts">🚲 好む振る舞い</LinkButton>
+          <LinkButton href="/behavior">🚲 好む振る舞い</LinkButton>
         </li>
         <li>
-          <LinkButton href="/posts">⛰️ キャリアの指向性(脳内メモ)</LinkButton>
+          <LinkButton href="/posts" disabled className="cursor-not-allowed">
+            ⛰️ キャリアの指向性(脳内メモ)
+          </LinkButton>
         </li>
-      </ul> -->
+      </ul>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -115,7 +119,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
 <style>
   /* ===== Hero Section ===== */
   #hero {
-    @apply pt-8 pb-6 flex flex-col gap-8;
+    @apply flex flex-col gap-8 pt-8 pb-6;
   }
   #hero .name {
     @apply my-4 flex items-center gap-8 sm:my-8;
