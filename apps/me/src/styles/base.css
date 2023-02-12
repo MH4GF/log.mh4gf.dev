@@ -41,7 +41,7 @@
     focus-visible:no-underline focus-visible:outline-dashed;
   }
   svg {
-    @apply fill-skin-base group-hover:fill-skin-accent inline-block h-6 w-6;
+    @apply group-hover:fill-skin-accent inline-block h-6 w-6;
   }
   svg.icon-tabler {
     @apply inline-block h-6 w-6 scale-125 fill-transparent
