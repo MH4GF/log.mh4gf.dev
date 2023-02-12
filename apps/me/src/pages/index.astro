@@ -4,7 +4,7 @@ import Layout from '@layouts/Layout.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 // import LinkButton from '@components/LinkButton.astro'
-import Hr from '@components/Hr.astro'
+// import Hr from '@components/Hr.astro'
 // import Card from '@components/Card'
 import Socials from '@components/Socials.astro'
 // import getSortedPosts from '@utils/getSortedPosts'
@@ -23,7 +23,10 @@ const socialCount = SOCIALS.filter((social) => social.active).length
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>Hirotaka Miyagi</h1>
+      <div class="name">
+        <img loading="lazy" src="https://github.com/mh4gf.png" />
+        <h1>Hirotaka Miyagi</h1>
+      </div>
       <!-- <a target="_blank" href="/rss.xml" class="rss-link" aria-label="rss feed" title="RSS Feed">
         <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
           ><path d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"></path><path
@@ -35,6 +38,17 @@ const socialCount = SOCIALS.filter((social) => social.active).length
       </a> -->
 
       <p>I'm a software engineer based in Tokyo, Japan.</p>
+      <!-- <ul>
+        <li>
+          <LinkButton href="/posts">🚀 Call for Job Offers</LinkButton>
+        </li>
+        <li>
+          <LinkButton href="/posts">🚲 好む振る舞い</LinkButton>
+        </li>
+        <li>
+          <LinkButton href="/posts">⛰️ キャリアの指向性(脳内メモ)</LinkButton>
+        </li>
+      </ul> -->
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -46,7 +60,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
       }
     </section>
 
-    <Hr />
+    <!-- <Hr /> -->
 
     <!-- {
       featuredPosts.length > 0 && (
@@ -97,8 +111,14 @@ const socialCount = SOCIALS.filter((social) => social.active).length
   #hero {
     @apply pt-8 pb-6;
   }
+  #hero .name {
+    @apply my-4 flex items-center gap-8 sm:my-8;
+  }
   #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+    @apply inline-block text-3xl font-bold sm:text-5xl;
+  }
+  #hero img {
+    @apply inline-block w-24 rounded-full sm:w-32;
   }
   #hero .rss-link {
     @apply mb-6;
