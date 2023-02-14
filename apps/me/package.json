@@ -9,7 +9,6 @@
     "sync": "astro sync",
     "astro": "astro",
     "cz": "cz",
-    "prepare": "husky install",
     "lint": "eslint ."
   },
   "dependencies": {
