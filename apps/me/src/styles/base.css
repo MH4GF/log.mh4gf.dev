@@ -13,7 +13,7 @@
     --color-border: 236, 233, 233;
   }
   html[data-theme='dark'] {
-    --color-fill: 40, 40, 39;
+    --color-fill: 45, 46, 46;
     --color-text-base: 234, 237, 243;
     --color-accent: 255, 107, 1;
     --color-card: 52, 63, 96;
@@ -41,7 +41,7 @@
     focus-visible:no-underline focus-visible:outline-dashed;
   }
   svg {
-    @apply fill-skin-base group-hover:fill-skin-accent inline-block h-6 w-6;
+    @apply group-hover:fill-skin-accent inline-block h-6 w-6;
   }
   svg.icon-tabler {
     @apply inline-block h-6 w-6 scale-125 fill-transparent
@@ -50,7 +50,7 @@
   }
   .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-skin-base
-    prose-h3:italic prose-p:!text-skin-base
+    prose-h3:prose-p:!text-skin-base
     prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
     hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
     prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
@@ -62,7 +62,7 @@
     prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base
     prose-code:before:!content-[''] prose-code:after:!content-['']
     prose-pre:!text-skin-base prose-ol:!text-skin-base
-    prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
+    prose-ul:overflow-x-clip prose-ul:!text-skin-base
     prose-table:text-skin-base prose-th:border
     prose-th:border-skin-line prose-td:border
     prose-td:border-skin-line prose-img:mx-auto

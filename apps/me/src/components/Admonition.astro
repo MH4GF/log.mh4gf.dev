@@ -1,0 +1,22 @@
+---
+export interface Props {
+  icon: string
+}
+
+const { icon } = Astro.props
+---
+
+<aside>
+  <div>
+    <span>{icon}</span>
+  </div>
+  <div>
+    <slot />
+  </div>
+</aside>
+
+<style>
+  aside {
+    @apply bg-skin-inverted/10 text-skin-base flex gap-2 rounded p-4;
+  }
+</style>
