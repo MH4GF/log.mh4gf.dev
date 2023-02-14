@@ -1,10 +1,11 @@
 import Fuse from 'fuse.js'
 import { useEffect, useRef, useState } from 'react'
-import Card from '@components/Card'
-import slugify from '@utils/slugify'
-import type { BlogFrontmatter } from '@content/_schemas'
 
-export type SearchItem = {
+import Card from '@components/Card'
+import type { BlogFrontmatter } from '@content/_schemas'
+import slugify from '@utils/slugify'
+
+export interface SearchItem {
   title: string
   description: string
   data: BlogFrontmatter
@@ -51,7 +52,7 @@ export default function SearchBar({ searchList }: Props) {
   useEffect(() => {
     // Add search result only if
     // input value is more than one character
-    let inputResult = inputVal.length > 1 ? fuse.search(inputVal) : []
+    const inputResult = inputVal.length > 1 ? fuse.search(inputVal) : []
     setSearchResults(inputResult)
 
     // Update search string in URL
@@ -92,7 +93,7 @@ export default function SearchBar({ searchList }: Props) {
       {inputVal.length > 1 && (
         <div className="mt-8">
           Found {searchResults?.length}
-          {searchResults?.length && searchResults?.length === 1 ? ' result' : ' results'} for '
+          {searchResults?.length && searchResults.length === 1 ? ' result' : ' results'} for '
           {inputVal}'
         </div>
       )}
