@@ -25,6 +25,9 @@
       "dependsOn": ["ui#build"],
       "outputs": []
     },
+    "me#lint": {
+      "dependsOn": ["me#build"]
+    },
     "storybook": {
       "outputs": []
     }

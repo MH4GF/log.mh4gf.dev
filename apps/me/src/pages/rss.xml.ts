@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
+
 import { SITE } from '@config'
 import slugify from '@utils/slugify'
 

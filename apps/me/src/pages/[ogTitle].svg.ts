@@ -1,6 +1,7 @@
-import { getCollection } from 'astro:content'
-import generateOgImage from '@utils/generateOgImage'
 import type { APIRoute } from 'astro'
+import { getCollection } from 'astro:content'
+
+import generateOgImage from '@utils/generateOgImage'
 
 export const get: APIRoute = async ({ params }) => ({
   body: await generateOgImage(params.ogTitle),
