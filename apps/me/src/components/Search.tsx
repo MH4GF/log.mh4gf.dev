@@ -45,7 +45,8 @@ export default function SearchBar({ searchList }: Props) {
 
     // put focus cursor at the end of the string
     setTimeout(function () {
-      inputRef.current!.selectionStart = inputRef.current!.selectionEnd = searchStr?.length || 0
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      inputRef.current!.selectionStart = inputRef.current!.selectionEnd = searchStr?.length ?? 0
     }, 50)
   }, [])
 
@@ -75,9 +76,9 @@ export default function SearchBar({ searchList }: Props) {
           </svg>
         </span>
         <input
-          className="border-skin-fill bg-skin-fill focus:border-skin-accent block w-full 
+          className="border-skin-fill bg-skin-fill focus:border-skin-accent block w-full
         rounded border border-opacity-40 py-3
-        pl-10 pr-3 placeholder:italic 
+        pl-10 pr-3 placeholder:italic
         placeholder:text-opacity-75 focus:outline-none"
           placeholder="Search for anything..."
           type="text"
@@ -99,14 +100,13 @@ export default function SearchBar({ searchList }: Props) {
       )}
 
       <ul>
-        {searchResults &&
-          searchResults.map(({ item, refIndex }) => (
-            <Card
-              href={`/posts/${slugify(item.data)}`}
-              frontmatter={item.data}
-              key={`${refIndex}-${slugify(item.data)}`}
-            />
-          ))}
+        {searchResults?.map(({ item, refIndex }) => (
+          <Card
+            href={`/posts/${slugify(item.data)}`}
+            frontmatter={item.data}
+            key={`${refIndex}-${slugify(item.data)}`}
+          />
+        ))}
       </ul>
     </>
   )

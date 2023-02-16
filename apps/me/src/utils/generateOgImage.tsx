@@ -1,4 +1,4 @@
-import type { SatoriOptions } from 'satori';
+import type { SatoriOptions } from 'satori'
 import satori from 'satori'
 
 import { SITE } from '@config'
