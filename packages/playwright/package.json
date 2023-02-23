@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "private": true,
   "main": "src/index.ts",
+  "scripts": {
+    "install": "playwright install --with-deps"
+  },
   "devDependencies": {
     "@playwright/test": "^1.30.0"
   }
