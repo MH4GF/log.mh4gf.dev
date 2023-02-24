@@ -28,7 +28,7 @@ jobs:
           git diff --exit-code
       - name: Setup browsers 👀
         run: |
-          yarn workspace playwright install
+          yarn workspace playwright install:browsers
       - name: Run tests 🧪
         run: yarn test
         env:

@@ -5,7 +5,7 @@
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-    "install": "playwright install --with-deps"
+    "install:browsers": "playwright install --with-deps"
   },
   "devDependencies": {
     "@playwright/test": "^1.30.0"
