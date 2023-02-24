@@ -18,7 +18,6 @@
     "astro": "^2.0.8",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
-    "playwright": "*",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^8.0.1",
     "satori": "^0.2.3",
@@ -35,6 +34,7 @@
     "astro-eslint-parser": "^0.11.0",
     "eslint": "^8.33.0",
     "eslint-plugin-astro": "^0.23.0",
+    "playwright": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
