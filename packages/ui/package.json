@@ -47,7 +47,7 @@
     "babel-loader": "^8.2.5",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.4",
-    "vite": "^3.0.4",
+    "vite": "^4.2.1",
     "vite-tsconfig-paths": "^3.5.0"
   },
   "dependencies": {
